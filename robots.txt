@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jennylee3769-cmyk.github.io/medispark-landing-page/sitemap.xml
+Sitemap: https://jennylee3769-cmyk.github.io/sitemap.xml

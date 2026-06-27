@@ -8,13 +8,13 @@
 
 기준 도메인:
 
-- `https://jennylee3769-cmyk.github.io/medispark-landing-page/`
+- `https://jennylee3769-cmyk.github.io/`
 
 ## 1. 네이버 서치어드바이저에 등록할 URL
 
-- 대표 URL: `https://jennylee3769-cmyk.github.io/medispark-landing-page/`
-- 사이트맵 URL: `https://jennylee3769-cmyk.github.io/medispark-landing-page/sitemap.xml`
-- robots URL: `https://jennylee3769-cmyk.github.io/medispark-landing-page/robots.txt`
+- 대표 URL: `https://jennylee3769-cmyk.github.io/`
+- 사이트맵 URL: `https://jennylee3769-cmyk.github.io/sitemap.xml`
+- robots URL: `https://jennylee3769-cmyk.github.io/robots.txt`
 
 ## 2. 소유확인 방법
 

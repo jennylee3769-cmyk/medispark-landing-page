@@ -1,0 +1,3 @@
+created_at,name,phone,lead_type,interest_type,visit_datetime,developer_name,page_name,page_url,device_type,utm_source,utm_medium,utm_campaign,referrer,privacy_agreed
+2026-06-27 15:03:22,홍길동,01012345678,phone_call,84A,,이정임,메디스파크 분양 홍보 랜딩,https://example.com,mobile,naver,cpc,medispark_open,https://search.naver.com,TRUE
+2026-06-27 15:09:10,김민서,01087654321,visit_reservation,101,2026-06-29 11:00,이정임,메디스파크 분양 홍보 랜딩,https://example.com,desktop,google,organic,brand,https://www.google.com,TRUE

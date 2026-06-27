@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>브레인시티 메디스파크 로제비앙 모아엘가</title>
+    <meta
+      name="description"
+      content="아주대병원 예정지, 초중학교, 공원, 중심상업지역을 가까이 누리는 브레인시티 메디스파크 로제비앙 모아엘가 분양 홍보 랜딩 페이지"
+    >
+    <meta property="og:title" content="브레인시티 메디스파크 로제비앙 모아엘가">
+    <meta
+      property="og:description"
+      content="1,215세대 대단지, 남향 위주 배치, 교통과 의료 생활권을 한 화면에서 확인하세요."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image/hero_render.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#top">
+          <span class="brand-eyebrow">BRAIN CITY 6BL</span>
+          <strong>메디스파크 로제비앙 모아엘가</strong>
+        </a>
+        <nav class="desktop-nav">
+          <a href="#location">입지</a>
+          <a href="#transport">교통</a>
+          <a href="#virtual">평면</a>
+          <a href="#consult">상담</a>
+        </nav>
+        <div class="topbar-actions">
+          <a class="ghost-link" href="tel:01066892348">010-6689-2348</a>
+          <button class="primary-chip" data-open-consult="phone_call">상담하기</button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero-section">
+          <div class="hero-media">
+            <img src="image/hero_render.jpg" alt="브레인시티 메디스파크 로제비앙 모아엘가 투시도">
+          </div>
+          <div class="hero-overlay"></div>
+          <div class="hero-content section-inner">
+            <div class="hero-copy">
+              <p class="hero-badges">
+                <span>평택 브레인시티 6BL</span>
+                <span>선착순 동호지정 상담</span>
+              </p>
+              <h1>
+                <span>의료, 교육, 공원, 상업을</span>
+                <span>가장 가까이 누리는</span>
+                <span class="hero-title-emphasis">브레인시티 메디스파크</span>
+              </h1>
+              <p class="hero-text">
+                아주대병원 예정지, 초중학교, 중심상업지역, 대규모 공원을 생활 반경에 둔
+                1,215세대 대단지. 방문예약부터 평면 확인, 전화상담까지 한 페이지에서 연결됩니다.
+              </p>
+              <p class="hero-disclaimer">
+                교통, 병원, 도보권, 개발 관련 내용은 제공 자료 기준 예정사항을 포함하며 실제 공개 전 공식 자료 검수가 필요합니다.
+              </p>
+              <div class="hero-stats">
+                <article>
+                  <strong>1,215</strong>
+                  <span>총 세대수</span>
+                </article>
+                <article>
+                  <strong>10</strong>
+                  <span>동 구성</span>
+                </article>
+                <article>
+                  <strong>35F</strong>
+                  <span>최고층</span>
+                </article>
+                <article>
+                  <strong>1.41</strong>
+                  <span>세대당 주차</span>
+                </article>
+              </div>
+              <div class="hero-cta">
+                <button class="cta-primary" data-open-consult="visit_reservation">방문예약</button>
+                <button class="cta-secondary" data-open-consult="phone_call">상담하기</button>
+                <a class="cta-link" href="#virtual">E모델하우스 보기</a>
+              </div>
+            </div>
+            <aside class="hero-form-card">
+              <div class="form-card-head">
+                <p>빠른 상담 접수</p>
+                <strong>대표번호 010-6689-2348</strong>
+              </div>
+              <p class="form-card-copy">
+                성함과 연락처만 남겨주시면 상담 내용을 빠르게 안내해드립니다.
+              </p>
+              <p class="form-card-note">현재 상담 가능 타입: 84A, 84B, 101</p>
+              <form id="quick-lead-form" class="quick-form">
+                <label>
+                  <span>이름</span>
+                  <input id="quick-name" name="name" type="text" placeholder="이름을 입력해주세요" required>
+                </label>
+                <label>
+                  <span>연락처</span>
+                  <input id="quick-phone" name="phone" type="tel" inputmode="numeric" placeholder="숫자만 입력해주세요" required>
+                </label>
+                <div class="chip-field">
+                  <span>관심 타입</span>
+                  <input id="quick-interest-type" name="interest_type" type="hidden" value="">
+                  <div class="option-chips" data-chip-group="quick-interest-type">
+                    <button type="button" class="option-chip is-active" data-chip-value="">선택 안 함</button>
+                    <button type="button" class="option-chip" data-chip-value="84A">84A</button>
+                    <button type="button" class="option-chip" data-chip-value="84B">84B</button>
+                    <button type="button" class="option-chip" data-chip-value="101">101</button>
+                  </div>
+                </div>
+                <label class="agree-line">
+                  <input id="quick-privacy" name="privacy_agreed" type="checkbox" required>
+                  <span>상담 목적의 개인정보 수집 및 연락에 동의합니다.</span>
+                </label>
+                <button type="submit" class="block-button">정보 남기고 상담 연결하기</button>
+                <a id="quick-call-link" class="line-button is-hidden" href="tel:01066892348">010-6689-2348로 전화 연결하기</a>
+                <p id="quick-form-status" class="form-status"></p>
+              </form>
+            </aside>
+          </div>
+          <div class="hero-ribbon section-inner">
+            <article>
+              <strong>자료 기준 도보권 안내</strong>
+              <span>초중학교, 공원, 근생시설</span>
+            </article>
+            <article>
+              <strong>자료 기준 예정지 접근</strong>
+              <span>아주대병원 예정지 접근</span>
+            </article>
+            <article>
+              <strong>평면 미리보기</strong>
+              <span>84A, 84B, 101 빠른 확인</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="value-section">
+          <div class="section-inner">
+            <div class="section-heading">
+              <p class="eyebrow">Core Value</p>
+              <h2>실거주 관점에서 바로 이해되는 네 가지 가치</h2>
+            </div>
+            <div class="value-grid">
+              <article>
+                <span>Medical</span>
+                <strong>아주대병원 예정지 도보권</strong>
+                <p>메디컬 생활권과 의료 R&D 복합타운 기대감을 가까이 누리는 입지.</p>
+              </article>
+              <article>
+                <span>Education</span>
+                <strong>초중학교 도보권</strong>
+                <p>통학 동선을 짧게 가져갈 수 있는 가족형 수요 중심 구조.</p>
+              </article>
+              <article>
+                <span>Green</span>
+                <strong>공원형 단지와 대규모 녹지</strong>
+                <p>단지 안팎으로 이어지는 조경과 근린공원으로 쾌적성을 강화.</p>
+              </article>
+              <article>
+                <span>Transit</span>
+                <strong>도로망과 철도망의 확장 축</strong>
+                <p>고속도로와 철도 예정축을 함께 보는 브레인시티 교통 프레임.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="priority-band">
+          <div class="section-inner priority-band-inner">
+            <div>
+              <p class="eyebrow">Priority Consult</p>
+              <h2>선착순 동호지정 상담과 방문예약을 한 번에</h2>
+              <p>
+                관심 타입별 상담 가능 여부, 방문 희망 일정, 평면 확인 요청을 같은 DB 구조로
+                접수합니다. 상담 이력이 남아 부재중 통화 후 재연락도 빠르게 진행됩니다.
+              </p>
+            </div>
+            <div class="priority-actions">
+              <button class="cta-primary" data-open-consult="visit_reservation">방문예약 접수</button>
+              <button class="cta-secondary" data-open-consult="phone_call">상담하기</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="location" class="split-section">
+          <div class="section-inner split-grid">
+            <div class="split-copy">
+              <p class="eyebrow">Location</p>
+              <h2>생활 동선 안에 들어오는 브레인시티 핵심 입지</h2>
+              <ul class="check-list">
+                <li>자료 기준 도보 1분 초중학교와 근린공원, 근생시설</li>
+                <li>자료 기준 도보 3분 아주대병원 예정지 접근</li>
+                <li>자료 기준 도보 5분 중심상업지역 연결</li>
+                <li>브레인시티 내 교육, 의료, 상업, 녹지 생활권 결합</li>
+              </ul>
+              <p class="fine-print">
+                도보 기준 문구와 예정 정보는 제공 자료 기준이며, 실제 공개 시 법정 표시 기준과
+                공식 자료 검수가 필요합니다.
+              </p>
+            </div>
+            <div class="split-media">
+              <img src="image/교육_10.jpg" alt="생활 및 교육환경 안내 지도">
+            </div>
+          </div>
+        </section>
+
+        <section id="transport" class="transport-section">
+          <div class="section-inner">
+            <div class="section-heading">
+              <p class="eyebrow">Transit Axis</p>
+              <h2>도로와 철도 개발 흐름을 함께 읽는 교통 프레임</h2>
+            </div>
+            <div class="transport-grid">
+              <article class="transport-card transport-card-large">
+                <img src="image/교육_8.jpg" alt="광역교통 안내도">
+                <div>
+                  <strong>동부고속화도로와 고속도로 연결 축</strong>
+                  <p>동부고속화도로, 평택-파주고속도로, 평택-제천고속도로, 경부고속도로 접근 프레임.</p>
+                </div>
+              </article>
+              <article class="transport-card">
+                <img src="image/교육_9.jpg" alt="메트로환경 안내도">
+                <div>
+                  <strong>철도망 예정 축</strong>
+                  <p>KTX, SRT, 지하철 1호선, GTX 예정축 등 자료 기준 교통망을 시각적으로 확인.</p>
+                </div>
+              </article>
+              <article class="transport-card accent-card">
+                <strong>예정 정보 고지</strong>
+                <p>교통 계획과 개통 시점은 자료 기준 예정사항이며, 실제 공개 전 최신 공식 자료 확인이 필요합니다.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="design-section">
+          <div class="section-inner">
+            <div class="section-heading">
+              <p class="eyebrow">Site Planning</p>
+              <h2>남향 위주 배치와 넓은 동간거리, 공원형 단지 설계</h2>
+            </div>
+            <div class="design-grid">
+              <div class="design-media">
+                <img src="image/교육_3.jpg" alt="단지배치도">
+              </div>
+              <div class="design-copy">
+                <div class="design-stat-list">
+                  <article>
+                    <strong>최대 129.1m</strong>
+                    <span>동간거리로 개방감 확보</span>
+                  </article>
+                  <article>
+                    <strong>약 6,500평</strong>
+                    <span>단지 내 조경 계획</span>
+                  </article>
+                  <article>
+                    <strong>약 7,150평</strong>
+                    <span>단지 앞 근린공원 규모</span>
+                  </article>
+                </div>
+                <p>
+                  전 세대 남향 위주 배치와 공원형 단지 콘셉트로 실거주 만족도를 높이고,
+                  조경과 커뮤니티, 넓은 동간거리를 함께 강조하는 구조로 설계합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="virtual" class="virtual-section">
+          <div class="section-inner">
+            <div class="section-heading">
+              <p class="eyebrow">Virtual Unit</p>
+              <h2>E모델하우스처럼 빠르게 보는 타입별 평면</h2>
+            </div>
+            <div class="unit-tabs" role="tablist" aria-label="타입별 평면">
+              <button class="unit-tab is-active" type="button" data-unit="84A">84A</button>
+              <button class="unit-tab" type="button" data-unit="84B">84B</button>
+              <button class="unit-tab" type="button" data-unit="101">101</button>
+            </div>
+            <div class="unit-panel-wrap">
+              <article class="unit-panel is-active" data-unit-panel="84A">
+                <div class="unit-panel-copy">
+                  <span>주력 타입</span>
+                  <h3>84A | 563세대</h3>
+                  <ul class="check-list">
+                    <li>알파룸, 팬트리, 드레스룸 구성</li>
+                    <li>거실과 주방 맞통풍 구조</li>
+                    <li>가족형 실거주 수요에 맞춘 주력 평면</li>
+                  </ul>
+                  <button class="cta-secondary" data-open-consult="visit_reservation" data-interest="84A">84A 상담받기</button>
+                </div>
+                <div class="unit-panel-media">
+                  <img src="image/교육_4.jpg" alt="84A 평면도">
+                </div>
+              </article>
+              <article class="unit-panel" data-unit-panel="84B">
+                <div class="unit-panel-copy">
+                  <span>프라이빗 평면</span>
+                  <h3>84B | 167세대</h3>
+                  <ul class="check-list">
+                    <li>남향 위주 침실 배치</li>
+                    <li>프라이빗한 독립 구조</li>
+                    <li>드레스룸과 팬트리로 수납력 확보</li>
+                  </ul>
+                  <button class="cta-secondary" data-open-consult="visit_reservation" data-interest="84B">84B 상담받기</button>
+                </div>
+                <div class="unit-panel-media">
+                  <img src="image/교육_5.jpg" alt="84B 평면도">
+                </div>
+              </article>
+              <article class="unit-panel" data-unit-panel="101">
+                <div class="unit-panel-copy">
+                  <span>상급 평형</span>
+                  <h3>101 | 333세대</h3>
+                  <ul class="check-list">
+                    <li>알파룸 포함 대형 가족형 구성</li>
+                    <li>넓은 수납과 주방 옵션 확장 가능</li>
+                    <li>실거주 업그레이드 수요에 적합한 평면</li>
+                  </ul>
+                  <button class="cta-secondary" data-open-consult="visit_reservation" data-interest="101">101 상담받기</button>
+                </div>
+                <div class="unit-panel-media">
+                  <img src="image/교육_6.jpg" alt="101 평면도">
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="medical-section">
+          <div class="section-inner medical-grid">
+            <div class="medical-media">
+              <img src="image/교육_11.jpg" alt="아주대병원 셀링포인트 안내">
+            </div>
+            <div class="medical-copy">
+              <p class="eyebrow">Medical Value</p>
+              <h2>메디스파크라는 이름과 직접 연결되는 의료 프레임</h2>
+              <p>
+                자료 기준 500병상 규모 예정, 의료 R&D와 스마트 종합병원 콘셉트, 연구 인력과 운영 인력
+                유입 기대까지. 의료 인프라가 가까운 생활권이라는 서사를 분명하게 가져갑니다.
+              </p>
+              <div class="note-box">
+                병원 규모와 착공, 개원 일정은 제공 자료 기준 예정사항이며 실제 추진 과정에서 변경될 수 있습니다.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="faq-section">
+          <div class="section-inner">
+            <div class="section-heading">
+              <p class="eyebrow">FAQ</p>
+              <h2>전환 직전 이탈을 줄이는 핵심 질문</h2>
+            </div>
+            <div class="faq-list">
+              <article class="faq-item">
+                <button class="faq-question" type="button">총 세대수와 타입 구성은 어떻게 되나요?</button>
+                <div class="faq-answer">
+                  <p>총 1,215세대 규모이며 현재 랜딩 페이지에서는 84A, 84B, 101 중심으로 상담을 안내합니다.</p>
+                </div>
+              </article>
+              <article class="faq-item">
+                <button class="faq-question" type="button">아주대병원은 얼마나 가까운가요?</button>
+                <div class="faq-answer">
+                  <p>제공 자료 기준 도보 3분 예정지 접근 프레임으로 안내되고 있으며, 공개 전 공식 자료 검수가 필요합니다.</p>
+                </div>
+              </article>
+              <article class="faq-item">
+                <button class="faq-question" type="button">전화상담은 어떻게 진행되나요?</button>
+                <div class="faq-answer">
+                  <p>성함과 연락처만 남기면 앱스크립트 기반 고객 DB에 저장되고, 이후 대표번호로 바로 전화 연결할 수 있습니다.</p>
+                </div>
+              </article>
+              <article class="faq-item">
+                <button class="faq-question" type="button">교통 개발 계획은 확정인가요?</button>
+                <div class="faq-answer">
+                  <p>교통과 병원 관련 일정은 자료 기준 예정사항입니다. 실제 공개 시 최신 공식 자료 기준으로 다시 확인해야 합니다.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="consult" class="consult-section">
+          <div class="section-inner consult-grid">
+            <div class="consult-copy">
+              <p class="eyebrow">Consultation</p>
+              <h2>이름과 연락처만 남기면<br>상담 흐름이 바로 이어집니다</h2>
+              <p>
+                광고성 연락이 아니라 문의 내용 안내와 연결 지연 시 재연락을 위한 최소 정보만 받습니다.
+                입력은 10초 내로 끝나며, 접수 후 바로 상담 연결이 가능합니다.
+              </p>
+              <div class="consult-phone">
+                <span>대표번호</span>
+                <a href="tel:01066892348">010-6689-2348</a>
+              </div>
+              <p class="consult-available-types">현재 상담 가능 타입: 84A, 84B, 101</p>
+            </div>
+            <form id="main-lead-form" class="consult-form">
+              <label>
+                <span>이름</span>
+                <input id="main-name" name="name" type="text" placeholder="이름을 입력해주세요" required>
+              </label>
+              <label>
+                <span>연락처</span>
+                <input id="main-phone" name="phone" type="tel" inputmode="numeric" placeholder="숫자만 입력해주세요" required>
+              </label>
+              <div class="chip-field">
+                <span>관심 타입</span>
+                <input id="main-interest-type" name="interest_type" type="hidden" value="">
+                <div class="option-chips" data-chip-group="main-interest-type">
+                  <button type="button" class="option-chip is-active" data-chip-value="">선택 안 함</button>
+                  <button type="button" class="option-chip" data-chip-value="84A">84A</button>
+                  <button type="button" class="option-chip" data-chip-value="84B">84B</button>
+                  <button type="button" class="option-chip" data-chip-value="101">101</button>
+                </div>
+              </div>
+              <label>
+                <span>상담 희망 방식</span>
+                <select id="main-lead-type" name="lead_type">
+                  <option value="visit_reservation">방문예약</option>
+                  <option value="phone_call">전화상담</option>
+                  <option value="info_request">분양자료 요청</option>
+                </select>
+              </label>
+              <div class="visit-grid">
+                <label>
+                  <span>방문 희망일</span>
+                  <input id="main-visit-date" name="visit_date" type="date">
+                </label>
+                <label>
+                  <span>방문 희망시간</span>
+                  <select id="main-visit-time" name="visit_time">
+                    <option value="">시간 선택</option>
+                    <option value="10:00">오전 10:00</option>
+                    <option value="11:00">오전 11:00</option>
+                    <option value="13:00">오후 1:00</option>
+                    <option value="14:00">오후 2:00</option>
+                    <option value="15:00">오후 3:00</option>
+                    <option value="16:00">오후 4:00</option>
+                    <option value="17:00">오후 5:00</option>
+                  </select>
+                </label>
+              </div>
+              <label class="agree-line">
+                <input id="main-privacy" name="privacy_agreed" type="checkbox" required>
+                <span>개인정보 수집 및 상담 연락에 동의합니다. 입력 정보는 상담 목적 외 사용하지 않습니다.</span>
+              </label>
+              <div class="privacy-box">
+                <strong>개인정보 수집 안내</strong>
+                <p>수집 항목: 이름, 연락처, 관심 타입, 방문 희망일시</p>
+                <p>수집 목적: 분양 상담 접수, 방문예약 안내, 통화 연결 지연 시 재연락</p>
+                <p>운영 주체: 메디스파크 분양 상담 운영팀</p>
+                <p>보관 기간: 상담 종료 후 내부 운영 기준에 따름</p>
+              </div>
+              <button type="submit" class="block-button">방문예약 접수하기</button>
+              <button type="button" class="line-button" data-open-consult="phone_call">상담하기</button>
+              <p id="main-form-status" class="form-status"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="section-inner footer-inner">
+          <div>
+            <strong>브레인시티 메디스파크 로제비앙 모아엘가</strong>
+            <p>본 페이지의 개발계획, 교통계획, 병원 관련 일정, 시설 구성 등은 관계기관 및 사업 주체 사정에 따라 변경될 수 있습니다.</p>
+          </div>
+          <div class="footer-meta">
+            <span>대표 상담번호 010-6689-2348</span>
+            <span>운영 주체 메디스파크 분양 상담 운영팀</span>
+            <span>개발자 식별값 이정임</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="sticky-cta">
+      <button class="sticky-cta-main" data-open-consult="phone_call">상담하기</button>
+      <a class="sticky-cta-sub" href="tel:01066892348">010-6689-2348</a>
+    </div>
+
+    <div id="consult-modal" class="modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" type="button" data-close-modal aria-label="닫기">×</button>
+        <p class="eyebrow">Pre-call Layer</p>
+        <h2 id="modal-title">전화 연결 전에 성함과 연락처만 남겨주세요</h2>
+        <p class="modal-copy">
+          광고성 연락이 아니라 문의 내용 안내와 통화 연결 지연 시 재연락을 위한 최소 정보만 받습니다.
+          입력은 10초 내로 끝나며, 저장 후 바로 대표번호로 연결됩니다.
+        </p>
+        <form id="modal-lead-form" class="modal-form">
+          <input id="modal-lead-type" type="hidden" value="phone_call">
+          <label>
+            <span>이름</span>
+            <input id="modal-name" name="name" type="text" placeholder="이름을 입력해주세요" required>
+          </label>
+          <label>
+            <span>연락처</span>
+            <input id="modal-phone" name="phone" type="tel" inputmode="numeric" placeholder="숫자만 입력해주세요" required>
+          </label>
+          <div class="chip-field">
+            <span>관심 타입</span>
+            <input id="modal-interest-type" name="interest_type" type="hidden" value="">
+            <div class="option-chips" data-chip-group="modal-interest-type">
+              <button type="button" class="option-chip is-active" data-chip-value="">선택 안 함</button>
+              <button type="button" class="option-chip" data-chip-value="84A">84A</button>
+              <button type="button" class="option-chip" data-chip-value="84B">84B</button>
+              <button type="button" class="option-chip" data-chip-value="101">101</button>
+            </div>
+          </div>
+          <label class="agree-line">
+            <input id="modal-privacy" name="privacy_agreed" type="checkbox" required>
+            <span>개인정보 수집 및 상담 연락에 동의합니다.</span>
+          </label>
+          <button id="modal-submit" type="submit" class="block-button">전화 연결하기</button>
+          <a id="modal-call-link" class="line-button is-hidden" href="tel:01066892348">010-6689-2348로 전화 연결하기</a>
+          <p id="modal-form-status" class="form-status"></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

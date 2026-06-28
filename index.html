@@ -61,6 +61,27 @@
     }
 
     img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    /* 데스크톱에서 콘텐츠 이미지는 원본 비율 유지 */
+    @media (min-width: 1024px) {
+      .tab-image img,
+      .complex-image img,
+      .overview-image img,
+      .floor-image img,
+      .medical-image img {
+        height: auto;
+        object-fit: contain;
+        background: #f0f0f0;
+      }
+      .tab-image,
+      .complex-image,
+      .overview-image,
+      .floor-image,
+      .medical-image {
+        height: auto !important;
+        min-height: 200px;
+      }
+    }
     a   { color: inherit; text-decoration: none; }
 
     /* ─── 공통 버튼 ─────────────────────────────── */

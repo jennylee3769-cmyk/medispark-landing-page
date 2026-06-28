@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0A1E3C"/>
+      <stop offset="100%" stop-color="#122A50"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C9A84C"/>
+      <stop offset="100%" stop-color="#E8C96A"/>
+    </linearGradient>
+    <linearGradient id="imgOverlay" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0A1E3C" stop-opacity="1"/>
+      <stop offset="45%" stop-color="#0A1E3C" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0A1E3C" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="imgClip">
+      <rect x="480" y="0" width="720" height="630" rx="0"/>
+    </clipPath>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- 우측 이미지 영역 배경 (실제 이미지 대체용 그라데이션) -->
+  <rect x="480" y="0" width="720" height="630" fill="#1c3560"/>
+
+  <!-- 건물 실루엣 장식 (우측 배경) -->
+  <rect x="600" y="180" width="60" height="450" fill="rgba(201,168,76,0.06)" rx="4"/>
+  <rect x="680" y="130" width="80" height="500" fill="rgba(201,168,76,0.08)" rx="4"/>
+  <rect x="780" y="160" width="70" height="470" fill="rgba(201,168,76,0.07)" rx="4"/>
+  <rect x="870" y="120" width="90" height="510" fill="rgba(201,168,76,0.09)" rx="4"/>
+  <rect x="980" y="200" width="65" height="430" fill="rgba(201,168,76,0.06)" rx="4"/>
+  <rect x="1060" y="150" width="75" height="480" fill="rgba(201,168,76,0.07)" rx="4"/>
+
+  <!-- 건물 창문 패턴 -->
+  <g fill="rgba(201,168,76,0.15)">
+    <rect x="610" y="200" width="8" height="10" rx="1"/>
+    <rect x="625" y="200" width="8" height="10" rx="1"/>
+    <rect x="640" y="200" width="8" height="10" rx="1"/>
+    <rect x="610" y="220" width="8" height="10" rx="1"/>
+    <rect x="625" y="220" width="8" height="10" rx="1"/>
+    <rect x="640" y="220" width="8" height="10" rx="1"/>
+    <rect x="610" y="240" width="8" height="10" rx="1"/>
+    <rect x="625" y="240" width="8" height="10" rx="1"/>
+    <rect x="640" y="240" width="8" height="10" rx="1"/>
+    <rect x="700" y="160" width="10" height="12" rx="1"/>
+    <rect x="718" y="160" width="10" height="12" rx="1"/>
+    <rect x="736" y="160" width="10" height="12" rx="1"/>
+    <rect x="700" y="183" width="10" height="12" rx="1"/>
+    <rect x="718" y="183" width="10" height="12" rx="1"/>
+    <rect x="736" y="183" width="10" height="12" rx="1"/>
+    <rect x="700" y="206" width="10" height="12" rx="1"/>
+    <rect x="718" y="206" width="10" height="12" rx="1"/>
+    <rect x="736" y="206" width="10" height="12" rx="1"/>
+    <rect x="890" y="145" width="12" height="14" rx="1"/>
+    <rect x="910" y="145" width="12" height="14" rx="1"/>
+    <rect x="930" y="145" width="12" height="14" rx="1"/>
+    <rect x="890" y="170" width="12" height="14" rx="1"/>
+    <rect x="910" y="170" width="12" height="14" rx="1"/>
+    <rect x="930" y="170" width="12" height="14" rx="1"/>
+    <rect x="890" y="195" width="12" height="14" rx="1"/>
+    <rect x="910" y="195" width="12" height="14" rx="1"/>
+    <rect x="930" y="195" width="12" height="14" rx="1"/>
+  </g>
+
+  <!-- 왼쪽→중간 그라데이션 오버레이 -->
+  <rect x="480" y="0" width="720" height="630" fill="url(#imgOverlay)"/>
+
+  <!-- 왼쪽 콘텐츠 영역 -->
+
+  <!-- 상단 로고 영역 -->
+  <rect x="60" y="52" width="3" height="32" fill="url(#gold)" rx="2"/>
+  <text x="80" y="66" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" fill="rgba(255,255,255,0.5)" font-weight="400" letter-spacing="2">BRAINCITY MEDIPARK</text>
+  <text x="80" y="85" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" fill="rgba(201,168,76,0.8)" font-weight="600" letter-spacing="1">로제비앙 | 모아엘가</text>
+
+  <!-- 핵심 배지 -->
+  <rect x="60" y="118" width="198" height="30" rx="15" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+  <text x="159" y="137" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13" fill="#E8C96A" font-weight="700" text-anchor="middle" letter-spacing="0.5">경기도 평택 브레인시티 6BL</text>
+
+  <!-- 메인 타이틀 -->
+  <text x="60" y="210" font-family="'Apple SD Gothic Neo','Noto Serif KR',Georgia,serif" font-size="58" fill="#FFFFFF" font-weight="900" letter-spacing="-1">병원이</text>
+  <text x="60" y="278" font-family="'Apple SD Gothic Neo','Noto Serif KR',Georgia,serif" font-size="58" fill="#FFFFFF" font-weight="900" letter-spacing="-1">도보 <tspan fill="#E8C96A">3분</tspan>인</text>
+  <text x="60" y="346" font-family="'Apple SD Gothic Neo','Noto Serif KR',Georgia,serif" font-size="58" fill="#FFFFFF" font-weight="900" letter-spacing="-1">아파트</text>
+
+  <!-- 구분선 -->
+  <rect x="60" y="378" width="280" height="2" fill="url(#gold)" rx="1" opacity="0.6"/>
+
+  <!-- 핵심 수치 3개 -->
+  <g>
+    <!-- 수치1 -->
+    <text x="60" y="420" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="rgba(255,255,255,0.45)" font-weight="500" letter-spacing="1">🏫 학교</text>
+    <text x="60" y="444" font-family="'Apple SD Gothic Neo','Noto Serif KR',Georgia,serif" font-size="26" fill="#E8C96A" font-weight="900">도보 1분</text>
+
+    <!-- 수치2 -->
+    <text x="200" y="420" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="rgba(255,255,255,0.45)" font-weight="500" letter-spacing="1">🏥 종합병원</text>
+    <text x="200" y="444" font-family="'Apple SD Gothic Neo','Noto Serif KR',Georgia,serif" font-size="26" fill="#E8C96A" font-weight="900">도보 3분</text>
+
+    <!-- 수치3 -->
+    <text x="60" y="492" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="rgba(255,255,255,0.45)" font-weight="500" letter-spacing="1">🚄 GTX·KTX·SRT</text>
+    <text x="60" y="516" font-family="'Apple SD Gothic Neo','Noto Serif KR',Georgia,serif" font-size="26" fill="#E8C96A" font-weight="900">광역 교통 수혜</text>
+
+    <text x="310" y="492" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="11" fill="rgba(255,255,255,0.45)" font-weight="500" letter-spacing="1">🏢 총 규모</text>
+    <text x="310" y="516" font-family="'Apple SD Gothic Neo','Noto Serif KR',Georgia,serif" font-size="26" fill="#E8C96A" font-weight="900">1,215세대</text>
+  </g>
+
+  <!-- 하단 CTA 바 -->
+  <rect x="0" y="574" width="1200" height="56" fill="rgba(201,168,76,0.12)" />
+  <rect x="0" y="574" width="1200" height="1" fill="rgba(201,168,76,0.3)"/>
+  <text x="60" y="609" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="16" fill="#E8C96A" font-weight="700">지금 선착순 동호지정 진행 중</text>
+  <text x="400" y="609" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14" fill="rgba(255,255,255,0.4)" font-weight="400">  ·  방문 예약 고객 우선 배정</text>
+  <text x="900" y="609" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14" fill="rgba(255,255,255,0.4)" text-anchor="end">jennylee3769-cmyk.github.io</text>
+  <rect x="920" y="586" width="220" height="32" rx="16" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+  <text x="1030" y="607" font-family="'Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14" fill="#E8C96A" font-weight="700" text-anchor="middle">📞 무료 상담 예약하기</text>
+
+  <!-- 작은 십자 의료 아이콘 (우측 상단) -->
+  <rect x="1120" y="40" width="40" height="10" rx="5" fill="rgba(201,168,76,0.3)"/>
+  <rect x="1135" y="25" width="10" height="40" rx="5" fill="rgba(201,168,76,0.3)"/>
+</svg>

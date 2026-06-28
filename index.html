@@ -1,555 +1,1603 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="naver-site-verification" content="be82e8ffae81f336536357b17576e45734e21291">
-    <title>브레인시티 메디스파크 로제비앙 모아엘가</title>
-    <meta name="robots" content="index,follow">
-    <meta
-      name="description"
-      content="아주대병원 예정지, 초중학교, 공원, 중심상업지역을 가까이 누리는 브레인시티 메디스파크 로제비앙 모아엘가 분양 홍보 랜딩 페이지"
-    >
-    <link rel="canonical" href="https://jennylee3769-cmyk.github.io/">
-    <meta property="og:title" content="브레인시티 메디스파크 로제비앙 모아엘가">
-    <meta
-      property="og:description"
-      content="1,215세대 대단지, 남향 위주 배치, 교통과 의료 생활권을 한 화면에서 확인하세요."
-    >
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jennylee3769-cmyk.github.io/medispark-landing-page/">
-    <meta property="og:image" content="https://jennylee3769-cmyk.github.io/medispark-landing-page/og-image.png">
-    <meta property="og:image:alt" content="브레인시티 메디스파크 로제비앙 모아엘가 대표 썸네일">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="브레인시티 메디스파크 로제비앙 모아엘가">
-    <meta
-      name="twitter:description"
-      content="1,215세대 대단지, 남향 위주 배치, 교통과 의료 생활권을 한 화면에서 확인하세요."
-    >
-    <meta name="twitter:image" content="https://jennylee3769-cmyk.github.io/medispark-landing-page/og-image.png">
-    <meta name="theme-color" content="#0f4f43">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+KR:wght@400;500;700;800&display=swap"
-      rel="stylesheet"
-    >
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="topbar">
-        <a class="brand" href="#top">
-          <span class="brand-eyebrow">BRAIN CITY 6BL</span>
-          <strong>메디스파크 로제비앙 모아엘가</strong>
-        </a>
-        <nav class="desktop-nav">
-          <a href="#location">입지</a>
-          <a href="#transport">교통</a>
-          <a href="#virtual">평면</a>
-          <a href="#consult">상담</a>
-        </nav>
-        <div class="topbar-actions">
-          <a class="ghost-link" href="tel:01066892348">010-6689-2348</a>
-          <button class="primary-chip" data-open-consult="phone_call">상담하기</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>브레인시티 메디스파크 로제비앙 | 모아엘가 — 분양 홍보</title>
+  <meta name="description" content="경기도 평택 브레인시티 메디스파크. 병원 도보 3분, 학교 도보 1분. 1,215세대 GTX 교통 수혜 단지. 지금 상담 신청하세요." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       CSS 변수
+    ═══════════════════════════════════════════════ */
+    :root {
+      --navy:       #0A1E3C;
+      --navy2:      #122A50;
+      --navy3:      #1A3A6E;
+      --gold:       #C9A84C;
+      --gold2:      #E8C96A;
+      --gold-bg:    #FBF7EE;
+      --white:      #FFFFFF;
+      --gray50:     #F7F8FA;
+      --gray100:    #ECEEF2;
+      --gray400:    #94A3B8;
+      --gray500:    #6B7590;
+      --gray800:    #1C2333;
+      --red:        #C62828;
+      --red-bg:     #FEF2F2;
+      --radius-sm:  8px;
+      --radius-md:  14px;
+      --radius-lg:  20px;
+      --shadow-sm:  0 2px 8px rgba(10,30,60,.08);
+      --shadow-md:  0 6px 24px rgba(10,30,60,.13);
+      --shadow-lg:  0 12px 40px rgba(10,30,60,.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--gray800);
+      background: var(--gray100);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif { font-family: 'Noto Serif KR', 'Apple Myungjo', Georgia, serif; }
+
+    .page-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--white);
+      min-height: 100vh;
+      position: relative;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a   { color: inherit; text-decoration: none; }
+
+    /* ─── 공통 버튼 ─────────────────────────────── */
+    .btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 16px 20px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 16px; font-weight: 800;
+      border: none; border-radius: var(--radius-md);
+      cursor: pointer; letter-spacing: -.2px;
+      transition: opacity .2s, transform .1s;
+    }
+    .btn:active { transform: scale(.98); }
+
+    .btn-navy  { background: var(--navy);  color: var(--white); }
+    .btn-gold  { background: var(--gold);  color: var(--navy);  }
+    .btn-white { background: var(--white); color: var(--navy); box-shadow: var(--shadow-sm); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.5); }
+    .btn-phone { background: var(--gold); color: var(--navy); font-size: 17px; }
+    .btn-kakao { background: #FEE500; color: #3A1D1D; }
+
+    .btn:hover { opacity: .88; }
+
+    /* ─── 섹션 공통 ─────────────────────────────── */
+    section { padding: 56px 24px; }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 26px; font-weight: 900; line-height: 1.35;
+      letter-spacing: -.6px; color: var(--navy); margin-bottom: 14px;
+    }
+
+    .section-title.on-dark { color: var(--white); }
+
+    .section-desc {
+      font-size: 14px; color: var(--gray500); line-height: 1.8;
+    }
+
+    .section-desc.on-dark { color: rgba(255,255,255,.65); }
+
+    /* 이미지 플레이스홀더 */
+    .img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      background: var(--gray100); color: var(--gray400); font-size: 13px;
+    }
+    .img-placeholder-icon { font-size: 36px; opacity: .45; }
+
+    /* ─── fade-in 애니메이션 ────────────────────── */
+    .fade-in {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ═══════════════════════════════════════════════
+       1. 헤더
+    ═══════════════════════════════════════════════ */
+    #site-header {
+      position: sticky; top: 0; z-index: 200;
+      background: var(--navy);
+      padding: 0 20px;
+      box-shadow: 0 2px 12px rgba(10,30,60,.25);
+      transition: background .3s;
+    }
+
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 58px;
+    }
+
+    .header-nav {
+      display: flex; align-items: center; gap: 0;
+      background: var(--navy2);
+      overflow-x: auto; scrollbar-width: none;
+      padding: 0 8px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .header-nav::-webkit-scrollbar { display: none; }
+    .header-nav a {
+      flex-shrink: 0;
+      font-size: 12px; font-weight: 700; color: rgba(255,255,255,.6);
+      padding: 11px 13px; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .header-nav a:hover { color: var(--gold2); border-color: var(--gold); }
+
+    .header-logo {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 15px; font-weight: 700; color: var(--white);
+      line-height: 1.3;
+    }
+    .header-logo span { color: var(--gold2); }
+
+    .header-phone {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--gold); color: var(--navy);
+      font-size: 13px; font-weight: 800;
+      padding: 8px 14px; border-radius: var(--radius-sm);
+      white-space: nowrap;
+    }
+
+    /* ═══════════════════════════════════════════════
+       2. 긴급성 배너
+    ═══════════════════════════════════════════════ */
+    .urgency-banner {
+      background: var(--red);
+      padding: 10px 20px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-size: 13px; font-weight: 700; color: var(--white);
+      text-align: center; line-height: 1.5;
+    }
+    .urgency-count {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 18px; font-weight: 900; color: #FFE082;
+    }
+
+    /* ═══════════════════════════════════════════════
+       3. Hero
+    ═══════════════════════════════════════════════ */
+    .hero { padding: 0; background: var(--navy); }
+
+    .hero-image {
+      width: 100%; height: 260px;
+      position: relative; overflow: hidden;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(10,30,60,.15) 0%,
+        rgba(10,30,60,.5)  55%,
+        rgba(10,30,60,.88) 100%);
+    }
+
+    .hero-content {
+      background: var(--navy);
+      padding: 32px 24px 44px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+      color: var(--gold2);
+      background: rgba(201,168,76,.18);
+      border: 1px solid rgba(201,168,76,.4);
+      border-radius: 100px; padding: 5px 15px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 30px; font-weight: 900; line-height: 1.35;
+      color: var(--white); letter-spacing: -.6px;
+      margin-bottom: 14px;
+    }
+    .hero-title em { color: var(--gold2); font-style: normal; }
+
+    .hero-sub {
+      font-size: 14px; color: rgba(255,255,255,.65);
+      margin-bottom: 32px; line-height: 1.75;
+    }
+
+    .hero-btns { display: flex; flex-direction: column; gap: 10px; }
+
+    /* ═══════════════════════════════════════════════
+       4. 수치 배너
+    ═══════════════════════════════════════════════ */
+    .stats-bar {
+      background: var(--navy2);
+      padding: 24px 20px;
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background-color: rgba(255,255,255,.08);
+    }
+    .stats-bar-inner { display: contents; }
+
+    .stat-item {
+      background: var(--navy2);
+      padding: 20px 16px;
+      text-align: center;
+    }
+
+    .stat-icon  { font-size: 22px; margin-bottom: 6px; }
+    .stat-num   {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 22px; font-weight: 900; color: var(--gold2);
+      line-height: 1.2; margin-bottom: 4px;
+    }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,.6); font-weight: 500; }
+
+    /* ═══════════════════════════════════════════════
+       5. 의료 인프라 섹션
+    ═══════════════════════════════════════════════ */
+    .medical {
+      background: var(--navy);
+      padding: 56px 24px;
+    }
+
+    .medical-eyebrow {
+      display: inline-block;
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--red); background: rgba(198,40,40,.18);
+      border: 1px solid rgba(198,40,40,.35);
+      border-radius: 100px; padding: 4px 14px;
+      margin-bottom: 14px;
+    }
+
+    .medical-image {
+      width: 100%; height: 220px;
+      border-radius: var(--radius-lg); overflow: hidden;
+      margin: 28px 0; box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    }
+
+    .medical-cards {
+      display: flex; flex-direction: column; gap: 12px;
+      margin-top: 24px;
+    }
+
+    .medical-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+
+    .medical-card-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: rgba(201,168,76,.2);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+
+    .medical-card-title {
+      font-size: 14px; font-weight: 700; color: var(--white);
+      margin-bottom: 4px;
+    }
+    .medical-card-desc { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.65; }
+
+    /* ═══════════════════════════════════════════════
+       6. 입지 강점 (탭)
+    ═══════════════════════════════════════════════ */
+    .location { background: var(--gray50); }
+
+    .tab-buttons {
+      display: flex; gap: 0;
+      background: var(--gray100);
+      border-radius: var(--radius-md);
+      padding: 4px;
+      margin-bottom: 24px;
+    }
+
+    .tab-btn {
+      flex: 1; padding: 10px 8px;
+      background: transparent;
+      border: none; border-radius: 10px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 13px; font-weight: 700; color: var(--gray500);
+      cursor: pointer; transition: all .2s;
+    }
+    .tab-btn.active {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .tab-image {
+      width: 100%; height: 200px;
+      border-radius: var(--radius-md); overflow: hidden;
+      margin-bottom: 20px; box-shadow: var(--shadow-md);
+    }
+
+    .tab-points { display: flex; flex-direction: column; gap: 10px; }
+
+    .tab-point {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--white); border-radius: var(--radius-sm);
+      padding: 14px 16px; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray100);
+    }
+
+    .tab-point-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: var(--gold-bg);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .tab-point-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .tab-point-desc  { font-size: 12px; color: var(--gray500); line-height: 1.55; }
+
+    /* ═══════════════════════════════════════════════
+       7. 단지 강점
+    ═══════════════════════════════════════════════ */
+    .complex { background: var(--white); }
+
+    .complex-image {
+      width: 100%; height: 210px;
+      border-radius: var(--radius-lg); overflow: hidden;
+      margin-bottom: 28px; box-shadow: var(--shadow-md);
+    }
+
+    .complex-cards {
+      display: flex; flex-direction: column; gap: 14px;
+    }
+
+    .complex-card {
+      background: var(--gray50);
+      border: 1px solid var(--gray100);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+
+    .complex-card-num {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Noto Serif KR', serif;
+      font-size: 16px; font-weight: 900; color: var(--gold2);
+    }
+    .complex-card-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .complex-card-desc  { font-size: 13px; color: var(--gray500); line-height: 1.65; }
+
+    /* ═══════════════════════════════════════════════
+       8. 평면 갤러리
+    ═══════════════════════════════════════════════ */
+    .floor-plan { background: var(--navy); padding: 56px 24px; }
+
+    .floor-tabs {
+      display: flex; gap: 6px; flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
+
+    .floor-tab-btn {
+      padding: 8px 14px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 100px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 12px; font-weight: 700; color: rgba(255,255,255,.55);
+      cursor: pointer; transition: all .2s;
+    }
+    .floor-tab-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+
+    .floor-panel { display: none; }
+    .floor-panel.active { display: block; }
+
+    .floor-image {
+      width: 100%; height: 280px;
+      border-radius: var(--radius-lg); overflow: hidden;
+      margin-bottom: 20px; box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    }
+
+    .floor-info {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+      margin-bottom: 16px;
+    }
+    .floor-info-item {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-sm);
+      padding: 12px 10px; text-align: center;
+    }
+    .floor-info-label { font-size: 10px; color: rgba(255,255,255,.45); font-weight: 600; letter-spacing: .5px; margin-bottom: 4px; }
+    .floor-info-value { font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 700; color: var(--gold2); }
+
+    .floor-features {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .floor-feature {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: rgba(255,255,255,.7);
+    }
+    .floor-feature::before { content: '▶'; font-size: 9px; color: var(--gold); flex-shrink: 0; }
+
+    /* ═══════════════════════════════════════════════
+       9. 분양 개요
+    ═══════════════════════════════════════════════ */
+    .overview { background: var(--gray50); }
+
+    .overview-image {
+      width: 100%; height: 200px;
+      border-radius: var(--radius-lg); overflow: hidden;
+      margin-bottom: 24px; box-shadow: var(--shadow-md);
+    }
+
+    .overview-table {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--gray100);
+      box-shadow: var(--shadow-sm);
+    }
+    .overview-row {
+      display: flex; border-bottom: 1px solid var(--gray100);
+    }
+    .overview-row:last-child { border-bottom: none; }
+    .overview-key {
+      width: 100px; flex-shrink: 0;
+      background: var(--navy); color: rgba(255,255,255,.8);
+      font-size: 12px; font-weight: 700;
+      padding: 13px 14px; display: flex; align-items: center;
+    }
+    .overview-val {
+      flex: 1; padding: 13px 14px;
+      font-size: 13px; color: var(--gray800); line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════════════
+       10. 상담 등록 폼
+    ═══════════════════════════════════════════════ */
+    .register-section { background: var(--white); }
+
+    .register-box {
+      background: var(--gold-bg);
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+    }
+
+    .register-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 20px; font-weight: 700; color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .register-sub { font-size: 13px; color: var(--gray500); margin-bottom: 24px; }
+
+    .form-group { margin-bottom: 16px; }
+
+    .form-label {
+      display: block;
+      font-size: 12px; font-weight: 700; color: var(--navy2);
+      margin-bottom: 6px; letter-spacing: .3px;
+    }
+    .form-label .req { color: var(--red); margin-left: 2px; }
+
+    .form-input {
+      width: 100%; padding: 13px 16px;
+      background: var(--white);
+      border: 1.5px solid var(--gray100);
+      border-radius: var(--radius-sm);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 15px; color: var(--gray800);
+      outline: none; transition: border-color .2s;
+    }
+    .form-input:focus { border-color: var(--gold); }
+    .form-input.error { border-color: var(--red); }
+
+    .unit-buttons {
+      display: flex; gap: 6px; flex-wrap: wrap;
+    }
+    .unit-btn {
+      padding: 9px 16px;
+      background: var(--white);
+      border: 1.5px solid var(--gray100);
+      border-radius: var(--radius-sm);
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 13px; font-weight: 700; color: var(--gray500);
+      cursor: pointer; transition: all .2s;
+    }
+    .unit-btn.selected {
+      background: var(--navy); border-color: var(--navy); color: var(--white);
+    }
+
+    .form-row { display: flex; gap: 8px; }
+    .form-row .form-input { flex: 1; }
+
+    .visit-time-select {
+      width: 90px; flex-shrink: 0; padding: 13px 10px;
+      background: var(--white);
+      border: 1.5px solid var(--gray100); border-radius: var(--radius-sm);
+      font-family: 'Noto Sans KR', sans-serif; font-size: 15px;
+      color: var(--gray800); outline: none;
+    }
+    .visit-time-select:focus { border-color: var(--gold); }
+
+    .agree-row {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin: 20px 0 22px;
+    }
+    .agree-check {
+      width: 20px; height: 20px; flex-shrink: 0;
+      margin-top: 2px; accent-color: var(--navy);
+      cursor: pointer;
+    }
+    .agree-text {
+      font-size: 12px; color: var(--gray500); line-height: 1.6; cursor: pointer;
+    }
+    .agree-text a { color: var(--navy); text-decoration: underline; }
+
+    .form-error-msg {
+      display: none; font-size: 12px; color: var(--red);
+      margin-top: 4px; font-weight: 700;
+    }
+
+    /* ─── 완료 팝업 ─────────────────────────────── */
+    #success-popup {
+      display: none; position: fixed; inset: 0;
+      background: rgba(10,30,60,.75);
+      z-index: 500;
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    #success-popup.show { display: flex; }
+
+    .popup-box {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 36px 28px; text-align: center; max-width: 340px; width: 100%;
+      box-shadow: var(--shadow-lg);
+    }
+    .popup-icon { font-size: 48px; margin-bottom: 16px; }
+    .popup-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px;
+    }
+    .popup-desc { font-size: 14px; color: var(--gray500); line-height: 1.7; margin-bottom: 24px; }
+    .popup-close { padding: 12px 32px; background: var(--navy); color: var(--white); font-size: 14px; font-weight: 700; border: none; border-radius: var(--radius-sm); cursor: pointer; }
+
+    /* ═══════════════════════════════════════════════
+       11. 최종 CTA
+    ═══════════════════════════════════════════════ */
+    .final-cta { background: var(--navy); }
+
+    .cta-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
+
+    .contact-rows {
+      display: flex; flex-direction: column; gap: 10px;
+      margin-top: 24px;
+    }
+    .contact-row {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; color: rgba(255,255,255,.7);
+    }
+    .contact-icon {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      display: flex; align-items: center; justify-content: center; font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════════
+       12. 하단 플로팅 버튼
+    ═══════════════════════════════════════════════ */
+    #float-btns {
+      position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 100%; max-width: 480px;
+      display: flex; gap: 0;
+      z-index: 300;
+      opacity: 0; pointer-events: none;
+      transition: opacity .35s;
+      box-shadow: 0 -4px 20px rgba(10,30,60,.2);
+    }
+    #float-btns.show { opacity: 1; pointer-events: auto; }
+
+    .float-btn {
+      flex: 1; padding: 16px 10px;
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 15px; font-weight: 800;
+      border: none; cursor: pointer;
+      transition: opacity .2s;
+    }
+    .float-btn:hover { opacity: .88; }
+    .float-btn-phone { background: var(--navy); color: var(--white); }
+    .float-btn-kakao { background: #FEE500; color: #3A1D1D; }
+
+    /* ═══════════════════════════════════════════════
+       13. 푸터
+    ═══════════════════════════════════════════════ */
+    footer {
+      background: #060E1A;
+      padding: 36px 24px 100px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    .footer-logo {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 15px; font-weight: 700; color: var(--white);
+      margin-bottom: 16px;
+    }
+    .footer-logo span { color: var(--gold2); }
+
+    .footer-rows { display: flex; flex-direction: column; gap: 7px; margin-bottom: 24px; }
+    .footer-row {
+      display: flex; gap: 10px;
+      font-size: 12px; color: rgba(255,255,255,.4);
+    }
+    .footer-key { color: rgba(255,255,255,.25); flex-shrink: 0; }
+
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 20px 0; }
+
+    .footer-legal {
+      font-size: 11px; color: rgba(255,255,255,.25); line-height: 1.75;
+    }
+
+    .footer-copy { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,.18); }
+
+    /* ─── 반응형: 480px 초과 ─────────────────────── */
+    @media (min-width: 481px) {
+      body { background: #D0D5E0; }
+      .page-wrap { box-shadow: 0 0 80px rgba(0,0,0,.18); }
+      #float-btns { border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  /* ─── 사이트 설정 ─────────────────────────────── */
+  const SITE = {
+    name:      '브레인시티 메디스파크',
+    brand:     '로제비앙 | 모아엘가',
+    phone:     '010-6689-2348',
+    developer: '이정임',
+    address:   '경기도 평택시 장안동 브레인시티 6BL',
+    showroom:  '평택시 브레인시티 분양홍보관',
+  };
+
+  /* ─── 앱스크립트 배포 URL (배포 후 교체) ──────── */
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwCh1aovSWgN5luflghPbeRVOu6cBc-l79ZPV0gexfgJHxXSW-t3iZye3WhSns0PrH1/exec';
+</script>
+
+<div class="page-wrap">
+
+  <!-- ══ 헤더 ══════════════════════════════════════ -->
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <span>메디스파크</span><br>로제비앙 | 모아엘가
+      </div>
+      <a id="header-phone" class="header-phone">
+        📞 <span id="header-phone-num"></span>
+      </a>
+    </div>
+  </header>
+
+  <nav class="header-nav">
+    <a href="#medical">🏥 의료</a>
+    <a href="#location">📍 입지·교통</a>
+    <a href="#floor-plan">📐 평면</a>
+    <a href="#overview">📋 분양개요</a>
+    <a href="#register">✏️ 상담예약</a>
+  </nav>
+
+  <!-- ══ 긴급성 배너 ═══════════════════════════════ -->
+  <div class="urgency-banner">
+    🔥 오늘&nbsp;<span class="urgency-count" id="urgency-count">--</span>&nbsp;명 문의 중 &nbsp;·&nbsp; 선착순 동호지정 진행
+  </div>
+
+  <!-- ══ Hero ══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="image/hero_render.jpg" alt="브레인시티 메디스파크 단지 전경"
+           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🏙️</div></div>'" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">평택 브레인시티 6BL &nbsp;·&nbsp; 1,215세대</div>
+      <h1 class="hero-title serif">
+        병원이 도보 <em>3분</em>,<br>
+        학교가 도보 <em>1분</em>,<br>
+        지금까지 없던 아파트
+      </h1>
+      <p class="hero-sub">
+        브레인시티 메디스파크 로제비앙 | 모아엘가<br>
+        경기도 평택시 — GTX·KTX·SRT 광역 교통 수혜 입지
+      </p>
+      <div class="hero-btns">
+        <a id="hero-phone" class="btn btn-phone">📞 전화 상담하기</a>
+        <a href="#register" class="btn btn-outline">방문 예약 등록하기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 수치 배너 ══════════════════════════════════ -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-icon">🏫</div>
+      <div class="stat-num">도보 1분</div>
+      <div class="stat-label">초·중학교 통학</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🏥</div>
+      <div class="stat-num">도보 3분</div>
+      <div class="stat-label">500병상 종합병원</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🌳</div>
+      <div class="stat-num">1만 4천평</div>
+      <div class="stat-label">단지 자연녹지</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🚄</div>
+      <div class="stat-num">GTX-C</div>
+      <div class="stat-label">교통 호재 예정</div>
+    </div>
+  </div>
+
+  <!-- ══ 의료 인프라 ════════════════════════════════ -->
+  <section class="medical fade-in" id="medical">
+    <div class="medical-eyebrow">타 단지에는 없는 단 하나의 차이</div>
+    <h2 class="section-title on-dark serif">
+      AI 스마트 병원이<br>단지 바로 앞, <em style="color:var(--gold2);">도보 3분</em>
+    </h2>
+    <p class="section-desc on-dark">
+      단순한 병원이 아닙니다. 로봇수술·AI 진단이 가능한<br>
+      첨단 스마트 인텔리전트 종합병원이 내 집 앞에 생깁니다.
+    </p>
+
+    <div class="medical-image">
+      <img src="image/교육_11-1.jpg" alt="메디스파크 병원 조감도"
+           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'background:rgba(255,255,255,.07);color:rgba(255,255,255,.35)\'><div class=\'img-placeholder-icon\'>🏥</div><div>교육_11-1.jpg</div></div>'" />
+    </div>
+
+    <div class="medical-cards">
+      <div class="medical-card">
+        <div class="medical-card-icon">🏥</div>
+        <div>
+          <div class="medical-card-title">500병상 규모 종합병원</div>
+          <div class="medical-card-desc">2028년 착공 · 2030년 개원 예정. 의사 100~200명, 간호사 400~600명 등 총 1,000~1,500명 근무</div>
         </div>
-      </header>
+      </div>
+      <div class="medical-card">
+        <div class="medical-card-icon">🔬</div>
+        <div>
+          <div class="medical-card-title">의료 R&amp;D 센터</div>
+          <div class="medical-card-desc">임상R&amp;D, 정단R&amp;D, Testing Bed 등 의료연구시설 함께 입주. 단순 병원을 넘어 연구까지</div>
+        </div>
+      </div>
+      <div class="medical-card">
+        <div class="medical-card-icon">🤖</div>
+        <div>
+          <div class="medical-card-title">AI 스마트 인텔리전트 병원</div>
+          <div class="medical-card-desc">스마트 수술실, 로봇보조진단·AI 활용 데이터 분석, 환자 케어 자동화 시스템 최첨단 설비</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <main id="top">
-        <section class="hero-section">
-          <div class="hero-media">
-            <img src="image/hero_render.jpg" alt="브레인시티 메디스파크 로제비앙 모아엘가 투시도">
-          </div>
-          <div class="hero-overlay"></div>
-          <div class="hero-content section-inner">
-            <div class="hero-copy">
-              <p class="hero-badges">
-                <span>평택 브레인시티 6BL</span>
-                <span>선착순 동호지정 상담</span>
-              </p>
-              <h1>
-                <span>의료, 교육, 공원, 상업을</span>
-                <span>가장 가까이 누리는</span>
-                <span class="hero-title-emphasis">브레인시티 메디스파크</span>
-              </h1>
-              <p class="hero-text">
-                아주대병원 예정지, 초중학교, 중심상업지역, 대규모 공원을 생활 반경에 둔
-                1,215세대 대단지. 방문예약부터 평면 확인, 전화상담까지 한 페이지에서 연결됩니다.
-              </p>
-              <p class="hero-disclaimer">
-                교통, 병원, 도보권, 개발 관련 내용은 제공 자료 기준 예정사항을 포함하며 실제 공개 전 공식 자료 검수가 필요합니다.
-              </p>
-              <div class="hero-stats">
-                <article>
-                  <strong>1,215</strong>
-                  <span>총 세대수</span>
-                </article>
-                <article>
-                  <strong>10</strong>
-                  <span>동 구성</span>
-                </article>
-                <article>
-                  <strong>35F</strong>
-                  <span>최고층</span>
-                </article>
-                <article>
-                  <strong>1.41</strong>
-                  <span>세대당 주차</span>
-                </article>
-              </div>
-              <div class="hero-cta">
-                <button class="cta-primary" data-open-consult="visit_reservation">방문예약</button>
-                <button class="cta-secondary" data-open-consult="phone_call">상담하기</button>
-                <a class="cta-link" href="#virtual">E모델하우스 보기</a>
-              </div>
-            </div>
-            <aside class="hero-form-card">
-              <div class="form-card-head">
-                <p>빠른 상담 접수</p>
-                <strong>대표번호 010-6689-2348</strong>
-              </div>
-              <p class="form-card-copy">
-                성함과 연락처만 남겨주시면 상담 내용을 빠르게 안내해드립니다.
-              </p>
-              <p class="form-card-note">현재 상담 가능 타입: 84A, 84B, 101</p>
-              <form id="quick-lead-form" class="quick-form">
-                <label>
-                  <span>이름</span>
-                  <input id="quick-name" name="name" type="text" placeholder="이름을 입력해주세요" required>
-                </label>
-                <label>
-                  <span>연락처</span>
-                  <input id="quick-phone" name="phone" type="tel" inputmode="numeric" placeholder="숫자만 입력해주세요" required>
-                </label>
-                <div class="chip-field">
-                  <span>관심 타입</span>
-                  <input id="quick-interest-type" name="interest_type" type="hidden" value="">
-                  <div class="option-chips" data-chip-group="quick-interest-type">
-                    <button type="button" class="option-chip is-active" data-chip-value="">선택 안 함</button>
-                    <button type="button" class="option-chip" data-chip-value="84A">84A</button>
-                    <button type="button" class="option-chip" data-chip-value="84B">84B</button>
-                    <button type="button" class="option-chip" data-chip-value="101">101</button>
-                  </div>
-                </div>
-                <label class="agree-line">
-                  <input id="quick-privacy" name="privacy_agreed" type="checkbox" required>
-                  <span>상담 목적의 개인정보 수집 및 연락에 동의합니다.</span>
-                </label>
-                <button type="submit" class="block-button">정보 남기고 상담 연결하기</button>
-                <a id="quick-call-link" class="line-button is-hidden" href="tel:01066892348">010-6689-2348로 전화 연결하기</a>
-                <p id="quick-form-status" class="form-status"></p>
-              </form>
-            </aside>
-          </div>
-          <div class="hero-ribbon section-inner">
-            <article>
-              <strong>자료 기준 도보권 안내</strong>
-              <span>초중학교, 공원, 근생시설</span>
-            </article>
-            <article>
-              <strong>자료 기준 예정지 접근</strong>
-              <span>아주대병원 예정지 접근</span>
-            </article>
-            <article>
-              <strong>평면 미리보기</strong>
-              <span>84A, 84B, 101 빠른 확인</span>
-            </article>
-          </div>
-        </section>
+  <!-- ══ 입지 강점 (탭) ═════════════════════════════ -->
+  <section class="location fade-in" id="location">
+    <span class="section-eyebrow">브레인시티 핵심 입지</span>
+    <h2 class="section-title serif">학교도, 교통도, 자연도<br>모두 도보 거리</h2>
+    <p class="section-desc" style="margin-bottom: 24px;">
+      포기했던 세 가지를 이곳에서 동시에 누립니다
+    </p>
 
-        <section class="value-section">
-          <div class="section-inner">
-            <div class="section-heading">
-              <p class="eyebrow">Core Value</p>
-              <h2>실거주 관점에서 바로 이해되는 네 가지 가치</h2>
-            </div>
-            <div class="value-grid">
-              <article>
-                <span>Medical</span>
-                <strong>아주대병원 예정지 도보권</strong>
-                <p>메디컬 생활권과 의료 R&D 복합타운 기대감을 가까이 누리는 입지.</p>
-              </article>
-              <article>
-                <span>Education</span>
-                <strong>초중학교 도보권</strong>
-                <p>통학 동선을 짧게 가져갈 수 있는 가족형 수요 중심 구조.</p>
-              </article>
-              <article>
-                <span>Green</span>
-                <strong>공원형 단지와 대규모 녹지</strong>
-                <p>단지 안팎으로 이어지는 조경과 근린공원으로 쾌적성을 강화.</p>
-              </article>
-              <article>
-                <span>Transit</span>
-                <strong>도로망과 철도망의 확장 축</strong>
-                <p>고속도로와 철도 예정축을 함께 보는 브레인시티 교통 프레임.</p>
-              </article>
-            </div>
-          </div>
-        </section>
+    <div class="tab-buttons" role="tablist">
+      <button class="tab-btn active" data-tab="edu" role="tab">🎓 교육</button>
+      <button class="tab-btn"        data-tab="tra" role="tab">🚄 교통</button>
+      <button class="tab-btn"        data-tab="nat" role="tab">🌳 자연</button>
+    </div>
 
-        <section class="priority-band">
-          <div class="section-inner priority-band-inner">
-            <div>
-              <p class="eyebrow">Priority Consult</p>
-              <h2>선착순 동호지정 상담과 방문예약을 한 번에</h2>
-              <p>
-                관심 타입별 상담 가능 여부, 방문 희망 일정, 평면 확인 요청을 같은 DB 구조로
-                접수합니다. 상담 이력이 남아 부재중 통화 후 재연락도 빠르게 진행됩니다.
-              </p>
-            </div>
-            <div class="priority-actions">
-              <button class="cta-primary" data-open-consult="visit_reservation">방문예약 접수</button>
-              <button class="cta-secondary" data-open-consult="phone_call">상담하기</button>
-            </div>
-          </div>
-        </section>
-
-        <section id="location" class="split-section">
-          <div class="section-inner split-grid">
-            <div class="split-copy">
-              <p class="eyebrow">Location</p>
-              <h2>생활 동선 안에 들어오는 브레인시티 핵심 입지</h2>
-              <ul class="check-list">
-                <li>자료 기준 도보 1분 초중학교와 근린공원, 근생시설</li>
-                <li>자료 기준 도보 3분 아주대병원 예정지 접근</li>
-                <li>자료 기준 도보 5분 중심상업지역 연결</li>
-                <li>브레인시티 내 교육, 의료, 상업, 녹지 생활권 결합</li>
-              </ul>
-              <p class="fine-print">
-                도보 기준 문구와 예정 정보는 제공 자료 기준이며, 실제 공개 시 법정 표시 기준과
-                공식 자료 검수가 필요합니다.
-              </p>
-            </div>
-            <div class="split-media">
-              <img src="image/교육_10.jpg" alt="생활 및 교육환경 안내 지도">
-            </div>
-          </div>
-        </section>
-
-        <section id="transport" class="transport-section">
-          <div class="section-inner">
-            <div class="section-heading">
-              <p class="eyebrow">Transit Axis</p>
-              <h2>도로와 철도 개발 흐름을 함께 읽는 교통 프레임</h2>
-            </div>
-            <div class="transport-grid">
-              <article class="transport-card transport-card-large">
-                <img src="image/교육_8.jpg" alt="광역교통 안내도">
-                <div>
-                  <strong>동부고속화도로와 고속도로 연결 축</strong>
-                  <p>동부고속화도로, 평택-파주고속도로, 평택-제천고속도로, 경부고속도로 접근 프레임.</p>
-                </div>
-              </article>
-              <article class="transport-card">
-                <img src="image/교육_9.jpg" alt="메트로환경 안내도">
-                <div>
-                  <strong>철도망 예정 축</strong>
-                  <p>KTX, SRT, 지하철 1호선, GTX 예정축 등 자료 기준 교통망을 시각적으로 확인.</p>
-                </div>
-              </article>
-              <article class="transport-card accent-card">
-                <strong>예정 정보 고지</strong>
-                <p>교통 계획과 개통 시점은 자료 기준 예정사항이며, 실제 공개 전 최신 공식 자료 확인이 필요합니다.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="design-section">
-          <div class="section-inner">
-            <div class="section-heading">
-              <p class="eyebrow">Site Planning</p>
-              <h2>남향 위주 배치와 넓은 동간거리, 공원형 단지 설계</h2>
-            </div>
-            <div class="design-grid">
-              <div class="design-media">
-                <img src="image/교육_3.jpg" alt="단지배치도">
-              </div>
-              <div class="design-copy">
-                <div class="design-stat-list">
-                  <article>
-                    <strong>최대 129.1m</strong>
-                    <span>동간거리로 개방감 확보</span>
-                  </article>
-                  <article>
-                    <strong>약 6,500평</strong>
-                    <span>단지 내 조경 계획</span>
-                  </article>
-                  <article>
-                    <strong>약 7,150평</strong>
-                    <span>단지 앞 근린공원 규모</span>
-                  </article>
-                </div>
-                <p>
-                  전 세대 남향 위주 배치와 공원형 단지 콘셉트로 실거주 만족도를 높이고,
-                  조경과 커뮤니티, 넓은 동간거리를 함께 강조하는 구조로 설계합니다.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="virtual" class="virtual-section">
-          <div class="section-inner">
-            <div class="section-heading">
-              <p class="eyebrow">Virtual Unit</p>
-              <h2>E모델하우스처럼 빠르게 보는 타입별 평면</h2>
-            </div>
-            <div class="unit-tabs" role="tablist" aria-label="타입별 평면">
-              <button class="unit-tab is-active" type="button" data-unit="84A">84A</button>
-              <button class="unit-tab" type="button" data-unit="84B">84B</button>
-              <button class="unit-tab" type="button" data-unit="101">101</button>
-            </div>
-            <div class="unit-panel-wrap">
-              <article class="unit-panel is-active" data-unit-panel="84A">
-                <div class="unit-panel-copy">
-                  <span>주력 타입</span>
-                  <h3>84A | 563세대</h3>
-                  <ul class="check-list">
-                    <li>알파룸, 팬트리, 드레스룸 구성</li>
-                    <li>거실과 주방 맞통풍 구조</li>
-                    <li>가족형 실거주 수요에 맞춘 주력 평면</li>
-                  </ul>
-                  <button class="cta-secondary" data-open-consult="visit_reservation" data-interest="84A">84A 상담받기</button>
-                </div>
-                <div class="unit-panel-media">
-                  <img src="image/교육_4.jpg" alt="84A 평면도">
-                </div>
-              </article>
-              <article class="unit-panel" data-unit-panel="84B">
-                <div class="unit-panel-copy">
-                  <span>프라이빗 평면</span>
-                  <h3>84B | 167세대</h3>
-                  <ul class="check-list">
-                    <li>남향 위주 침실 배치</li>
-                    <li>프라이빗한 독립 구조</li>
-                    <li>드레스룸과 팬트리로 수납력 확보</li>
-                  </ul>
-                  <button class="cta-secondary" data-open-consult="visit_reservation" data-interest="84B">84B 상담받기</button>
-                </div>
-                <div class="unit-panel-media">
-                  <img src="image/교육_5.jpg" alt="84B 평면도">
-                </div>
-              </article>
-              <article class="unit-panel" data-unit-panel="101">
-                <div class="unit-panel-copy">
-                  <span>상급 평형</span>
-                  <h3>101 | 333세대</h3>
-                  <ul class="check-list">
-                    <li>알파룸 포함 대형 가족형 구성</li>
-                    <li>넓은 수납과 주방 옵션 확장 가능</li>
-                    <li>실거주 업그레이드 수요에 적합한 평면</li>
-                  </ul>
-                  <button class="cta-secondary" data-open-consult="visit_reservation" data-interest="101">101 상담받기</button>
-                </div>
-                <div class="unit-panel-media">
-                  <img src="image/교육_6.jpg" alt="101 평면도">
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="medical-section">
-          <div class="section-inner medical-grid">
-            <div class="medical-media">
-              <img src="image/교육_11.jpg" alt="아주대병원 셀링포인트 안내">
-            </div>
-            <div class="medical-copy">
-              <p class="eyebrow">Medical Value</p>
-              <h2>메디스파크라는 이름과 직접 연결되는 의료 프레임</h2>
-              <p>
-                자료 기준 500병상 규모 예정, 의료 R&D와 스마트 종합병원 콘셉트, 연구 인력과 운영 인력
-                유입 기대까지. 의료 인프라가 가까운 생활권이라는 서사를 분명하게 가져갑니다.
-              </p>
-              <div class="note-box">
-                병원 규모와 착공, 개원 일정은 제공 자료 기준 예정사항이며 실제 추진 과정에서 변경될 수 있습니다.
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="faq-section">
-          <div class="section-inner">
-            <div class="section-heading">
-              <p class="eyebrow">FAQ</p>
-              <h2>전환 직전 이탈을 줄이는 핵심 질문</h2>
-            </div>
-            <div class="faq-list">
-              <article class="faq-item">
-                <button class="faq-question" type="button">총 세대수와 타입 구성은 어떻게 되나요?</button>
-                <div class="faq-answer">
-                  <p>총 1,215세대 규모이며 현재 랜딩 페이지에서는 84A, 84B, 101 중심으로 상담을 안내합니다.</p>
-                </div>
-              </article>
-              <article class="faq-item">
-                <button class="faq-question" type="button">아주대병원은 얼마나 가까운가요?</button>
-                <div class="faq-answer">
-                  <p>제공 자료 기준 도보 3분 예정지 접근 프레임으로 안내되고 있으며, 공개 전 공식 자료 검수가 필요합니다.</p>
-                </div>
-              </article>
-              <article class="faq-item">
-                <button class="faq-question" type="button">전화상담은 어떻게 진행되나요?</button>
-                <div class="faq-answer">
-                  <p>성함과 연락처만 남기면 앱스크립트 기반 고객 DB에 저장되고, 이후 대표번호로 바로 전화 연결할 수 있습니다.</p>
-                </div>
-              </article>
-              <article class="faq-item">
-                <button class="faq-question" type="button">교통 개발 계획은 확정인가요?</button>
-                <div class="faq-answer">
-                  <p>교통과 병원 관련 일정은 자료 기준 예정사항입니다. 실제 공개 시 최신 공식 자료 기준으로 다시 확인해야 합니다.</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section id="consult" class="consult-section">
-          <div class="section-inner consult-grid">
-            <div class="consult-copy">
-              <p class="eyebrow">Consultation</p>
-              <h2>이름과 연락처만 남기면<br>상담 흐름이 바로 이어집니다</h2>
-              <p>
-                광고성 연락이 아니라 문의 내용 안내와 연결 지연 시 재연락을 위한 최소 정보만 받습니다.
-                입력은 10초 내로 끝나며, 접수 후 바로 상담 연결이 가능합니다.
-              </p>
-              <div class="consult-phone">
-                <span>대표번호</span>
-                <a href="tel:01066892348">010-6689-2348</a>
-              </div>
-              <p class="consult-available-types">현재 상담 가능 타입: 84A, 84B, 101</p>
-            </div>
-            <form id="main-lead-form" class="consult-form">
-              <label>
-                <span>이름</span>
-                <input id="main-name" name="name" type="text" placeholder="이름을 입력해주세요" required>
-              </label>
-              <label>
-                <span>연락처</span>
-                <input id="main-phone" name="phone" type="tel" inputmode="numeric" placeholder="숫자만 입력해주세요" required>
-              </label>
-              <div class="chip-field">
-                <span>관심 타입</span>
-                <input id="main-interest-type" name="interest_type" type="hidden" value="">
-                <div class="option-chips" data-chip-group="main-interest-type">
-                  <button type="button" class="option-chip is-active" data-chip-value="">선택 안 함</button>
-                  <button type="button" class="option-chip" data-chip-value="84A">84A</button>
-                  <button type="button" class="option-chip" data-chip-value="84B">84B</button>
-                  <button type="button" class="option-chip" data-chip-value="101">101</button>
-                </div>
-              </div>
-              <label>
-                <span>상담 희망 방식</span>
-                <select id="main-lead-type" name="lead_type">
-                  <option value="visit_reservation">방문예약</option>
-                  <option value="phone_call">전화상담</option>
-                  <option value="info_request">분양자료 요청</option>
-                </select>
-              </label>
-              <div class="visit-grid">
-                <label>
-                  <span>방문 희망일</span>
-                  <input id="main-visit-date" name="visit_date" type="date">
-                </label>
-                <label>
-                  <span>방문 희망시간</span>
-                  <select id="main-visit-time" name="visit_time">
-                    <option value="">시간 선택</option>
-                    <option value="10:00">오전 10:00</option>
-                    <option value="11:00">오전 11:00</option>
-                    <option value="13:00">오후 1:00</option>
-                    <option value="14:00">오후 2:00</option>
-                    <option value="15:00">오후 3:00</option>
-                    <option value="16:00">오후 4:00</option>
-                    <option value="17:00">오후 5:00</option>
-                  </select>
-                </label>
-              </div>
-              <label class="agree-line">
-                <input id="main-privacy" name="privacy_agreed" type="checkbox" required>
-                <span>개인정보 수집 및 상담 연락에 동의합니다. 입력 정보는 상담 목적 외 사용하지 않습니다.</span>
-              </label>
-              <div class="privacy-box">
-                <strong>개인정보 수집 안내</strong>
-                <p>수집 항목: 이름, 연락처, 관심 타입, 방문 희망일시</p>
-                <p>수집 목적: 분양 상담 접수, 방문예약 안내, 통화 연결 지연 시 재연락</p>
-                <p>운영 주체: 메디스파크 분양 상담 운영팀</p>
-                <p>보관 기간: 상담 종료 후 내부 운영 기준에 따름</p>
-              </div>
-              <button type="submit" class="block-button">방문예약 접수하기</button>
-              <button type="button" class="line-button" data-open-consult="phone_call">상담하기</button>
-              <p id="main-form-status" class="form-status"></p>
-            </form>
-          </div>
-        </section>
-      </main>
-
-      <footer class="footer">
-        <div class="section-inner footer-inner">
+    <!-- 교육 탭 -->
+    <div class="tab-panel active" id="tab-edu">
+      <div class="tab-image">
+        <img src="image/교육_10-1.jpg" alt="도보권 입지 지도"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🗺️</div><div>교육_10-1.jpg</div></div>'" />
+      </div>
+      <div class="tab-points">
+        <div class="tab-point">
+          <div class="tab-point-icon">🏫</div>
           <div>
-            <strong>브레인시티 메디스파크 로제비앙 모아엘가</strong>
-            <p>본 페이지의 개발계획, 교통계획, 병원 관련 일정, 시설 구성 등은 관계기관 및 사업 주체 사정에 따라 변경될 수 있습니다.</p>
-          </div>
-          <div class="footer-meta">
-            <span>대표 상담번호 010-6689-2348</span>
-            <span>운영 주체 메디스파크 분양 상담 운영팀</span>
-            <span>개발자 식별값 이정임</span>
+            <div class="tab-point-title">도보 1분 — 초·중학교 통학</div>
+            <div class="tab-point-desc">단지 바로 앞 브레인시티 전용 초등학교·중학교 위치. 아이 혼자 걸어서 등교 가능한 완전한 교육 환경</div>
           </div>
         </div>
-      </footer>
-    </div>
-
-    <div class="sticky-cta">
-      <button class="sticky-cta-main" data-open-consult="phone_call">상담하기</button>
-      <a class="sticky-cta-sub" href="tel:01066892348">010-6689-2348</a>
-    </div>
-
-    <div id="consult-modal" class="modal" aria-hidden="true">
-      <div class="modal-backdrop" data-close-modal></div>
-      <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal-close" type="button" data-close-modal aria-label="닫기">×</button>
-        <p class="eyebrow">Pre-call Layer</p>
-        <h2 id="modal-title">전화 연결 전에 성함과 연락처만 남겨주세요</h2>
-        <p class="modal-copy">
-          광고성 연락이 아니라 문의 내용 안내와 통화 연결 지연 시 재연락을 위한 최소 정보만 받습니다.
-          입력은 10초 내로 끝나며, 저장 후 바로 대표번호로 연결됩니다.
-        </p>
-        <form id="modal-lead-form" class="modal-form">
-          <input id="modal-lead-type" type="hidden" value="phone_call">
-          <label>
-            <span>이름</span>
-            <input id="modal-name" name="name" type="text" placeholder="이름을 입력해주세요" required>
-          </label>
-          <label>
-            <span>연락처</span>
-            <input id="modal-phone" name="phone" type="tel" inputmode="numeric" placeholder="숫자만 입력해주세요" required>
-          </label>
-          <div class="chip-field">
-            <span>관심 타입</span>
-            <input id="modal-interest-type" name="interest_type" type="hidden" value="">
-            <div class="option-chips" data-chip-group="modal-interest-type">
-              <button type="button" class="option-chip is-active" data-chip-value="">선택 안 함</button>
-              <button type="button" class="option-chip" data-chip-value="84A">84A</button>
-              <button type="button" class="option-chip" data-chip-value="84B">84B</button>
-              <button type="button" class="option-chip" data-chip-value="101">101</button>
-            </div>
+        <div class="tab-point">
+          <div class="tab-point-icon">🏥</div>
+          <div>
+            <div class="tab-point-title">도보 3분 — 아주대병원</div>
+            <div class="tab-point-desc">평택 내 최대 수준 상급종합의료시설 아주대 브레인시티 도보 3분 거리에 위치</div>
           </div>
-          <label class="agree-line">
-            <input id="modal-privacy" name="privacy_agreed" type="checkbox" required>
-            <span>개인정보 수집 및 상담 연락에 동의합니다.</span>
-          </label>
-          <button id="modal-submit" type="submit" class="block-button">전화 연결하기</button>
-          <a id="modal-call-link" class="line-button is-hidden" href="tel:01066892348">010-6689-2348로 전화 연결하기</a>
-          <p id="modal-form-status" class="form-status"></p>
-        </form>
+        </div>
+        <div class="tab-point">
+          <div class="tab-point-icon">🛍️</div>
+          <div>
+            <div class="tab-point-title">도보 5분 — 상업시설</div>
+            <div class="tab-point-desc">단지 바로 앞 근생시설 도보 1분. 브레인시티 유일 중심상업지역 도보 5분</div>
+          </div>
+        </div>
+        <div class="tab-point">
+          <div class="tab-point-icon">🌿</div>
+          <div>
+            <div class="tab-point-title">도보 1분 — 대규모 공원</div>
+            <div class="tab-point-desc">단지 바로 앞 대규모 근린공원. 7천평 공원을 품은 공원 속 아파트</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <script src="config.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <!-- 교통 탭 -->
+    <div class="tab-panel" id="tab-tra">
+      <div class="tab-image">
+        <img src="image/교육_8-1.jpg" alt="고속도로 교통망 지도"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🗺️</div><div>교육_8-1.jpg</div></div>'" />
+      </div>
+      <div class="tab-image" style="margin-top:10px;">
+        <img src="image/교육_9-1.jpg" alt="철도망 교통 지도"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🚄</div><div>교육_9-1.jpg</div></div>'" />
+      </div>
+      <div class="tab-points">
+        <div class="tab-point">
+          <div class="tab-point-icon">🛣️</div>
+          <div>
+            <div class="tab-point-title">동부화고속도로 2026년 9월 개통 예정</div>
+            <div class="tab-point-desc">용인-서울 고속도로와 연결. 고속도로 5개 노선 풍부한 도로망과 높은 접근성</div>
+          </div>
+        </div>
+        <div class="tab-point">
+          <div class="tab-point-icon">🚄</div>
+          <div>
+            <div class="tab-point-title">GTX-C · KTX · SRT 철도 수혜</div>
+            <div class="tab-point-desc">GTX-C(예정) + KTX(28년 개통 예정) + SRT + 지하철 1·2호선. 철도 5개 노선 광역교통의 핵심 입지</div>
+          </div>
+        </div>
+        <div class="tab-point">
+          <div class="tab-point-icon">🏭</div>
+          <div>
+            <div class="tab-point-title">삼성반도체 · 고덕신도시 인근</div>
+            <div class="tab-point-desc">삼성반도체 평택 캠퍼스, 고덕신도시와 인접. 직주근접 수요 풍부한 입지</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 자연 탭 -->
+    <div class="tab-panel" id="tab-nat">
+      <div class="tab-image">
+        <img src="image/교육_3-1.jpg" alt="단지 배치도"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🌳</div><div>교육_3-1.jpg</div></div>'" />
+      </div>
+      <div class="tab-points">
+        <div class="tab-point">
+          <div class="tab-point-icon">🌳</div>
+          <div>
+            <div class="tab-point-title">약 1만 4천 평 자연녹지</div>
+            <div class="tab-point-desc">단지 내 6,500평 + 근린공원 7,150평으로 총 약 1만4천 평 규모 자연녹지 조성</div>
+          </div>
+        </div>
+        <div class="tab-point">
+          <div class="tab-point-icon">🏘️</div>
+          <div>
+            <div class="tab-point-title">동간거리 최대 129.1m</div>
+            <div class="tab-point-desc">V자형·T자형 단지배치로 전 세대 남향 위주 배치. 최대 129.1m 넓은 동간거리로 풍부한 일조량</div>
+          </div>
+        </div>
+        <div class="tab-point">
+          <div class="tab-point-icon">🎪</div>
+          <div>
+            <div class="tab-point-title">414평 프리미엄 커뮤니티</div>
+            <div class="tab-point-desc">피트니스·골프연습장·키즈카페·도서관·독서실 등 다양한 커뮤니티 시설 410평 규모</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 단지 강점 ══════════════════════════════════ -->
+  <section class="complex fade-in">
+    <span class="section-eyebrow">단지 프리미엄</span>
+    <h2 class="section-title serif">평면·설계·커뮤니티<br>3가지 모두 최고입니다</h2>
+
+    <div class="complex-image">
+      <img src="image/교육_7-1.jpg" alt="단지 3대 강점"
+           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🏢</div><div>교육_7-1.jpg</div></div>'" />
+    </div>
+
+    <div class="complex-cards">
+      <div class="complex-card">
+        <div class="complex-card-num">1</div>
+        <div>
+          <div class="complex-card-title">최고의 평면구성</div>
+          <div class="complex-card-desc">조망과 동선 효율도 극대화. 대형 드레스룸·팬트리 등 실용적 수납공간 확보. 알파룸 제공으로 높은 활용도. 거실-주방 맞통풍 구조</div>
+        </div>
+      </div>
+      <div class="complex-card">
+        <div class="complex-card-num">2</div>
+        <div>
+          <div class="complex-card-title">최적의 단지설계</div>
+          <div class="complex-card-desc">전 세대 남향 위주 배치. 시야각 최소화 배치로 풍부한 일조량. 동간거리 최대 129.1m 시원한 개방감. 자연 속 공원형 단지</div>
+        </div>
+      </div>
+      <div class="complex-card">
+        <div class="complex-card-num">3</div>
+        <div>
+          <div class="complex-card-title">최상의 커뮤니티</div>
+          <div class="complex-card-desc">410평 규모의 쾌적한 커뮤니티 시설. 피트니스·골프연습장·키즈카페·도서관·독서실 등. 1,215세대를 위한 다양한 활동 공간</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 평면 갤러리 ════════════════════════════════ -->
+  <section class="floor-plan fade-in" id="floor-plan">
+    <span class="section-eyebrow" style="color:var(--gold);">평형 안내</span>
+    <h2 class="section-title on-dark serif">나에게 맞는<br>평형을 선택하세요</h2>
+    <p class="section-desc on-dark" style="margin-bottom: 24px;">3가지 타입 · 1,063세대 (잔여 세대 한정)</p>
+
+    <div class="floor-tabs" role="tablist">
+      <button class="floor-tab-btn active" data-floor="84A">84A<br><span style="font-size:10px;font-weight:400;">34평·563세대</span></button>
+      <button class="floor-tab-btn"        data-floor="84B">84B<br><span style="font-size:10px;font-weight:400;">34평·167세대</span></button>
+      <button class="floor-tab-btn"        data-floor="101">101<br><span style="font-size:10px;font-weight:400;">40평·333세대</span></button>
+    </div>
+
+    <!-- 84A -->
+    <div class="floor-panel active" id="floor-84A">
+      <div class="floor-image">
+        <img src="image/교육_4-1.jpg" alt="84A 평면도"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)\'><div class=\'img-placeholder-icon\'>📐</div><div>84A 평면도</div></div>'" />
+      </div>
+      <div class="floor-info">
+        <div class="floor-info-item"><div class="floor-info-label">전용면적</div><div class="floor-info-value">84.99㎡</div></div>
+        <div class="floor-info-item"><div class="floor-info-label">공급면적</div><div class="floor-info-value">112.70㎡</div></div>
+        <div class="floor-info-item"><div class="floor-info-label">세대수</div><div class="floor-info-value">563세대</div></div>
+      </div>
+      <div class="floor-features">
+        <div class="floor-feature">ㄷ자형 주방의 넓은 수납공간 제공</div>
+        <div class="floor-feature">거실-주방 맞통풍 구조</div>
+        <div class="floor-feature">알파룸 제공으로 높은 활용도</div>
+        <div class="floor-feature">드레스룸 및 팬트리 공간 확보</div>
+      </div>
+    </div>
+
+    <!-- 84B -->
+    <div class="floor-panel" id="floor-84B">
+      <div class="floor-image">
+        <img src="image/교육_5-1.jpg" alt="84B 평면도"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)\'><div class=\'img-placeholder-icon\'>📐</div><div>84B 평면도</div></div>'" />
+      </div>
+      <div class="floor-info">
+        <div class="floor-info-item"><div class="floor-info-label">전용면적</div><div class="floor-info-value">84.98㎡</div></div>
+        <div class="floor-info-item"><div class="floor-info-label">공급면적</div><div class="floor-info-value">112.92㎡</div></div>
+        <div class="floor-info-item"><div class="floor-info-label">세대수</div><div class="floor-info-value">167세대</div></div>
+      </div>
+      <div class="floor-features">
+        <div class="floor-feature">ㄱ자형 주방으로 효율적인 동선 배치</div>
+        <div class="floor-feature">거실·침실1·2·3 남향 위주 배치</div>
+        <div class="floor-feature">침실1 독립적 구조의 프라이빗 평면</div>
+        <div class="floor-feature">드레스룸 및 팬트리 공간 확보</div>
+      </div>
+    </div>
+
+    <!-- 101 -->
+    <div class="floor-panel" id="floor-101">
+      <div class="floor-image">
+        <img src="image/교육_6-1.jpg" alt="101㎡ 평면도"
+             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)\'><div class=\'img-placeholder-icon\'>📐</div><div>101㎡ 평면도</div></div>'" />
+      </div>
+      <div class="floor-info">
+        <div class="floor-info-item"><div class="floor-info-label">전용면적</div><div class="floor-info-value">101.98㎡</div></div>
+        <div class="floor-info-item"><div class="floor-info-label">공급면적</div><div class="floor-info-value">134.48㎡</div></div>
+        <div class="floor-info-item"><div class="floor-info-label">세대수</div><div class="floor-info-value">333세대</div></div>
+      </div>
+      <div class="floor-features">
+        <div class="floor-feature">ㄷ자형 주방의 넓은 수납공간 제공</div>
+        <div class="floor-feature">거실-주방 맞통풍 구조</div>
+        <div class="floor-feature">알파룸 제공으로 높은 활용도</div>
+        <div class="floor-feature">드레스룸 및 팬트리 공간 확보</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 분양 개요 ════════════════════════════════ -->
+  <section class="overview fade-in" id="overview">
+    <span class="section-eyebrow">사업 개요</span>
+    <h2 class="section-title serif">분양 정보</h2>
+
+    <div class="overview-image">
+      <img src="image/교육_2-1.jpg" alt="사업 개요 및 면적표"
+           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>📋</div><div>교육_2-1.jpg</div></div>'" />
+    </div>
+
+    <div class="overview-table">
+      <div class="overview-row">
+        <div class="overview-key">위치</div>
+        <div class="overview-val">경기도 평택시 장안동 평택브레인시티 일반산업단지 6BL</div>
+      </div>
+      <div class="overview-row">
+        <div class="overview-key">용도지구</div>
+        <div class="overview-val">공동주택지구, 제3종 일반주거지역</div>
+      </div>
+      <div class="overview-row">
+        <div class="overview-key">규모</div>
+        <div class="overview-val">지하 2층 ~ 지상 35층 / 10개동 / 총 1,215세대</div>
+      </div>
+      <div class="overview-row">
+        <div class="overview-key">세대구성</div>
+        <div class="overview-val">84A(563) · 84B(167) · 101(333)</div>
+      </div>
+      <div class="overview-row">
+        <div class="overview-key">건폐율</div>
+        <div class="overview-val">14.80%</div>
+      </div>
+      <div class="overview-row">
+        <div class="overview-key">용적률</div>
+        <div class="overview-val">229.90%</div>
+      </div>
+      <div class="overview-row">
+        <div class="overview-key">주차</div>
+        <div class="overview-val">총 1,722대 (세대당 1.41대)</div>
+      </div>
+      <div class="overview-row">
+        <div class="overview-key">시행사</div>
+        <div class="overview-val">모아종합건설(주) · (주)로제비앙</div>
+      </div>
+      <div class="overview-row">
+        <div class="overview-key">시공사</div>
+        <div class="overview-val">모아엘가</div>
+      </div>
+      <div class="overview-row">
+        <div class="overview-key">입주예정</div>
+        <div class="overview-val">2028년 하반기 예정</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ 분양 일정 ══════════════════════════════════ -->
+  <section class="fade-in" style="background:var(--navy);padding:56px 24px;">
+    <span class="section-eyebrow" style="color:var(--gold);">분양 일정</span>
+    <h2 class="section-title on-dark serif">청약 전, 지금이<br>가장 좋은 타이밍입니다</h2>
+    <p class="section-desc on-dark" style="margin-bottom:28px;">선착순 동호지정 · 방문예약 고객 우선 배정</p>
+
+    <div style="display:flex;flex-direction:column;gap:0;border-radius:var(--radius-md);overflow:hidden;border:1px solid rgba(255,255,255,.12);">
+      <div style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:rgba(201,168,76,.15);border-bottom:1px solid rgba(255,255,255,.08);">
+        <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--navy);font-size:15px;flex-shrink:0;">1</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--gold2);margin-bottom:2px;">방문 예약 등록</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.55);">지금 바로 — 담당자 1:1 배정</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);">
+        <div style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--white);font-size:15px;flex-shrink:0;">2</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:2px;">견본주택 방문 상담</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.55);">평택 브레인시티 분양홍보관 운영 중</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);">
+        <div style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--white);font-size:15px;flex-shrink:0;">3</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:2px;">선착순 동호지정</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.55);">방문예약 고객 우선 배정 · 잔여 세대 한정</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:rgba(255,255,255,.04);">
+        <div style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--white);font-size:15px;flex-shrink:0;">4</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:2px;">계약 완료</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.55);">입주 예정 2028년 하반기</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;background:rgba(198,40,40,.15);border:1px solid rgba(198,40,40,.3);border-radius:var(--radius-md);padding:16px 20px;">
+      <div style="font-size:13px;font-weight:700;color:#FF8A80;margin-bottom:4px;">⚠️ 잔여 세대 소진 시 마감</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.65;">84A·84B·101 평형 잔여 세대 한정 진행 중입니다. 방문 예약 후 전담 상담사를 통해 정확한 현황을 확인하세요.</div>
+    </div>
+  </section>
+
+  <!-- ══ 방문 특별 혜택 ══════════════════════════════ -->
+  <section class="fade-in" style="background:var(--gold-bg);padding:56px 24px;border-top:3px solid var(--gold);">
+    <span class="section-eyebrow">방문예약 고객 전용</span>
+    <h2 class="section-title serif">지금 예약하면<br>이런 혜택이 드려집니다</h2>
+
+    <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+      <div style="background:var(--white);border-radius:var(--radius-md);padding:20px;display:flex;align-items:flex-start;gap:14px;box-shadow:var(--shadow-sm);border:1px solid rgba(201,168,76,.2);">
+        <div style="font-size:28px;flex-shrink:0;">🎁</div>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">1:1 전담 상담사 배정</div>
+          <div style="font-size:13px;color:var(--gray500);line-height:1.6;">방문예약 고객 전용 전담 상담사가 배정되어 최적의 평형·층수·동호수를 안내드립니다.</div>
+        </div>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-md);padding:20px;display:flex;align-items:flex-start;gap:14px;box-shadow:var(--shadow-sm);border:1px solid rgba(201,168,76,.2);">
+        <div style="font-size:28px;flex-shrink:0;">🅿️</div>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">방문예약 고객 전용 주차 안내</div>
+          <div style="font-size:13px;color:var(--gray500);line-height:1.6;">사전 예약 고객에 한해 분양홍보관 전용 주차 구역을 별도 안내해 드립니다.</div>
+        </div>
+      </div>
+      <div style="background:var(--white);border-radius:var(--radius-md);padding:20px;display:flex;align-items:flex-start;gap:14px;box-shadow:var(--shadow-sm);border:1px solid rgba(201,168,76,.2);">
+        <div style="font-size:28px;flex-shrink:0;">📋</div>
+        <div>
+          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">분양가 및 잔여 세대 우선 안내</div>
+          <div style="font-size:13px;color:var(--gray500);line-height:1.6;">방문예약 고객에게 실시간 잔여 세대 현황과 분양가 정보를 가장 먼저 안내드립니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ══════════════════════════════════════ -->
+  <section class="fade-in" style="background:var(--gray50);padding:56px 24px;">
+    <span class="section-eyebrow">자주 묻는 질문</span>
+    <h2 class="section-title serif">궁금한 점이 있으신가요?</h2>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:24px;" id="faq-list">
+
+      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
+          <span>분양가는 얼마인가요?</span>
+          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
+        </button>
+        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
+          <div style="padding-top:14px;">분양가는 방문 상담 시 정확한 금액을 안내드립니다. 평형·층수·동호수에 따라 차이가 있으며, 전담 상담사가 1:1로 최적의 조건을 안내해 드립니다. 아래 폼으로 방문 예약을 남겨주시면 빠르게 연락드립니다.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
+          <span>청약 없이 계약할 수 있나요?</span>
+          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
+        </button>
+        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
+          <div style="padding-top:14px;">네, 가능합니다. 현재 선착순 동호지정 방식으로 진행 중으로, 청약통장 없이 방문 계약이 가능합니다. 잔여 세대 한정으로 조기 마감될 수 있으니 빠른 방문 예약을 권장드립니다.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
+          <span>병원은 언제 개원하나요?</span>
+          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
+        </button>
+        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
+          <div style="padding-top:14px;">아주대학교병원 평택브레인시티 캠퍼스는 2028년 착공, 2030년 개원을 목표로 하고 있습니다. 500병상 규모의 AI 스마트 종합병원으로, 단지 입주 시점과 맞물려 의료 인프라가 완성됩니다. (예정사항으로 일정은 변경될 수 있습니다)</div>
+        </div>
+      </div>
+
+      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
+          <span>견본주택(분양홍보관) 위치가 어디인가요?</span>
+          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
+        </button>
+        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
+          <div style="padding-top:14px;">평택 브레인시티 내 분양홍보관을 운영 중입니다. 정확한 위치와 운영 시간은 방문 예약 후 담당자가 안내드립니다. 방문예약 고객에 한해 전용 주차 안내도 제공됩니다.</div>
+        </div>
+      </div>
+
+      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
+        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
+          <span>GTX-C 개통은 언제인가요?</span>
+          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
+        </button>
+        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
+          <div style="padding-top:14px;">GTX-C 노선은 예정사항으로 공식 발표 일정을 기준으로 안내드립니다. 현재 KTX(2028년 예정)·SRT·지하철 1호선이 이미 운행 중으로 광역 교통 접근성이 우수합니다. 동부화성고속도로 또한 2026년 9월 개통 예정입니다. (예정사항으로 변경될 수 있습니다)</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ 상담 등록 폼 ════════════════════════════ -->
+  <section class="register-section fade-in" id="register">
+    <span class="section-eyebrow">방문 예약 고객 등록</span>
+    <h2 class="section-title serif">지금 등록하면<br>담당자가 1:1 안내합니다</h2>
+    <p class="section-desc" style="margin-bottom: 28px;">
+      30초 입력으로 전담 상담사 배정 · 방문예약 혜택 즉시 적용
+    </p>
+
+    <div class="register-box">
+      <div class="register-title">상담 신청 등록</div>
+      <div class="register-sub">담당자를 배정하여 순차적으로 안내드립니다</div>
+
+      <form id="register-form" novalidate>
+
+        <!-- 이름 -->
+        <div class="form-group">
+          <label class="form-label" for="inp-name">이름 <span class="req">*</span></label>
+          <input type="text" id="inp-name" class="form-input" placeholder="이름을 입력해 주세요" autocomplete="name" />
+          <div class="form-error-msg" id="err-name">이름을 입력해 주세요</div>
+        </div>
+
+        <!-- 연락처 -->
+        <div class="form-group">
+          <label class="form-label" for="inp-phone">연락처 <span class="req">*</span></label>
+          <input type="tel" id="inp-phone" class="form-input" placeholder="010-0000-0000" autocomplete="tel" inputmode="numeric" maxlength="13" />
+          <div class="form-error-msg" id="err-phone">올바른 연락처를 입력해 주세요 (숫자 11자리)</div>
+        </div>
+
+        <!-- 관심 타입 -->
+        <div class="form-group">
+          <label class="form-label">관심 평형 <span style="color:var(--gray400);font-weight:400;">(선택)</span></label>
+          <div class="unit-buttons" id="unit-buttons">
+            <button type="button" class="unit-btn" data-unit="84A">84A</button>
+            <button type="button" class="unit-btn" data-unit="84B">84B</button>
+            <button type="button" class="unit-btn" data-unit="101">101</button>
+          </div>
+          <input type="hidden" id="inp-unit" value="" />
+        </div>
+
+        <!-- 방문 희망일 -->
+        <div class="form-group">
+          <label class="form-label">방문 희망일시 <span style="color:var(--gray400);font-weight:400;">(선택)</span></label>
+          <div class="form-row">
+            <input type="date" id="inp-date" class="form-input" />
+            <select id="inp-time" class="visit-time-select">
+              <option value="">시간</option>
+              <option value="09:00">09:00</option>
+              <option value="09:30">09:30</option>
+              <option value="10:00">10:00</option>
+              <option value="10:30">10:30</option>
+              <option value="11:00">11:00</option>
+              <option value="11:30">11:30</option>
+              <option value="13:00">13:00</option>
+              <option value="13:30">13:30</option>
+              <option value="14:00">14:00</option>
+              <option value="14:30">14:30</option>
+              <option value="15:00">15:00</option>
+              <option value="15:30">15:30</option>
+              <option value="16:00">16:00</option>
+              <option value="16:30">16:30</option>
+              <option value="17:00">17:00</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 개인정보 동의 -->
+        <div class="agree-row">
+          <input type="checkbox" id="inp-agree" class="agree-check" />
+          <label class="agree-text" for="inp-agree">
+            개인정보 수집·이용에 동의합니다. 수집된 정보(이름, 연락처)는 분양 상담 목적으로만 사용되며, 관련 법령에 따라 안전하게 보관됩니다.
+            <a href="#">개인정보처리방침 보기</a>
+          </label>
+        </div>
+        <div class="form-error-msg" id="err-agree">개인정보 수집·이용에 동의해 주세요</div>
+
+        <button type="submit" id="submit-btn" class="btn btn-navy" style="font-size:17px;padding:18px;background:var(--navy);letter-spacing:-.3px;">
+          무료 방문 예약 등록하기 →
+        </button>
+        <p style="text-align:center;font-size:11px;color:var(--gray400);margin-top:10px;">수집된 정보는 분양 상담 외 목적으로 절대 사용하지 않습니다</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══ 최종 CTA ═══════════════════════════════ -->
+  <section class="final-cta fade-in">
+    <span class="section-eyebrow">상담 안내</span>
+    <h2 class="section-title on-dark serif">
+      지금 바로<br>상담을 시작하세요
+    </h2>
+    <p class="section-desc on-dark">
+      선착순 동호지정 — 방문 예약 고객 우선 배정
+    </p>
+
+    <div class="contact-rows">
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <span id="footer-addr"></span>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <span id="footer-phone"></span>
+      </div>
+    </div>
+
+    <div class="cta-btns">
+      <a id="cta-phone" class="btn btn-phone">📞 전화 상담하기</a>
+      <a href="#register" class="btn btn-outline">방문 예약 등록하기</a>
+    </div>
+  </section>
+
+  <!-- ══ 푸터 ══════════════════════════════════ -->
+  <footer>
+    <div class="footer-logo"><span>브레인시티 메디스파크</span><br>로제비앙 | 모아엘가</div>
+
+    <div class="footer-rows">
+      <div class="footer-row"><span class="footer-key">위치</span><span>경기도 평택시 장안동 브레인시티 6BL</span></div>
+      <div class="footer-row"><span class="footer-key">대표번호</span><span id="foot-phone"></span></div>
+      <div class="footer-row"><span class="footer-key">개발</span><span id="foot-dev"></span></div>
+    </div>
+
+    <hr class="footer-divider" />
+
+    <div class="footer-legal">
+      본 홍보물의 이미지, 조감도, 배치도, 평면도 등은 예정사항으로 향후 관계기관의 인·허가, 시공 여건, 사업 진행에 따라 변경될 수 있으므로 참고자료로만 활용하시기 바랍니다.<br><br>
+      ※ 본 홈페이지는 분양 홍보를 위해 제작된 것으로 실제 계약 내용과 다를 수 있으며, 청약 전 입주자모집공고를 반드시 확인하시기 바랍니다.<br><br>
+      ※ 개인정보 수집·이용 목적: 분양 상담 및 방문 예약 안내 / 보유기간: 상담 완료 후 즉시 파기 / 문의: <span id="footer-legal-phone"></span>
+    </div>
+
+    <div class="footer-copy" id="foot-copy"></div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+<!-- ══ 플로팅 버튼 ════════════════════════════ -->
+<div id="float-btns">
+  <a id="float-phone" class="float-btn float-btn-phone">📞 전화 상담</a>
+  <a href="#register" class="float-btn float-btn-kakao">📋 방문 예약</a>
+</div>
+
+<!-- ══ 완료 팝업 ═════════════════════════════ -->
+<div id="success-popup" role="dialog" aria-modal="true">
+  <div class="popup-box">
+    <div class="popup-icon">✅</div>
+    <div class="popup-title">등록이 확인되었습니다</div>
+    <div class="popup-desc">
+      담당자를 배정하여<br>순차적으로 안내드립니다.<br><br>
+      문의: <strong id="popup-phone"></strong>
+    </div>
+    <button class="popup-close" id="popup-close-btn">확인</button>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════
+   초기화 — 동적 콘텐츠 삽입
+═══════════════════════════════════════════════ */
+(function() {
+  const tel = 'tel:' + SITE.phone;
+
+  document.getElementById('header-phone-num').textContent = SITE.phone;
+  document.getElementById('header-phone').href = tel;
+  document.getElementById('hero-phone').href   = tel;
+  document.getElementById('cta-phone').href    = tel;
+  document.getElementById('float-phone').href  = tel;
+
+  document.getElementById('footer-addr').textContent  = SITE.address;
+  document.getElementById('footer-phone').textContent = SITE.phone;
+  document.getElementById('foot-phone').textContent   = SITE.phone;
+  document.getElementById('foot-dev').textContent     = SITE.developer;
+  document.getElementById('foot-copy').textContent    = '© ' + new Date().getFullYear() + ' ' + SITE.name + '. All rights reserved. | 개발: ' + SITE.developer;
+  const lp = document.getElementById('footer-legal-phone');
+  if (lp) lp.textContent = SITE.phone;
+  document.getElementById('popup-phone').textContent  = SITE.phone;
+})();
+
+/* ═══════════════════════════════════════════════
+   긴급성 배너 — 랜덤 문의 수
+═══════════════════════════════════════════════ */
+(function() {
+  const base = 87;
+  const rand = Math.floor(Math.random() * 30) + base;
+  document.getElementById('urgency-count').textContent = rand;
+})();
+
+/* ═══════════════════════════════════════════════
+   입지 탭 전환
+═══════════════════════════════════════════════ */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+  });
+});
+
+/* ═══════════════════════════════════════════════
+   평면도 탭 전환
+═══════════════════════════════════════════════ */
+document.querySelectorAll('.floor-tab-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.floor-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.floor-panel').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    document.getElementById('floor-' + this.dataset.floor).classList.add('active');
+  });
+});
+
+/* ═══════════════════════════════════════════════
+   평형 선택 버튼
+═══════════════════════════════════════════════ */
+document.querySelectorAll('.unit-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('selected'));
+    this.classList.add('selected');
+    document.getElementById('inp-unit').value = this.dataset.unit;
+  });
+});
+
+/* ═══════════════════════════════════════════════
+   연락처 자동 하이픈 포맷
+═══════════════════════════════════════════════ */
+document.getElementById('inp-phone').addEventListener('input', function() {
+  let v = this.value.replace(/\D/g, '').substring(0, 11);
+  if (v.length >= 8)      v = v.substring(0,3) + '-' + v.substring(3,7) + '-' + v.substring(7);
+  else if (v.length >= 4) v = v.substring(0,3) + '-' + v.substring(3);
+  this.value = v;
+});
+
+/* ═══════════════════════════════════════════════
+   폼 유효성 검사
+═══════════════════════════════════════════════ */
+function validateForm() {
+  let ok = true;
+
+  const name  = document.getElementById('inp-name').value.trim();
+  const phone = document.getElementById('inp-phone').value.replace(/\D/g,'');
+  const agree = document.getElementById('inp-agree').checked;
+
+  // 이름
+  const errName = document.getElementById('err-name');
+  if (!name) {
+    document.getElementById('inp-name').classList.add('error');
+    errName.style.display = 'block'; ok = false;
+  } else {
+    document.getElementById('inp-name').classList.remove('error');
+    errName.style.display = 'none';
+  }
+
+  // 연락처
+  const errPhone = document.getElementById('err-phone');
+  if (phone.length < 10) {
+    document.getElementById('inp-phone').classList.add('error');
+    errPhone.style.display = 'block'; ok = false;
+  } else {
+    document.getElementById('inp-phone').classList.remove('error');
+    errPhone.style.display = 'none';
+  }
+
+  // 동의
+  const errAgree = document.getElementById('err-agree');
+  if (!agree) {
+    errAgree.style.display = 'block'; ok = false;
+  } else {
+    errAgree.style.display = 'none';
+  }
+
+  return ok;
+}
+
+/* ═══════════════════════════════════════════════
+   폼 제출 → 앱스크립트 → 구글 시트 저장
+   개발자: 이정임 (서버에서 자동 삽입)
+═══════════════════════════════════════════════ */
+document.getElementById('register-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  if (!validateForm()) return;
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = '등록 중...';
+
+  const date = document.getElementById('inp-date').value;
+  const time = document.getElementById('inp-time').value;
+  const visitDate = (date && time) ? date + ' ' + time
+                  : date           ? date
+                  : '미정';
+
+  const payload = {
+    name:      document.getElementById('inp-name').value.trim(),
+    phone:     document.getElementById('inp-phone').value.trim(),
+    unitType:  document.getElementById('inp-unit').value || '미정',
+    visitDate: visitDate
+    // ※ developer("이정임")는 서버(Code.gs)에서 자동 삽입 — 클라이언트에서 전송 불필요
+  };
+
+  try {
+    // CORS 이슈 방지를 위해 no-cors 모드 사용
+    // (no-cors 사용 시 응답 본문을 읽을 수 없으므로 무조건 성공 처리)
+    await fetch(APPS_SCRIPT_URL, {
+      method:  'POST',
+      mode:    'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body:    JSON.stringify(payload)
+    });
+
+    // 성공 처리
+    document.getElementById('register-form').reset();
+    document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('selected'));
+    document.getElementById('inp-unit').value = '';
+    document.getElementById('success-popup').classList.add('show');
+
+  } catch(err) {
+    alert('등록 중 오류가 발생했습니다.\n전화로 문의해 주세요: ' + SITE.phone);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '등록하기 →';
+  }
+});
+
+/* ═══════════════════════════════════════════════
+   완료 팝업 닫기
+═══════════════════════════════════════════════ */
+document.getElementById('popup-close-btn').addEventListener('click', function() {
+  document.getElementById('success-popup').classList.remove('show');
+});
+document.getElementById('success-popup').addEventListener('click', function(e) {
+  if (e.target === this) this.classList.remove('show');
+});
+
+/* ═══════════════════════════════════════════════
+   플로팅 버튼 — 스크롤 300px 후 등장
+═══════════════════════════════════════════════ */
+const floatBtns = document.getElementById('float-btns');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 300) floatBtns.classList.add('show');
+  else floatBtns.classList.remove('show');
+}, { passive: true });
+
+/* ═══════════════════════════════════════════════
+   FAQ 아코디언
+═══════════════════════════════════════════════ */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const ans  = item.querySelector('.faq-a');
+    const icon = this.querySelector('.faq-icon');
+    const open = ans.style.display === 'block';
+    document.querySelectorAll('.faq-a').forEach(a => a.style.display = 'none');
+    document.querySelectorAll('.faq-icon').forEach(i => { i.textContent = '＋'; i.style.transform = ''; });
+    if (!open) {
+      ans.style.display = 'block';
+      icon.textContent = '－';
+      icon.style.transform = 'rotate(0deg)';
+    }
+  });
+});
+
+/* ═══════════════════════════════════════════════
+   스크롤 fade-in 애니메이션
+═══════════════════════════════════════════════ */
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+fadeEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
 </html>

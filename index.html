@@ -674,131 +674,181 @@
     .footer-copy { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,.18); }
 
     /* ═══════════════════════════════════════════════
-       반응형 — 태블릿 (768px+)
-    ═══════════════════════════════════════════════ */
-    @media (min-width: 768px) {
-      section { padding: 72px 48px; }
-
-      .hero-title   { font-size: 38px; }
-      .section-title{ font-size: 32px; }
-
-      .stats-bar {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .medical-cards {
-        display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
-      }
-
-      .tab-image { height: 280px; }
-
-      .complex-cards {
-        display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
-      }
-      .complex-card:last-child { grid-column: 1 / -1; }
-
-      .floor-image { height: 380px; }
-
-      .register-box { padding: 40px 48px; }
-      .form-group   { max-width: 560px; }
-      .unit-buttons { gap: 10px; }
-      .unit-btn     { padding: 11px 22px; font-size: 14px; }
-
-      #float-btns { max-width: 768px; }
-    }
-
-    /* ═══════════════════════════════════════════════
-       반응형 — 데스크톱 (1024px+)
+       데스크톱 공통 컨테이너
     ═══════════════════════════════════════════════ */
     @media (min-width: 1024px) {
-      body { background: #D0D5E0; }
+      /* 전체 너비 사용 */
+      .page-wrap { max-width: 100%; }
 
-      #site-header { padding: 0 60px; }
-      .header-inner{ height: 70px; }
-      .header-logo { font-size: 18px; }
-      .header-phone{ font-size: 15px; padding: 10px 20px; }
-      .header-nav a { font-size: 13px; padding: 14px 18px; }
-
-      section { padding: 88px 80px; }
-
-      /* Hero — 좌우 2분할 */
-      .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
-      .hero-image { height: 100%; }
-      .hero-content { padding: 64px 60px; display: flex; flex-direction: column; justify-content: center; }
-      .hero-title { font-size: 44px; }
-      .hero-btns { flex-direction: row; flex-wrap: wrap; }
-      .hero-btns .btn { width: auto; min-width: 200px; }
-
-      /* 수치 배너 4열 유지 */
-      .stats-bar { padding: 32px 80px; }
-      .stat-num  { font-size: 28px; }
-
-      /* 의료 — 이미지 + 카드 */
-      .medical { padding: 88px 80px; }
-      .medical-cards { grid-template-columns: repeat(3, 1fr); }
-      .medical-image { height: 300px; }
-
-      /* 입지 탭 */
-      .tab-image { height: 340px; }
-      .tab-points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
-
-      /* 단지 강점 */
-      .complex-image { height: 300px; }
-      .complex-cards { grid-template-columns: repeat(3, 1fr); }
-      .complex-card:last-child { grid-column: auto; }
-
-      /* 평면도 */
-      .floor-plan { padding: 88px 80px; }
-      .floor-image { height: 460px; }
-      .floor-info  { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-
-      /* 분양 개요 */
-      .overview-image { height: 280px; }
-      .overview-table { max-width: 800px; }
-      .overview-key   { width: 140px; font-size: 13px; }
-      .overview-val   { font-size: 14px; }
-
-      /* 폼 */
-      .register-section { padding: 88px 80px; }
-      .register-box {
-        max-width: 700px; margin: 0 auto;
-        padding: 52px 56px;
+      /* 섹션 내부 콘텐츠 최대폭 제한 */
+      .section-inner {
+        max-width: 1200px;
+        margin: 0 auto;
       }
-      .register-title { font-size: 24px; }
-      .form-group { max-width: 100%; }
 
-      /* section-title */
-      .section-title { font-size: 36px; }
+      /* ── 헤더 ── */
+      #site-header { padding: 0 80px; }
+      .header-inner { height: 72px; }
+      .header-logo  { font-size: 17px; }
+      .header-phone { font-size: 15px; padding: 12px 24px; border-radius: 10px; }
+      .header-nav   { padding: 0 80px; }
+      .header-nav a { font-size: 14px; padding: 14px 20px; }
 
-      /* 플로팅 버튼 */
+      /* ── 긴급 배너 ── */
+      .urgency-banner { font-size: 15px; padding: 14px; }
+      .urgency-count  { font-size: 22px; }
+
+      /* ── Hero: 이미지 꽉차게 + 오른쪽 콘텐츠 ── */
+      .hero { display: grid; grid-template-columns: 58% 42%; min-height: 88vh; }
+      .hero-image   { height: 100%; min-height: 88vh; }
+      .hero-overlay { background: linear-gradient(to right, rgba(10,30,60,.15) 0%, rgba(10,30,60,.05) 100%); }
+      .hero-content {
+        padding: 80px 64px;
+        display: flex; flex-direction: column; justify-content: center;
+        background: var(--navy);
+      }
+      .hero-badge   { font-size: 12px; margin-bottom: 24px; }
+      .hero-title   { font-size: 48px; line-height: 1.28; margin-bottom: 20px; }
+      .hero-sub     { font-size: 16px; margin-bottom: 40px; }
+      .hero-btns    { flex-direction: column; gap: 14px; }
+      .hero-btns .btn { font-size: 17px; padding: 18px 24px; border-radius: 12px; }
+
+      /* ── 수치 배너 4열 ── */
+      .stats-bar {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 80px;
+        gap: 0;
+      }
+      .stat-item  { padding: 32px 24px; }
+      .stat-num   { font-size: 30px; }
+      .stat-label { font-size: 13px; }
+      .stat-icon  { font-size: 28px; }
+
+      /* ── 의료 섹션 ── */
+      .medical { padding: 100px 80px; }
+      .medical > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+      .medical-eyebrow { font-size: 12px; }
+      .medical .section-title { font-size: 40px; }
+      .medical .section-desc  { font-size: 16px; }
+      .medical-image  { height: 480px; border-radius: 20px; margin: 40px 0; }
+      .medical-cards  { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 32px; }
+      .medical-card   { padding: 24px 28px; border-radius: 16px; }
+      .medical-card-icon  { width: 52px; height: 52px; font-size: 24px; }
+      .medical-card-title { font-size: 16px; margin-bottom: 8px; }
+      .medical-card-desc  { font-size: 14px; line-height: 1.7; }
+
+      /* ── 입지 섹션 ── */
+      .location { padding: 100px 80px; }
+      .location > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+      .location .section-title { font-size: 40px; }
+      .tab-buttons { gap: 6px; margin-bottom: 32px; }
+      .tab-btn     { font-size: 15px; padding: 14px 20px; }
+      .tab-image   { height: 460px; border-radius: 16px; margin-bottom: 28px; }
+      .tab-points  { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+      .tab-point   { padding: 20px 24px; border-radius: 12px; }
+      .tab-point-title { font-size: 15px; }
+      .tab-point-desc  { font-size: 13px; }
+
+      /* ── 단지 강점 ── */
+      .complex { padding: 100px 80px; }
+      .complex > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+      .complex .section-title { font-size: 40px; }
+      .complex-image { height: 420px; border-radius: 20px; margin-bottom: 40px; }
+      .complex-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+      .complex-card  { padding: 28px 24px; border-radius: 16px; }
+      .complex-card-title { font-size: 17px; margin-bottom: 10px; }
+      .complex-card-desc  { font-size: 14px; line-height: 1.7; }
+      .complex-card-num   { width: 44px; height: 44px; font-size: 18px; }
+
+      /* ── 평면도 ── */
+      .floor-plan { padding: 100px 80px; }
+      .floor-plan > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+      .floor-plan .section-title { font-size: 40px; }
+      .floor-tabs  { gap: 10px; margin-bottom: 32px; }
+      .floor-tab-btn { padding: 12px 24px; font-size: 14px; }
+      .floor-image { height: 560px; border-radius: 20px; margin-bottom: 28px; }
+      .floor-info  { gap: 16px; margin-bottom: 24px; }
+      .floor-info-value { font-size: 20px; }
+      .floor-features  { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; }
+      .floor-feature   { font-size: 14px; }
+
+      /* ── 분양 개요 ── */
+      .overview { padding: 100px 80px; }
+      .overview > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
+      .overview .section-title { font-size: 40px; }
+      .overview-image { height: 360px; border-radius: 20px; margin-bottom: 40px; }
+      .overview-table { border-radius: 16px; overflow: hidden; }
+      .overview-key   { width: 160px; font-size: 14px; padding: 16px 20px; }
+      .overview-val   { font-size: 14px; padding: 16px 20px; }
+
+      /* ── 분양 일정 섹션 ── */
+      section[id=""] + section,
+      .fade-in[style*="background:var(--navy)"] { padding: 100px 80px; }
+
+      /* ── FAQ ── */
+      .faq-item button { font-size: 15px; padding: 22px 24px; }
+      .faq-item .faq-a div { font-size: 14px; line-height: 1.8; }
+
+      /* ── 상담 폼 ── */
+      .register-section { padding: 100px 80px; }
+      .register-section > * { max-width: 800px; margin-left: auto; margin-right: auto; }
+      .register-section .section-eyebrow { display: block; text-align: center; }
+      .register-section .section-title   { text-align: center; font-size: 40px; }
+      .register-section > p { text-align: center; }
+      .register-box { padding: 56px 64px; border-radius: 24px; }
+      .register-title { font-size: 24px; margin-bottom: 8px; }
+      .register-sub   { font-size: 15px; margin-bottom: 32px; }
+      .form-input     { font-size: 16px; padding: 15px 18px; }
+      .unit-btn       { padding: 12px 24px; font-size: 14px; }
+      #submit-btn     { font-size: 18px; padding: 20px; border-radius: 14px; margin-top: 8px; }
+
+      /* ── 최종 CTA ── */
+      .final-cta { padding: 100px 80px; text-align: center; }
+      .final-cta > * { max-width: 700px; margin-left: auto; margin-right: auto; }
+      .final-cta .section-title { font-size: 44px; }
+      .cta-btns { flex-direction: row; justify-content: center; gap: 16px; margin-top: 40px; }
+      .cta-btns .btn { width: auto; min-width: 220px; font-size: 17px; }
+
+      /* ── 플로팅 버튼 ── */
       #float-btns {
-        max-width: 480px;
-        left: auto; right: 40px;
+        width: 360px;
+        left: auto; right: 40px; bottom: 40px;
         transform: none;
-        border-radius: var(--radius-md);
-        bottom: 40px;
-        box-shadow: var(--shadow-lg);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 40px rgba(10,30,60,.35);
       }
+      .float-btn { padding: 18px; font-size: 15px; }
 
-      /* 푸터 */
-      footer { padding: 56px 80px 80px; }
-      .footer-rows { flex-direction: row; flex-wrap: wrap; gap: 24px; }
-
-      /* FAQ */
-      .faq-item button { font-size: 15px; }
+      /* ── 푸터 ── */
+      footer { padding: 64px 80px 80px; }
+      .footer-logo  { font-size: 17px; margin-bottom: 24px; }
+      .footer-rows  { flex-direction: row; flex-wrap: wrap; gap: 32px; margin-bottom: 32px; }
+      .footer-legal { font-size: 12px; max-width: 900px; line-height: 1.9; }
     }
 
     /* ═══════════════════════════════════════════════
-       반응형 — 와이드 (1400px+)
+       와이드 (1440px+)
     ═══════════════════════════════════════════════ */
-    @media (min-width: 1400px) {
-      section { padding: 100px 120px; }
-      .hero-content { padding: 80px 80px; }
-      .stats-bar    { padding: 36px 120px; }
-      .medical      { padding: 100px 120px; }
-      .floor-plan   { padding: 100px 120px; }
-      .register-section { padding: 100px 120px; }
-      footer        { padding: 64px 120px 100px; }
+    @media (min-width: 1440px) {
+      #site-header  { padding: 0 120px; }
+      .header-nav   { padding: 0 120px; }
+      .stats-bar    { padding: 0 120px; }
+      .medical      { padding: 120px 120px; }
+      .location     { padding: 120px 120px; }
+      .complex      { padding: 120px 120px; }
+      .floor-plan   { padding: 120px 120px; }
+      .overview     { padding: 120px 120px; }
+      .register-section { padding: 120px 120px; }
+      .final-cta    { padding: 120px 120px; }
+      footer        { padding: 80px 120px 100px; }
+
+      .hero-title   { font-size: 56px; }
+      .medical-image { height: 540px; }
+      .tab-image    { height: 520px; }
+      .complex-image { height: 480px; }
+      .floor-image  { height: 640px; }
+      .overview-image { height: 400px; }
     }
   </style>
 </head>

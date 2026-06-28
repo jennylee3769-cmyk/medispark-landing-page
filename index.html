@@ -1,1795 +1,940 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>브레인시티 메디스파크 로제비앙 | 모아엘가 — 분양 홍보</title>
-  <meta name="description" content="경기도 평택 브레인시티 메디스파크. 병원 도보 3분, 학교 도보 1분. 1,215세대 GTX 교통 수혜 단지. 지금 상담 신청하세요." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
-
-  <style>
-    /* ═══════════════════════════════════════════════
-       CSS 변수
-    ═══════════════════════════════════════════════ */
-    :root {
-      --navy:       #0A1E3C;
-      --navy2:      #122A50;
-      --navy3:      #1A3A6E;
-      --gold:       #C9A84C;
-      --gold2:      #E8C96A;
-      --gold-bg:    #FBF7EE;
-      --white:      #FFFFFF;
-      --gray50:     #F7F8FA;
-      --gray100:    #ECEEF2;
-      --gray400:    #94A3B8;
-      --gray500:    #6B7590;
-      --gray800:    #1C2333;
-      --red:        #C62828;
-      --red-bg:     #FEF2F2;
-      --radius-sm:  8px;
-      --radius-md:  14px;
-      --radius-lg:  20px;
-      --shadow-sm:  0 2px 8px rgba(10,30,60,.08);
-      --shadow-md:  0 6px 24px rgba(10,30,60,.13);
-      --shadow-lg:  0 12px 40px rgba(10,30,60,.18);
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--gray800);
-      background: var(--gray100);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .serif { font-family: 'Noto Serif KR', 'Apple Myungjo', Georgia, serif; }
-
-    .page-wrap {
-      max-width: 100%;
-      margin: 0 auto;
-      background: var(--white);
-      min-height: 100vh;
-      position: relative;
-    }
-
-    img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-    /* 데스크톱에서 콘텐츠 이미지는 원본 비율 유지 */
-    @media (min-width: 1024px) {
-      .tab-image img,
-      .complex-image img,
-      .overview-image img,
-      .floor-image img,
-      .medical-image img {
-        height: auto;
-        object-fit: contain;
-        background: #f0f0f0;
-      }
-      .tab-image,
-      .complex-image,
-      .overview-image,
-      .floor-image,
-      .medical-image {
-        height: auto !important;
-        min-height: 200px;
-      }
-    }
-    a   { color: inherit; text-decoration: none; }
-
-    /* ─── 공통 버튼 ─────────────────────────────── */
-    .btn {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; padding: 16px 20px;
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 16px; font-weight: 800;
-      border: none; border-radius: var(--radius-md);
-      cursor: pointer; letter-spacing: -.2px;
-      transition: opacity .2s, transform .1s;
-    }
-    .btn:active { transform: scale(.98); }
-
-    .btn-navy  { background: var(--navy);  color: var(--white); }
-    .btn-gold  { background: var(--gold);  color: var(--navy);  }
-    .btn-white { background: var(--white); color: var(--navy); box-shadow: var(--shadow-sm); }
-    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.5); }
-    .btn-phone { background: var(--gold); color: var(--navy); font-size: 17px; }
-    .btn-kakao { background: #FEE500; color: #3A1D1D; }
-
-    .btn:hover { opacity: .88; }
-
-    /* ─── 섹션 공통 ─────────────────────────────── */
-    section { padding: 56px 24px; }
-
-    .section-eyebrow {
-      display: inline-block;
-      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 26px; font-weight: 900; line-height: 1.35;
-      letter-spacing: -.6px; color: var(--navy); margin-bottom: 14px;
-    }
-
-    .section-title.on-dark { color: var(--white); }
-
-    .section-desc {
-      font-size: 14px; color: var(--gray500); line-height: 1.8;
-    }
-
-    .section-desc.on-dark { color: rgba(255,255,255,.65); }
-
-    /* 이미지 플레이스홀더 */
-    .img-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 8px;
-      background: var(--gray100); color: var(--gray400); font-size: 13px;
-    }
-    .img-placeholder-icon { font-size: 36px; opacity: .45; }
-
-    /* ─── fade-in 애니메이션 ────────────────────── */
-    .fade-in {
-      opacity: 0; transform: translateY(22px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* ═══════════════════════════════════════════════
-       1. 헤더
-    ═══════════════════════════════════════════════ */
-    #site-header {
-      position: sticky; top: 0; z-index: 200;
-      background: var(--navy);
-      padding: 0 20px;
-      box-shadow: 0 2px 12px rgba(10,30,60,.25);
-      transition: background .3s;
-    }
-
-    .header-inner {
-      display: flex; align-items: center; justify-content: space-between;
-      height: 58px;
-    }
-
-    .header-nav {
-      display: flex; align-items: center; gap: 0;
-      background: var(--navy2);
-      overflow-x: auto; scrollbar-width: none;
-      padding: 0 8px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .header-nav::-webkit-scrollbar { display: none; }
-    .header-nav a {
-      flex-shrink: 0;
-      font-size: 12px; font-weight: 700; color: rgba(255,255,255,.6);
-      padding: 11px 13px; white-space: nowrap;
-      border-bottom: 2px solid transparent;
-      transition: color .2s, border-color .2s;
-    }
-    .header-nav a:hover { color: var(--gold2); border-color: var(--gold); }
-
-    .header-logo {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 15px; font-weight: 700; color: var(--white);
-      line-height: 1.3;
-    }
-    .header-logo span { color: var(--gold2); }
-
-    .header-phone {
-      display: flex; align-items: center; gap: 6px;
-      background: var(--gold); color: var(--navy);
-      font-size: 13px; font-weight: 800;
-      padding: 8px 14px; border-radius: var(--radius-sm);
-      white-space: nowrap;
-    }
-
-    /* ═══════════════════════════════════════════════
-       2. 긴급성 배너
-    ═══════════════════════════════════════════════ */
-    .urgency-banner {
-      background: var(--red);
-      padding: 10px 20px;
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      font-size: 13px; font-weight: 700; color: var(--white);
-      text-align: center; line-height: 1.5;
-    }
-    .urgency-count {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 18px; font-weight: 900; color: #FFE082;
-    }
-
-    /* ═══════════════════════════════════════════════
-       3. Hero
-    ═══════════════════════════════════════════════ */
-    .hero { padding: 0; background: var(--navy); }
-
-    .hero-image {
-      width: 100%; height: 260px;
-      position: relative; overflow: hidden;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to bottom,
-        rgba(10,30,60,.15) 0%,
-        rgba(10,30,60,.5)  55%,
-        rgba(10,30,60,.88) 100%);
-    }
-
-    .hero-content {
-      background: var(--navy);
-      padding: 32px 24px 44px;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      font-size: 11px; font-weight: 700; letter-spacing: 1px;
-      color: var(--gold2);
-      background: rgba(201,168,76,.18);
-      border: 1px solid rgba(201,168,76,.4);
-      border-radius: 100px; padding: 5px 15px;
-      margin-bottom: 20px;
-    }
-
-    .hero-title {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 30px; font-weight: 900; line-height: 1.35;
-      color: var(--white); letter-spacing: -.6px;
-      margin-bottom: 14px;
-    }
-    .hero-title em { color: var(--gold2); font-style: normal; }
-
-    .hero-sub {
-      font-size: 14px; color: rgba(255,255,255,.65);
-      margin-bottom: 32px; line-height: 1.75;
-    }
-
-    .hero-btns { display: flex; flex-direction: column; gap: 10px; }
-
-    /* ═══════════════════════════════════════════════
-       4. 수치 배너
-    ═══════════════════════════════════════════════ */
-    .stats-bar {
-      background: var(--navy2);
-      padding: 24px 20px;
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 1px; background-color: rgba(255,255,255,.08);
-    }
-    .stats-bar-inner { display: contents; }
-
-    .stat-item {
-      background: var(--navy2);
-      padding: 20px 16px;
-      text-align: center;
-    }
-
-    .stat-icon  { font-size: 22px; margin-bottom: 6px; }
-    .stat-num   {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 22px; font-weight: 900; color: var(--gold2);
-      line-height: 1.2; margin-bottom: 4px;
-    }
-    .stat-label { font-size: 12px; color: rgba(255,255,255,.6); font-weight: 500; }
-
-    /* ═══════════════════════════════════════════════
-       5. 의료 인프라 섹션
-    ═══════════════════════════════════════════════ */
-    .medical {
-      background: var(--navy);
-      padding: 56px 24px;
-    }
-
-    .medical-eyebrow {
-      display: inline-block;
-      font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--red); background: rgba(198,40,40,.18);
-      border: 1px solid rgba(198,40,40,.35);
-      border-radius: 100px; padding: 4px 14px;
-      margin-bottom: 14px;
-    }
-
-    .medical-image {
-      width: 100%; height: 220px;
-      border-radius: var(--radius-lg); overflow: hidden;
-      margin: 28px 0; box-shadow: 0 8px 32px rgba(0,0,0,.4);
-    }
-
-    .medical-cards {
-      display: flex; flex-direction: column; gap: 12px;
-      margin-top: 24px;
-    }
-
-    .medical-card {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: var(--radius-md);
-      padding: 18px 20px;
-      display: flex; align-items: flex-start; gap: 14px;
-    }
-
-    .medical-card-icon {
-      width: 42px; height: 42px; flex-shrink: 0;
-      background: rgba(201,168,76,.2);
-      border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-    }
-
-    .medical-card-title {
-      font-size: 14px; font-weight: 700; color: var(--white);
-      margin-bottom: 4px;
-    }
-    .medical-card-desc { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.65; }
-
-    /* ═══════════════════════════════════════════════
-       6. 입지 강점 (탭)
-    ═══════════════════════════════════════════════ */
-    .location { background: var(--gray50); }
-
-    .tab-buttons {
-      display: flex; gap: 0;
-      background: var(--gray100);
-      border-radius: var(--radius-md);
-      padding: 4px;
-      margin-bottom: 24px;
-    }
-
-    .tab-btn {
-      flex: 1; padding: 10px 8px;
-      background: transparent;
-      border: none; border-radius: 10px;
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 13px; font-weight: 700; color: var(--gray500);
-      cursor: pointer; transition: all .2s;
-    }
-    .tab-btn.active {
-      background: var(--navy);
-      color: var(--white);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .tab-panel { display: none; }
-    .tab-panel.active { display: block; }
-
-    .tab-image {
-      width: 100%; height: 200px;
-      border-radius: var(--radius-md); overflow: hidden;
-      margin-bottom: 20px; box-shadow: var(--shadow-md);
-    }
-
-    .tab-points { display: flex; flex-direction: column; gap: 10px; }
-
-    .tab-point {
-      display: flex; align-items: flex-start; gap: 12px;
-      background: var(--white); border-radius: var(--radius-sm);
-      padding: 14px 16px; box-shadow: var(--shadow-sm);
-      border: 1px solid var(--gray100);
-    }
-
-    .tab-point-icon {
-      width: 36px; height: 36px; flex-shrink: 0;
-      background: var(--gold-bg);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center; font-size: 18px;
-    }
-    .tab-point-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
-    .tab-point-desc  { font-size: 12px; color: var(--gray500); line-height: 1.55; }
-
-    /* ═══════════════════════════════════════════════
-       7. 단지 강점
-    ═══════════════════════════════════════════════ */
-    .complex { background: var(--white); }
-
-    .complex-image {
-      width: 100%; height: 210px;
-      border-radius: var(--radius-lg); overflow: hidden;
-      margin-bottom: 28px; box-shadow: var(--shadow-md);
-    }
-
-    .complex-cards {
-      display: flex; flex-direction: column; gap: 14px;
-    }
-
-    .complex-card {
-      background: var(--gray50);
-      border: 1px solid var(--gray100);
-      border-radius: var(--radius-md);
-      padding: 20px;
-      display: flex; align-items: flex-start; gap: 16px;
-    }
-
-    .complex-card-num {
-      width: 36px; height: 36px; flex-shrink: 0;
-      background: var(--navy);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Noto Serif KR', serif;
-      font-size: 16px; font-weight: 900; color: var(--gold2);
-    }
-    .complex-card-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-    .complex-card-desc  { font-size: 13px; color: var(--gray500); line-height: 1.65; }
-
-    /* ═══════════════════════════════════════════════
-       8. 평면 갤러리
-    ═══════════════════════════════════════════════ */
-    .floor-plan { background: var(--navy); padding: 56px 24px; }
-
-    .floor-tabs {
-      display: flex; gap: 6px; flex-wrap: wrap;
-      margin-bottom: 22px;
-    }
-
-    .floor-tab-btn {
-      padding: 8px 14px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 100px;
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 12px; font-weight: 700; color: rgba(255,255,255,.55);
-      cursor: pointer; transition: all .2s;
-    }
-    .floor-tab-btn.active {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--navy);
-    }
-
-    .floor-panel { display: none; }
-    .floor-panel.active { display: block; }
-
-    .floor-image {
-      width: 100%; height: 280px;
-      border-radius: var(--radius-lg); overflow: hidden;
-      margin-bottom: 20px; box-shadow: 0 8px 32px rgba(0,0,0,.4);
-    }
-
-    .floor-info {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-      margin-bottom: 16px;
-    }
-    .floor-info-item {
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: var(--radius-sm);
-      padding: 12px 10px; text-align: center;
-    }
-    .floor-info-label { font-size: 10px; color: rgba(255,255,255,.45); font-weight: 600; letter-spacing: .5px; margin-bottom: 4px; }
-    .floor-info-value { font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 700; color: var(--gold2); }
-
-    .floor-features {
-      display: flex; flex-direction: column; gap: 6px;
-    }
-    .floor-feature {
-      display: flex; align-items: center; gap: 8px;
-      font-size: 13px; color: rgba(255,255,255,.7);
-    }
-    .floor-feature::before { content: '▶'; font-size: 9px; color: var(--gold); flex-shrink: 0; }
-
-    /* ═══════════════════════════════════════════════
-       9. 분양 개요
-    ═══════════════════════════════════════════════ */
-    .overview { background: var(--gray50); }
-
-    .overview-image {
-      width: 100%; height: 200px;
-      border-radius: var(--radius-lg); overflow: hidden;
-      margin-bottom: 24px; box-shadow: var(--shadow-md);
-    }
-
-    .overview-table {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      border: 1px solid var(--gray100);
-      box-shadow: var(--shadow-sm);
-    }
-    .overview-row {
-      display: flex; border-bottom: 1px solid var(--gray100);
-    }
-    .overview-row:last-child { border-bottom: none; }
-    .overview-key {
-      width: 100px; flex-shrink: 0;
-      background: var(--navy); color: rgba(255,255,255,.8);
-      font-size: 12px; font-weight: 700;
-      padding: 13px 14px; display: flex; align-items: center;
-    }
-    .overview-val {
-      flex: 1; padding: 13px 14px;
-      font-size: 13px; color: var(--gray800); line-height: 1.6;
-    }
-
-    /* ═══════════════════════════════════════════════
-       10. 상담 등록 폼
-    ═══════════════════════════════════════════════ */
-    .register-section { background: var(--white); }
-
-    .register-box {
-      background: var(--gold-bg);
-      border: 1px solid rgba(201,168,76,.3);
-      border-radius: var(--radius-lg);
-      padding: 28px 22px;
-    }
-
-    .register-title {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 20px; font-weight: 700; color: var(--navy);
-      margin-bottom: 6px;
-    }
-    .register-sub { font-size: 13px; color: var(--gray500); margin-bottom: 24px; }
-
-    .form-group { margin-bottom: 16px; }
-
-    .form-label {
-      display: block;
-      font-size: 12px; font-weight: 700; color: var(--navy2);
-      margin-bottom: 6px; letter-spacing: .3px;
-    }
-    .form-label .req { color: var(--red); margin-left: 2px; }
-
-    .form-input {
-      width: 100%; padding: 13px 16px;
-      background: var(--white);
-      border: 1.5px solid var(--gray100);
-      border-radius: var(--radius-sm);
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 15px; color: var(--gray800);
-      outline: none; transition: border-color .2s;
-    }
-    .form-input:focus { border-color: var(--gold); }
-    .form-input.error { border-color: var(--red); }
-
-    .unit-buttons {
-      display: flex; gap: 6px; flex-wrap: wrap;
-    }
-    .unit-btn {
-      padding: 9px 16px;
-      background: var(--white);
-      border: 1.5px solid var(--gray100);
-      border-radius: var(--radius-sm);
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 13px; font-weight: 700; color: var(--gray500);
-      cursor: pointer; transition: all .2s;
-    }
-    .unit-btn.selected {
-      background: var(--navy); border-color: var(--navy); color: var(--white);
-    }
-
-    .form-row { display: flex; gap: 8px; }
-    .form-row .form-input { flex: 1; }
-
-    .visit-time-select {
-      width: 90px; flex-shrink: 0; padding: 13px 10px;
-      background: var(--white);
-      border: 1.5px solid var(--gray100); border-radius: var(--radius-sm);
-      font-family: 'Noto Sans KR', sans-serif; font-size: 15px;
-      color: var(--gray800); outline: none;
-    }
-    .visit-time-select:focus { border-color: var(--gold); }
-
-    .agree-row {
-      display: flex; align-items: flex-start; gap: 10px;
-      margin: 20px 0 22px;
-    }
-    .agree-check {
-      width: 20px; height: 20px; flex-shrink: 0;
-      margin-top: 2px; accent-color: var(--navy);
-      cursor: pointer;
-    }
-    .agree-text {
-      font-size: 12px; color: var(--gray500); line-height: 1.6; cursor: pointer;
-    }
-    .agree-text a { color: var(--navy); text-decoration: underline; }
-
-    .form-error-msg {
-      display: none; font-size: 12px; color: var(--red);
-      margin-top: 4px; font-weight: 700;
-    }
-
-    /* ─── 완료 팝업 ─────────────────────────────── */
-    #success-popup {
-      display: none; position: fixed; inset: 0;
-      background: rgba(10,30,60,.75);
-      z-index: 500;
-      align-items: center; justify-content: center; padding: 24px;
-    }
-    #success-popup.show { display: flex; }
-
-    .popup-box {
-      background: var(--white); border-radius: var(--radius-lg);
-      padding: 36px 28px; text-align: center; max-width: 340px; width: 100%;
-      box-shadow: var(--shadow-lg);
-    }
-    .popup-icon { font-size: 48px; margin-bottom: 16px; }
-    .popup-title {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px;
-    }
-    .popup-desc { font-size: 14px; color: var(--gray500); line-height: 1.7; margin-bottom: 24px; }
-    .popup-close { padding: 12px 32px; background: var(--navy); color: var(--white); font-size: 14px; font-weight: 700; border: none; border-radius: var(--radius-sm); cursor: pointer; }
-
-    /* ═══════════════════════════════════════════════
-       11. 최종 CTA
-    ═══════════════════════════════════════════════ */
-    .final-cta { background: var(--navy); }
-
-    .cta-btns { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
-
-    .contact-rows {
-      display: flex; flex-direction: column; gap: 10px;
-      margin-top: 24px;
-    }
-    .contact-row {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 14px; color: rgba(255,255,255,.7);
-    }
-    .contact-icon {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: rgba(255,255,255,.1);
-      display: flex; align-items: center; justify-content: center; font-size: 16px;
-      flex-shrink: 0;
-    }
-
-    /* ═══════════════════════════════════════════════
-       12. 하단 플로팅 버튼
-    ═══════════════════════════════════════════════ */
-    #float-btns {
-      position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
-      width: 100%; max-width: 100%;
-      display: flex; gap: 0;
-      z-index: 300;
-      opacity: 0; pointer-events: none;
-      transition: opacity .35s;
-      box-shadow: 0 -4px 20px rgba(10,30,60,.2);
-    }
-    #float-btns.show { opacity: 1; pointer-events: auto; }
-
-    .float-btn {
-      flex: 1; padding: 16px 10px;
-      display: flex; align-items: center; justify-content: center; gap: 7px;
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 15px; font-weight: 800;
-      border: none; cursor: pointer;
-      transition: opacity .2s;
-    }
-    .float-btn:hover { opacity: .88; }
-    .float-btn-phone { background: var(--navy); color: var(--white); }
-    .float-btn-kakao { background: #FEE500; color: #3A1D1D; }
-
-    /* ═══════════════════════════════════════════════
-       13. 푸터
-    ═══════════════════════════════════════════════ */
-    footer {
-      background: #060E1A;
-      padding: 36px 24px 100px;
-      border-top: 1px solid rgba(255,255,255,.06);
-    }
-
-    .footer-logo {
-      font-family: 'Noto Serif KR', serif;
-      font-size: 15px; font-weight: 700; color: var(--white);
-      margin-bottom: 16px;
-    }
-    .footer-logo span { color: var(--gold2); }
-
-    .footer-rows { display: flex; flex-direction: column; gap: 7px; margin-bottom: 24px; }
-    .footer-row {
-      display: flex; gap: 10px;
-      font-size: 12px; color: rgba(255,255,255,.4);
-    }
-    .footer-key { color: rgba(255,255,255,.25); flex-shrink: 0; }
-
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 20px 0; }
-
-    .footer-legal {
-      font-size: 11px; color: rgba(255,255,255,.25); line-height: 1.75;
-    }
-
-    .footer-copy { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,.18); }
-
-    /* ═══════════════════════════════════════════════
-       데스크톱 공통 컨테이너
-    ═══════════════════════════════════════════════ */
-    @media (min-width: 1024px) {
-      /* 전체 너비 사용 */
-      .page-wrap { max-width: 100%; }
-
-      /* 섹션 내부 콘텐츠 최대폭 제한 */
-      .section-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      /* ── 헤더 ── */
-      #site-header { padding: 0 80px; }
-      .header-inner { height: 72px; }
-      .header-logo  { font-size: 17px; }
-      .header-phone { font-size: 15px; padding: 12px 24px; border-radius: 10px; }
-      .header-nav   { padding: 0 80px; }
-      .header-nav a { font-size: 14px; padding: 14px 20px; }
-
-      /* ── 긴급 배너 ── */
-      .urgency-banner { font-size: 15px; padding: 14px; }
-      .urgency-count  { font-size: 22px; }
-
-      /* ── Hero: 이미지 꽉차게 + 오른쪽 콘텐츠 ── */
-      .hero { display: grid; grid-template-columns: 58% 42%; min-height: 88vh; }
-      .hero-image   { height: 100%; min-height: 88vh; }
-      .hero-overlay { background: linear-gradient(to right, rgba(10,30,60,.15) 0%, rgba(10,30,60,.05) 100%); }
-      .hero-content {
-        padding: 80px 64px;
-        display: flex; flex-direction: column; justify-content: center;
-        background: var(--navy);
-      }
-      .hero-badge   { font-size: 12px; margin-bottom: 24px; }
-      .hero-title   { font-size: 48px; line-height: 1.28; margin-bottom: 20px; }
-      .hero-sub     { font-size: 16px; margin-bottom: 40px; }
-      .hero-btns    { flex-direction: column; gap: 14px; }
-      .hero-btns .btn { font-size: 17px; padding: 18px 24px; border-radius: 12px; }
-
-      /* ── 수치 배너 4열 ── */
-      .stats-bar {
-        grid-template-columns: repeat(4, 1fr);
-        padding: 0 80px;
-        gap: 0;
-      }
-      .stat-item  { padding: 32px 24px; }
-      .stat-num   { font-size: 30px; }
-      .stat-label { font-size: 13px; }
-      .stat-icon  { font-size: 28px; }
-
-      /* ── 의료 섹션 ── */
-      .medical { padding: 100px 80px; }
-      .medical > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
-      .medical-eyebrow { font-size: 12px; }
-      .medical .section-title { font-size: 40px; }
-      .medical .section-desc  { font-size: 16px; }
-      .medical-image  { height: 480px; border-radius: 20px; margin: 40px 0; }
-      .medical-cards  { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 32px; }
-      .medical-card   { padding: 24px 28px; border-radius: 16px; }
-      .medical-card-icon  { width: 52px; height: 52px; font-size: 24px; }
-      .medical-card-title { font-size: 16px; margin-bottom: 8px; }
-      .medical-card-desc  { font-size: 14px; line-height: 1.7; }
-
-      /* ── 입지 섹션 ── */
-      .location { padding: 100px 80px; }
-      .location > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
-      .location .section-title { font-size: 40px; }
-      .tab-buttons { gap: 6px; margin-bottom: 32px; }
-      .tab-btn     { font-size: 15px; padding: 14px 20px; }
-      .tab-image   { height: 460px; border-radius: 16px; margin-bottom: 28px; }
-      .tab-points  { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
-      .tab-point   { padding: 20px 24px; border-radius: 12px; }
-      .tab-point-title { font-size: 15px; }
-      .tab-point-desc  { font-size: 13px; }
-
-      /* ── 단지 강점 ── */
-      .complex { padding: 100px 80px; }
-      .complex > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
-      .complex .section-title { font-size: 40px; }
-      .complex-image { height: 420px; border-radius: 20px; margin-bottom: 40px; }
-      .complex-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-      .complex-card  { padding: 28px 24px; border-radius: 16px; }
-      .complex-card-title { font-size: 17px; margin-bottom: 10px; }
-      .complex-card-desc  { font-size: 14px; line-height: 1.7; }
-      .complex-card-num   { width: 44px; height: 44px; font-size: 18px; }
-
-      /* ── 평면도 ── */
-      .floor-plan { padding: 100px 80px; }
-      .floor-plan > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
-      .floor-plan .section-title { font-size: 40px; }
-      .floor-tabs  { gap: 10px; margin-bottom: 32px; }
-      .floor-tab-btn { padding: 12px 24px; font-size: 14px; }
-      .floor-image { height: 560px; border-radius: 20px; margin-bottom: 28px; }
-      .floor-info  { gap: 16px; margin-bottom: 24px; }
-      .floor-info-value { font-size: 20px; }
-      .floor-features  { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; }
-      .floor-feature   { font-size: 14px; }
-
-      /* ── 분양 개요 ── */
-      .overview { padding: 100px 80px; }
-      .overview > * { max-width: 1200px; margin-left: auto; margin-right: auto; }
-      .overview .section-title { font-size: 40px; }
-      .overview-image { height: 360px; border-radius: 20px; margin-bottom: 40px; }
-      .overview-table { border-radius: 16px; overflow: hidden; }
-      .overview-key   { width: 160px; font-size: 14px; padding: 16px 20px; }
-      .overview-val   { font-size: 14px; padding: 16px 20px; }
-
-      /* ── 분양 일정 섹션 ── */
-      section[id=""] + section,
-      .fade-in[style*="background:var(--navy)"] { padding: 100px 80px; }
-
-      /* ── FAQ ── */
-      .faq-item button { font-size: 15px; padding: 22px 24px; }
-      .faq-item .faq-a div { font-size: 14px; line-height: 1.8; }
-
-      /* ── 상담 폼 ── */
-      .register-section { padding: 100px 80px; }
-      .register-section > * { max-width: 800px; margin-left: auto; margin-right: auto; }
-      .register-section .section-eyebrow { display: block; text-align: center; }
-      .register-section .section-title   { text-align: center; font-size: 40px; }
-      .register-section > p { text-align: center; }
-      .register-box { padding: 56px 64px; border-radius: 24px; }
-      .register-title { font-size: 24px; margin-bottom: 8px; }
-      .register-sub   { font-size: 15px; margin-bottom: 32px; }
-      .form-input     { font-size: 16px; padding: 15px 18px; }
-      .unit-btn       { padding: 12px 24px; font-size: 14px; }
-      #submit-btn     { font-size: 18px; padding: 20px; border-radius: 14px; margin-top: 8px; }
-
-      /* ── 최종 CTA ── */
-      .final-cta { padding: 100px 80px; text-align: center; }
-      .final-cta > * { max-width: 700px; margin-left: auto; margin-right: auto; }
-      .final-cta .section-title { font-size: 44px; }
-      .cta-btns { flex-direction: row; justify-content: center; gap: 16px; margin-top: 40px; }
-      .cta-btns .btn { width: auto; min-width: 220px; font-size: 17px; }
-
-      /* ── 플로팅 버튼 ── */
-      #float-btns {
-        width: 360px;
-        left: auto; right: 40px; bottom: 40px;
-        transform: none;
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 8px 40px rgba(10,30,60,.35);
-      }
-      .float-btn { padding: 18px; font-size: 15px; }
-
-      /* ── 푸터 ── */
-      footer { padding: 64px 80px 80px; }
-      .footer-logo  { font-size: 17px; margin-bottom: 24px; }
-      .footer-rows  { flex-direction: row; flex-wrap: wrap; gap: 32px; margin-bottom: 32px; }
-      .footer-legal { font-size: 12px; max-width: 900px; line-height: 1.9; }
-    }
-
-    /* ═══════════════════════════════════════════════
-       와이드 (1440px+)
-    ═══════════════════════════════════════════════ */
-    @media (min-width: 1440px) {
-      #site-header  { padding: 0 120px; }
-      .header-nav   { padding: 0 120px; }
-      .stats-bar    { padding: 0 120px; }
-      .medical      { padding: 120px 120px; }
-      .location     { padding: 120px 120px; }
-      .complex      { padding: 120px 120px; }
-      .floor-plan   { padding: 120px 120px; }
-      .overview     { padding: 120px 120px; }
-      .register-section { padding: 120px 120px; }
-      .final-cta    { padding: 120px 120px; }
-      footer        { padding: 80px 120px 100px; }
-
-      .hero-title   { font-size: 56px; }
-      .medical-image { height: 540px; }
-      .tab-image    { height: 520px; }
-      .complex-image { height: 480px; }
-      .floor-image  { height: 640px; }
-      .overview-image { height: 400px; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>브레인시티 메디스파크 로제비앙 | 모아엘가 — 평택 분양</title>
+<meta name="description" content="경기도 평택 브레인시티 메디스파크. 병원 도보 3분, 학교 도보 1분. 1,215세대 GTX 교통 수혜 단지."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#0A1E3C; --navy2:#122A50; --navy3:#1c3560;
+  --gold:#C9A84C; --gold2:#E8C96A; --gold-bg:#FBF7EE;
+  --cream:#F8F6F0; --white:#fff;
+  --gray50:#F7F8FA; --gray100:#ECEEF2; --gray300:#C8CDD8;
+  --gray500:#6B7590; --gray700:#3A4260; --gray900:#1C2333;
+  --red:#C62828;
+  --r4:4px; --r8:8px; --r12:12px; --r16:16px; --r24:24px;
+  --sh1:0 2px 12px rgba(10,30,60,.08);
+  --sh2:0 8px 32px rgba(10,30,60,.14);
+  --sh3:0 20px 60px rgba(10,30,60,.20);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.7;color:var(--gray900);background:#fff;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit}
+
+/* ── 컨테이너 ── */
+.wrap{width:100%;max-width:1280px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.wrap{padding:0 48px}}
+@media(min-width:1024px){.wrap{padding:0 80px}}
+@media(min-width:1280px){.wrap{padding:0 100px}}
+
+/* ── 공통 섹션 ── */
+.sec{padding:72px 0}
+@media(min-width:1024px){.sec{padding:110px 0}}
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.sec-title{font-family:'Noto Serif KR',serif;font-size:28px;font-weight:900;line-height:1.3;letter-spacing:-.5px;color:var(--navy);margin-bottom:16px}
+.sec-title em{color:var(--gold);font-style:normal}
+.sec-title.wh{color:#fff}
+.sec-desc{font-size:14px;color:var(--gray500);line-height:1.85}
+.sec-desc.wh{color:rgba(255,255,255,.65)}
+@media(min-width:1024px){
+  .sec-title{font-size:44px;margin-bottom:20px}
+  .sec-desc{font-size:16px}
+}
+
+/* ── 버튼 ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;font-size:15px;font-weight:800;border:none;border-radius:var(--r12);cursor:pointer;transition:all .2s;letter-spacing:-.2px;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold2)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy2)}
+.btn-outline-w{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5)}
+.btn-outline-w:hover{background:rgba(255,255,255,.1)}
+.btn-lg{padding:18px 36px;font-size:17px}
+.btn-full{width:100%}
+
+/* ════════════════════════════════
+   헤더
+════════════════════════════════ */
+#hdr{
+  position:sticky;top:0;z-index:500;
+  background:var(--navy);
+  box-shadow:0 2px 20px rgba(0,0,0,.25);
+}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+.hdr-logo{font-family:'Noto Serif KR',serif;font-size:14px;font-weight:700;color:#fff;line-height:1.35}
+.hdr-logo span{color:var(--gold2)}
+.hdr-phone{display:flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);font-size:13px;font-weight:800;padding:9px 16px;border-radius:var(--r8)}
+.hdr-nav{display:none}
+@media(min-width:1024px){
+  .hdr-inner{height:72px}
+  .hdr-logo{font-size:16px}
+  .hdr-phone{font-size:14px;padding:11px 22px}
+  .hdr-nav{
+    display:flex;align-items:center;gap:2px;
+    position:absolute;left:50%;transform:translateX(-50%);
+  }
+  .hdr-nav a{font-size:13px;font-weight:700;color:rgba(255,255,255,.65);padding:8px 16px;border-radius:var(--r8);transition:all .2s}
+  .hdr-nav a:hover{color:var(--gold2);background:rgba(255,255,255,.08)}
+}
+
+/* ════════════════════════════════
+   긴급 배너
+════════════════════════════════ */
+.urgency{background:#B71C1C;padding:11px 24px;text-align:center;font-size:13px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px}
+.urgency-num{font-family:'Noto Serif KR',serif;font-size:20px;font-weight:900;color:#FFE082}
+@media(min-width:1024px){.urgency{font-size:15px}.urgency-num{font-size:24px}}
+
+/* ════════════════════════════════
+   Hero
+════════════════════════════════ */
+.hero{position:relative;background:var(--navy);overflow:hidden}
+.hero-img{width:100%;height:300px;position:relative}
+.hero-img img{height:100%;object-fit:cover}
+.hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,30,60,.2) 0%,rgba(10,30,60,.8) 100%)}
+.hero-body{padding:40px 24px 56px;position:relative}
+.hero-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--gold2);background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.4);border-radius:100px;padding:5px 16px;margin-bottom:20px}
+.hero-title{font-family:'Noto Serif KR',serif;font-size:32px;font-weight:900;line-height:1.3;color:#fff;letter-spacing:-.6px;margin-bottom:16px}
+.hero-title em{color:var(--gold2);font-style:normal}
+.hero-sub{font-size:14px;color:rgba(255,255,255,.65);margin-bottom:36px;line-height:1.8}
+.hero-btns{display:flex;flex-direction:column;gap:12px}
+
+@media(min-width:1024px){
+  .hero{display:grid;grid-template-columns:55% 45%;min-height:90vh}
+  .hero-img{height:100%;min-height:90vh}
+  .hero-img::after{background:linear-gradient(to right,rgba(10,30,60,.25) 0%,rgba(10,30,60,.05) 100%)}
+  .hero-body{
+    padding:80px 72px;
+    display:flex;flex-direction:column;justify-content:center;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  }
+  .hero-badge{font-size:12px;margin-bottom:28px}
+  .hero-title{font-size:56px;margin-bottom:22px;line-height:1.25}
+  .hero-sub{font-size:17px;margin-bottom:48px}
+  .hero-btns{flex-direction:column;gap:14px}
+  .hero-btns .btn{font-size:17px;padding:19px 32px;border-radius:var(--r16)}
+}
+@media(min-width:1440px){
+  .hero-title{font-size:64px}
+  .hero-body{padding:100px 96px}
+}
+
+/* ════════════════════════════════
+   수치 배너
+════════════════════════════════ */
+.stats{background:var(--navy2);display:grid;grid-template-columns:repeat(2,1fr)}
+.stat{padding:28px 16px;text-align:center;border-right:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.stat:nth-child(2n){border-right:none}
+.stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
+.stat-ico{font-size:24px;margin-bottom:8px}
+.stat-num{font-family:'Noto Serif KR',serif;font-size:22px;font-weight:900;color:var(--gold2);margin-bottom:4px}
+.stat-lbl{font-size:12px;color:rgba(255,255,255,.55);font-weight:500}
+@media(min-width:768px){
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .stat:nth-child(2){border-right:1px solid rgba(255,255,255,.08)}
+  .stat:nth-child(3),.stat:nth-child(4){border-bottom:1px solid rgba(255,255,255,.08)}
+  .stat:nth-child(4){border-right:none}
+}
+@media(min-width:1024px){
+  .stat{padding:36px 24px}
+  .stat-num{font-size:30px}
+  .stat-lbl{font-size:14px}
+  .stat-ico{font-size:30px}
+}
+
+/* ════════════════════════════════
+   의료 섹션
+════════════════════════════════ */
+.medical-sec{background:var(--navy);padding:72px 0}
+@media(min-width:1024px){.medical-sec{padding:110px 0}}
+.medical-eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;color:#fff;background:rgba(198,40,40,.8);border-radius:100px;padding:4px 14px;margin-bottom:16px}
+.medical-img{border-radius:var(--r24);overflow:hidden;margin:36px 0;aspect-ratio:21/9}
+.medical-img img{height:100%;object-fit:cover}
+.medical-cards{display:flex;flex-direction:column;gap:14px}
+.mc{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r16);padding:22px 24px;display:flex;align-items:flex-start;gap:16px}
+.mc-ico{width:48px;height:48px;flex-shrink:0;background:rgba(201,168,76,.2);border-radius:var(--r12);display:flex;align-items:center;justify-content:center;font-size:22px}
+.mc-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+.mc-desc{font-size:13px;color:rgba(255,255,255,.55);line-height:1.7}
+@media(min-width:1024px){
+  .medical-img{aspect-ratio:16/6;margin:48px 0}
+  .medical-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .mc{padding:28px 28px;border-radius:var(--r16)}
+  .mc-ico{width:56px;height:56px;font-size:26px}
+  .mc-title{font-size:17px;margin-bottom:8px}
+  .mc-desc{font-size:14px}
+}
+
+/* ════════════════════════════════
+   입지 섹션
+════════════════════════════════ */
+.location-sec{background:var(--cream)}
+.tab-btns{display:flex;background:var(--gray100);border-radius:var(--r12);padding:4px;margin-bottom:28px}
+.tab-btn{flex:1;padding:11px 8px;background:transparent;border:none;border-radius:var(--r8);font-size:13px;font-weight:700;color:var(--gray500);transition:all .2s}
+.tab-btn.on{background:var(--navy);color:#fff;box-shadow:var(--sh1)}
+.tab-pane{display:none}
+.tab-pane.on{display:block}
+.tab-img{border-radius:var(--r16);overflow:hidden;margin-bottom:20px;aspect-ratio:16/9}
+.tab-img img{height:100%;object-fit:cover}
+.tab-pts{display:flex;flex-direction:column;gap:12px}
+.tp{background:#fff;border-radius:var(--r12);padding:16px 18px;display:flex;align-items:flex-start;gap:12px;box-shadow:var(--sh1)}
+.tp-ico{width:38px;height:38px;flex-shrink:0;background:var(--gold-bg);border-radius:var(--r8);display:flex;align-items:center;justify-content:center;font-size:18px}
+.tp-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.tp-desc{font-size:12px;color:var(--gray500);line-height:1.6}
+@media(min-width:1024px){
+  .tab-btns{max-width:480px;margin-bottom:36px}
+  .tab-btn{font-size:15px;padding:14px 20px}
+  .tab-img{aspect-ratio:16/7;margin-bottom:28px}
+  .tab-pts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .tp{padding:22px 24px;border-radius:var(--r16)}
+  .tp-ico{width:46px;height:46px;font-size:22px}
+  .tp-title{font-size:15px;margin-bottom:5px}
+  .tp-desc{font-size:13px}
+}
+
+/* ════════════════════════════════
+   단지 강점
+════════════════════════════════ */
+.complex-sec{background:#fff}
+.complex-img{border-radius:var(--r24);overflow:hidden;margin-bottom:36px;aspect-ratio:16/7}
+.complex-img img{height:100%;object-fit:cover}
+.cx-cards{display:flex;flex-direction:column;gap:16px}
+.cx{background:var(--gray50);border:1px solid var(--gray100);border-radius:var(--r16);padding:24px;display:flex;align-items:flex-start;gap:16px}
+.cx-num{width:40px;height:40px;flex-shrink:0;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-size:17px;font-weight:900;color:var(--gold2)}
+.cx-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.cx-desc{font-size:13px;color:var(--gray500);line-height:1.7}
+@media(min-width:1024px){
+  .complex-img{aspect-ratio:21/8;margin-bottom:56px}
+  .cx-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .cx{padding:32px 28px;border-radius:20px}
+  .cx-num{width:48px;height:48px;font-size:20px}
+  .cx-title{font-size:18px;margin-bottom:10px}
+  .cx-desc{font-size:14px}
+}
+
+/* ════════════════════════════════
+   평면도
+════════════════════════════════ */
+.floor-sec{background:var(--navy);padding:72px 0}
+@media(min-width:1024px){.floor-sec{padding:110px 0}}
+.floor-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.ft{padding:9px 18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:100px;font-size:13px;font-weight:700;color:rgba(255,255,255,.55);transition:all .2s;cursor:pointer}
+.ft.on{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.fp{display:none}
+.fp.on{display:block}
+.fp-img{border-radius:var(--r24);overflow:hidden;margin-bottom:24px;background:rgba(255,255,255,.04);aspect-ratio:4/3}
+.fp-img img{height:100%;object-fit:contain;background:rgba(255,255,255,.04)}
+.fp-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.fp-spec{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r8);padding:14px 12px;text-align:center}
+.fp-spec-lbl{font-size:10px;color:rgba(255,255,255,.4);font-weight:600;letter-spacing:.5px;margin-bottom:5px}
+.fp-spec-val{font-family:'Noto Serif KR',serif;font-size:17px;font-weight:700;color:var(--gold2)}
+.fp-feats{display:flex;flex-direction:column;gap:7px}
+.fp-feat{font-size:13px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:8px}
+.fp-feat::before{content:'▶';font-size:8px;color:var(--gold);flex-shrink:0}
+@media(min-width:1024px){
+  .floor-tabs{gap:10px;margin-bottom:32px}
+  .ft{font-size:15px;padding:12px 28px}
+  .fp-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
+  .fp-img{aspect-ratio:4/3;margin-bottom:0}
+  .fp-specs{grid-template-columns:repeat(3,1fr);gap:14px}
+  .fp-spec{padding:18px 16px}
+  .fp-spec-val{font-size:22px}
+  .fp-feats{gap:10px;margin-top:24px}
+  .fp-feat{font-size:15px}
+}
+
+/* ════════════════════════════════
+   분양 개요
+════════════════════════════════ */
+.overview-sec{background:var(--cream)}
+.ov-img{border-radius:var(--r24);overflow:hidden;margin-bottom:36px;aspect-ratio:16/7}
+.ov-img img{height:100%;object-fit:cover}
+.ov-table{background:#fff;border-radius:var(--r16);overflow:hidden;border:1px solid var(--gray100);box-shadow:var(--sh1)}
+.ov-row{display:flex;border-bottom:1px solid var(--gray100)}
+.ov-row:last-child{border-bottom:none}
+.ov-key{width:110px;flex-shrink:0;background:var(--navy);color:rgba(255,255,255,.8);font-size:12px;font-weight:700;padding:14px 16px;display:flex;align-items:center}
+.ov-val{flex:1;padding:14px 16px;font-size:13px;color:var(--gray900);line-height:1.65}
+@media(min-width:1024px){
+  .ov-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .ov-img{aspect-ratio:4/3;margin-bottom:0}
+  .ov-key{width:140px;font-size:13px;padding:16px 20px}
+  .ov-val{font-size:14px;padding:16px 20px}
+  .ov-table{border-radius:20px}
+}
+
+/* ════════════════════════════════
+   분양 일정
+════════════════════════════════ */
+.schedule-sec{background:var(--navy);padding:72px 0}
+@media(min-width:1024px){.schedule-sec{padding:110px 0}}
+.sch-steps{display:flex;flex-direction:column;gap:0;border-radius:var(--r16);overflow:hidden;border:1px solid rgba(255,255,255,.1);margin-top:40px}
+.sch-step{display:flex;align-items:center;gap:18px;padding:20px 24px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.sch-step:last-child{border-bottom:none}
+.sch-step.hl{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.2)}
+.sch-n{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;font-size:16px;flex-shrink:0}
+.sch-step.hl .sch-n{background:var(--gold);color:var(--navy)}
+.sch-title{font-size:14px;font-weight:700;color:var(--gold2);margin-bottom:3px}
+.sch-desc{font-size:12px;color:rgba(255,255,255,.5)}
+.sch-warn{margin-top:20px;background:rgba(198,40,40,.15);border:1px solid rgba(198,40,40,.3);border-radius:var(--r12);padding:16px 20px;font-size:13px;color:rgba(255,255,255,.7);line-height:1.7}
+.sch-warn strong{color:#FF8A80;font-weight:700}
+@media(min-width:1024px){
+  .sch-steps{flex-direction:row;gap:0;margin-top:56px}
+  .sch-step{flex-direction:column;align-items:center;text-align:center;padding:36px 28px;flex:1;border-bottom:none;border-right:1px solid rgba(255,255,255,.07)}
+  .sch-step:last-child{border-right:none}
+  .sch-n{width:52px;height:52px;font-size:20px;margin-bottom:12px}
+  .sch-title{font-size:16px;margin-bottom:8px}
+  .sch-desc{font-size:13px}
+  .sch-warn{margin-top:32px;font-size:14px}
+}
+
+/* ════════════════════════════════
+   방문 혜택
+════════════════════════════════ */
+.benefit-sec{background:var(--gold-bg);padding:72px 0;border-top:3px solid var(--gold)}
+@media(min-width:1024px){.benefit-sec{padding:110px 0}}
+.benefit-cards{display:flex;flex-direction:column;gap:14px;margin-top:36px}
+.bc{background:#fff;border-radius:var(--r16);padding:24px;display:flex;align-items:flex-start;gap:16px;box-shadow:var(--sh1);border:1px solid rgba(201,168,76,.15)}
+.bc-ico{font-size:32px;flex-shrink:0}
+.bc-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.bc-desc{font-size:13px;color:var(--gray500);line-height:1.65}
+@media(min-width:1024px){
+  .benefit-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+  .bc{padding:36px 32px;border-radius:20px}
+  .bc-ico{font-size:40px}
+  .bc-title{font-size:18px;margin-bottom:10px}
+  .bc-desc{font-size:14px}
+}
+
+/* ════════════════════════════════
+   FAQ
+════════════════════════════════ */
+.faq-sec{background:#fff}
+.faq-list{display:flex;flex-direction:column;gap:10px;margin-top:36px}
+.faq-item{border:1px solid var(--gray100);border-radius:var(--r12);overflow:hidden;background:#fff}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:16px;cursor:pointer}
+.faq-ico{font-size:20px;flex-shrink:0;transition:transform .25s;color:var(--gray300)}
+.faq-a{display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100)}
+.faq-a-inner{padding-top:14px}
+.faq-item.open .faq-ico{transform:rotate(45deg);color:var(--navy)}
+@media(min-width:1024px){
+  .faq-list{max-width:900px;margin-top:56px;gap:12px}
+  .faq-q{font-size:16px;padding:22px 28px}
+  .faq-a{padding:0 28px 22px;font-size:14px}
+}
+
+/* ════════════════════════════════
+   상담 폼
+════════════════════════════════ */
+.form-sec{background:var(--gray50)}
+.form-box{background:#fff;border-radius:var(--r24);padding:32px 24px;box-shadow:var(--sh2);border:1px solid rgba(201,168,76,.2);margin-top:36px}
+.form-group{margin-bottom:18px}
+.form-label{display:block;font-size:12px;font-weight:700;color:var(--navy2);margin-bottom:7px;letter-spacing:.3px}
+.form-label .req{color:var(--red);margin-left:2px}
+.form-input{width:100%;padding:14px 16px;background:#fff;border:1.5px solid var(--gray100);border-radius:var(--r8);font-family:inherit;font-size:15px;color:var(--gray900);outline:none;transition:border-color .2s}
+.form-input:focus{border-color:var(--gold)}
+.form-input.err{border-color:var(--red)}
+.unit-btns{display:flex;gap:8px;flex-wrap:wrap}
+.ub{padding:10px 18px;background:#fff;border:1.5px solid var(--gray100);border-radius:var(--r8);font-size:13px;font-weight:700;color:var(--gray500);transition:all .2s;cursor:pointer}
+.ub.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.form-row{display:flex;gap:8px}
+.form-row .form-input{flex:1}
+.time-sel{width:96px;flex-shrink:0;padding:14px 10px;background:#fff;border:1.5px solid var(--gray100);border-radius:var(--r8);font-family:inherit;font-size:15px;color:var(--gray900);outline:none}
+.time-sel:focus{border-color:var(--gold)}
+.agree-row{display:flex;align-items:flex-start;gap:10px;margin:20px 0}
+.agree-chk{width:20px;height:20px;flex-shrink:0;margin-top:2px;accent-color:var(--navy);cursor:pointer}
+.agree-txt{font-size:12px;color:var(--gray500);line-height:1.65;cursor:pointer}
+.agree-txt a{color:var(--navy);text-decoration:underline}
+.err-msg{display:none;font-size:11px;color:var(--red);margin-top:4px;font-weight:700}
+.submit-note{text-align:center;font-size:11px;color:var(--gray300);margin-top:10px}
+@media(min-width:1024px){
+  .form-box{max-width:720px;margin:56px auto 0;padding:56px 64px;border-radius:28px}
+  .form-input{font-size:16px;padding:16px 18px}
+  .ub{padding:12px 24px;font-size:14px}
+  #submit-btn{font-size:18px;padding:20px}
+}
+
+/* ════════════════════════════════
+   최종 CTA
+════════════════════════════════ */
+.cta-sec{background:var(--navy);padding:72px 0;text-align:center}
+@media(min-width:1024px){.cta-sec{padding:110px 0}}
+.cta-contact{display:flex;flex-direction:column;gap:10px;margin:28px 0}
+.cta-row{display:flex;align-items:center;justify-content:center;gap:10px;font-size:14px;color:rgba(255,255,255,.7)}
+.cta-ico{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:16px}
+.cta-btns{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+@media(min-width:768px){.cta-btns{flex-direction:row;justify-content:center}}
+@media(min-width:1024px){
+  .cta-contact{flex-direction:row;gap:40px;margin:36px 0}
+  .cta-row{font-size:16px}
+}
+
+/* ════════════════════════════════
+   플로팅 버튼
+════════════════════════════════ */
+#float{
+  position:fixed;bottom:0;left:0;right:0;
+  display:flex;z-index:400;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  box-shadow:0 -4px 20px rgba(10,30,60,.25);
+}
+#float.show{opacity:1;pointer-events:auto}
+.fb{flex:1;padding:17px 10px;display:flex;align-items:center;justify-content:center;gap:7px;font-family:inherit;font-size:15px;font-weight:800;border:none;cursor:pointer}
+.fb-call{background:var(--navy);color:#fff}
+.fb-res{background:var(--gold);color:var(--navy)}
+@media(min-width:1024px){
+  #float{
+    left:auto;right:40px;bottom:40px;width:320px;
+    border-radius:var(--r16);overflow:hidden;
+    box-shadow:var(--sh3);
+  }
+  .fb{padding:18px}
+}
+
+/* ════════════════════════════════
+   성공 팝업
+════════════════════════════════ */
+#popup{display:none;position:fixed;inset:0;background:rgba(10,30,60,.7);z-index:600;align-items:center;justify-content:center;padding:24px}
+#popup.show{display:flex}
+.popup-box{background:#fff;border-radius:var(--r24);padding:40px 32px;text-align:center;max-width:360px;width:100%;box-shadow:var(--sh3)}
+.popup-ico{font-size:52px;margin-bottom:18px}
+.popup-title{font-family:'Noto Serif KR',serif;font-size:22px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.popup-desc{font-size:14px;color:var(--gray500);line-height:1.75;margin-bottom:28px}
+.popup-close{padding:13px 36px;background:var(--navy);color:#fff;font-size:14px;font-weight:700;border:none;border-radius:var(--r8);cursor:pointer}
+
+/* ════════════════════════════════
+   푸터
+════════════════════════════════ */
+footer{background:#060E1A;padding:48px 0 90px;border-top:1px solid rgba(255,255,255,.05)}
+.foot-logo{font-family:'Noto Serif KR',serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:18px}
+.foot-logo span{color:var(--gold2)}
+.foot-rows{display:flex;flex-direction:column;gap:7px;margin-bottom:24px}
+.foot-row{display:flex;gap:10px;font-size:12px;color:rgba(255,255,255,.35)}
+.foot-key{color:rgba(255,255,255,.2);flex-shrink:0}
+.foot-div{border:none;border-top:1px solid rgba(255,255,255,.07);margin:20px 0}
+.foot-legal{font-size:11px;color:rgba(255,255,255,.22);line-height:1.8}
+.foot-copy{margin-top:16px;font-size:11px;color:rgba(255,255,255,.15)}
+@media(min-width:1024px){
+  footer{padding:64px 0 100px}
+  .foot-rows{flex-direction:row;flex-wrap:wrap;gap:28px}
+  .foot-legal{max-width:900px}
+}
+</style>
 </head>
 <body>
 
 <script>
-  /* ─── 사이트 설정 ─────────────────────────────── */
-  const SITE = {
-    name:      '브레인시티 메디스파크',
-    brand:     '로제비앙 | 모아엘가',
-    phone:     '010-6689-2348',
-    developer: '이정임',
-    address:   '경기도 평택시 장안동 브레인시티 6BL',
-    showroom:  '평택시 브레인시티 분양홍보관',
-  };
-
-  /* ─── 앱스크립트 배포 URL (배포 후 교체) ──────── */
-  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwCh1aovSWgN5luflghPbeRVOu6cBc-l79ZPV0gexfgJHxXSW-t3iZye3WhSns0PrH1/exec';
+const SITE={phone:'010-6689-2348',developer:'이정임',address:'경기도 평택시 장안동 브레인시티 6BL',showroom:'평택 브레인시티 분양홍보관'};
+const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbwCh1aovSWgN5luflghPbeRVOu6cBc-l79ZPV0gexfgJHxXSW-t3iZye3WhSns0PrH1/exec';
 </script>
 
-<div class="page-wrap">
-
-  <!-- ══ 헤더 ══════════════════════════════════════ -->
-  <header id="site-header">
-    <div class="header-inner">
-      <div class="header-logo">
-        <span>메디스파크</span><br>로제비앙 | 모아엘가
-      </div>
-      <a id="header-phone" class="header-phone">
-        📞 <span id="header-phone-num"></span>
-      </a>
-    </div>
-  </header>
-
-  <nav class="header-nav">
-    <a href="#medical">🏥 의료</a>
-    <a href="#location">📍 입지·교통</a>
-    <a href="#floor-plan">📐 평면</a>
-    <a href="#overview">📋 분양개요</a>
-    <a href="#register">✏️ 상담예약</a>
-  </nav>
-
-  <!-- ══ 긴급성 배너 ═══════════════════════════════ -->
-  <div class="urgency-banner">
-    🔥 오늘&nbsp;<span class="urgency-count" id="urgency-count">--</span>&nbsp;명 문의 중 &nbsp;·&nbsp; 선착순 동호지정 진행
-  </div>
-
-  <!-- ══ Hero ══════════════════════════════════════ -->
-  <section class="hero">
-    <div class="hero-image">
-      <img src="image/hero_render.jpg" alt="브레인시티 메디스파크 단지 전경"
-           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🏙️</div></div>'" />
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-      <div class="hero-badge">평택 브레인시티 6BL &nbsp;·&nbsp; 1,215세대</div>
-      <h1 class="hero-title serif">
-        병원이 도보 <em>3분</em>,<br>
-        학교가 도보 <em>1분</em>,<br>
-        지금까지 없던 아파트
-      </h1>
-      <p class="hero-sub">
-        브레인시티 메디스파크 로제비앙 | 모아엘가<br>
-        경기도 평택시 — GTX·KTX·SRT 광역 교통 수혜 입지
-      </p>
-      <div class="hero-btns">
-        <a id="hero-phone" class="btn btn-phone">📞 전화 상담하기</a>
-        <a href="#register" class="btn btn-outline">방문 예약 등록하기</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 수치 배너 ══════════════════════════════════ -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-icon">🏫</div>
-      <div class="stat-num">도보 1분</div>
-      <div class="stat-label">초·중학교 통학</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon">🏥</div>
-      <div class="stat-num">도보 3분</div>
-      <div class="stat-label">500병상 종합병원</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon">🌳</div>
-      <div class="stat-num">1만 4천평</div>
-      <div class="stat-label">단지 자연녹지</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-icon">🚄</div>
-      <div class="stat-num">GTX-C</div>
-      <div class="stat-label">교통 호재 예정</div>
+<!-- ══ 헤더 ══════════════════════════ -->
+<header id="hdr">
+  <div class="wrap">
+    <div class="hdr-inner">
+      <div class="hdr-logo"><span>메디스파크</span><br>로제비앙 | 모아엘가</div>
+      <nav class="hdr-nav">
+        <a href="#medical">🏥 의료</a>
+        <a href="#location">📍 입지</a>
+        <a href="#floor">📐 평면</a>
+        <a href="#overview">📋 개요</a>
+        <a href="#form">✏️ 상담예약</a>
+      </nav>
+      <a id="hdr-tel" class="hdr-phone">📞 <span id="hdr-num"></span></a>
     </div>
   </div>
+</header>
 
-  <!-- ══ 의료 인프라 ════════════════════════════════ -->
-  <section class="medical fade-in" id="medical">
+<!-- ══ 긴급 배너 ════════════════════ -->
+<div class="urgency">
+  🔥 오늘&nbsp;<span class="urgency-num" id="urg-n">--</span>&nbsp;명 문의 중 &nbsp;·&nbsp; 선착순 동호지정 진행
+</div>
+
+<!-- ══ Hero ═════════════════════════ -->
+<section class="hero">
+  <div class="hero-img">
+    <img src="image/hero_render.jpg" alt="브레인시티 메디스파크 단지 전경"
+         onerror="this.style.display='none'"/>
+  </div>
+  <div class="hero-body">
+    <div class="hero-badge">평택 브레인시티 6BL &nbsp;·&nbsp; 1,215세대</div>
+    <h1 class="hero-title">병원이 도보 <em>3분</em>,<br>학교가 도보 <em>1분</em>,<br>지금까지 없던 아파트</h1>
+    <p class="hero-sub">브레인시티 메디스파크 로제비앙 | 모아엘가<br>경기도 평택시 — GTX·KTX·SRT 광역 교통 수혜 입지</p>
+    <div class="hero-btns">
+      <a id="hero-tel" class="btn btn-gold btn-lg">📞 전화 상담하기</a>
+      <a href="#form" class="btn btn-outline-w btn-lg">방문 예약 등록하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 수치 배너 ═════════════════════ -->
+<div class="stats">
+  <div class="stat"><div class="stat-ico">🏫</div><div class="stat-num">도보 1분</div><div class="stat-lbl">초·중학교 통학</div></div>
+  <div class="stat"><div class="stat-ico">🏥</div><div class="stat-num">도보 3분</div><div class="stat-lbl">500병상 종합병원</div></div>
+  <div class="stat"><div class="stat-ico">🌳</div><div class="stat-num">1만 4천평</div><div class="stat-lbl">단지 자연녹지</div></div>
+  <div class="stat"><div class="stat-ico">🚄</div><div class="stat-num">GTX-C</div><div class="stat-lbl">교통 호재 예정</div></div>
+</div>
+
+<!-- ══ 의료 ═════════════════════════ -->
+<section class="medical-sec" id="medical">
+  <div class="wrap">
     <div class="medical-eyebrow">타 단지에는 없는 단 하나의 차이</div>
-    <h2 class="section-title on-dark serif">
-      AI 스마트 병원이<br>단지 바로 앞, <em style="color:var(--gold2);">도보 3분</em>
-    </h2>
-    <p class="section-desc on-dark">
-      단순한 병원이 아닙니다. 로봇수술·AI 진단이 가능한<br>
-      첨단 스마트 인텔리전트 종합병원이 내 집 앞에 생깁니다.
-    </p>
-
-    <div class="medical-image">
-      <img src="image/교육_11-1.jpg" alt="메디스파크 병원 조감도"
-           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'background:rgba(255,255,255,.07);color:rgba(255,255,255,.35)\'><div class=\'img-placeholder-icon\'>🏥</div><div>교육_11-1.jpg</div></div>'" />
+    <h2 class="sec-title wh">AI 스마트 병원이<br>단지 바로 앞, <em>도보 3분</em></h2>
+    <p class="sec-desc wh">단순한 병원이 아닙니다. 로봇수술·AI 진단이 가능한<br>첨단 스마트 인텔리전트 종합병원이 내 집 앞에 생깁니다.</p>
+    <div class="medical-img">
+      <img src="image/교육_11-1.jpg" alt="메디스파크 병원 조감도" onerror="this.style.background='rgba(255,255,255,.06)'"/>
     </div>
-
     <div class="medical-cards">
-      <div class="medical-card">
-        <div class="medical-card-icon">🏥</div>
-        <div>
-          <div class="medical-card-title">500병상 규모 종합병원</div>
-          <div class="medical-card-desc">2028년 착공 · 2030년 개원 예정. 의사 100~200명, 간호사 400~600명 등 총 1,000~1,500명 근무</div>
-        </div>
-      </div>
-      <div class="medical-card">
-        <div class="medical-card-icon">🔬</div>
-        <div>
-          <div class="medical-card-title">의료 R&amp;D 센터</div>
-          <div class="medical-card-desc">임상R&amp;D, 정단R&amp;D, Testing Bed 등 의료연구시설 함께 입주. 단순 병원을 넘어 연구까지</div>
-        </div>
-      </div>
-      <div class="medical-card">
-        <div class="medical-card-icon">🤖</div>
-        <div>
-          <div class="medical-card-title">AI 스마트 인텔리전트 병원</div>
-          <div class="medical-card-desc">스마트 수술실, 로봇보조진단·AI 활용 데이터 분석, 환자 케어 자동화 시스템 최첨단 설비</div>
-        </div>
+      <div class="mc"><div class="mc-ico">🏥</div><div><div class="mc-title">500병상 규모 종합병원</div><div class="mc-desc">2028년 착공 · 2030년 개원 예정. 의사 100~200명, 간호사 400~600명 등 총 1,000~1,500명 근무</div></div></div>
+      <div class="mc"><div class="mc-ico">🔬</div><div><div class="mc-title">의료 R&amp;D 센터</div><div class="mc-desc">임상R&amp;D, 첨단R&amp;D, Testing Bed 등 의료연구시설 함께 입주. 단순 병원을 넘어 연구까지</div></div></div>
+      <div class="mc"><div class="mc-ico">🤖</div><div><div class="mc-title">AI 스마트 인텔리전트 병원</div><div class="mc-desc">스마트 수술실, 로봇보조진단·AI 활용 데이터 분석, 환자 케어 자동화 시스템 최첨단 설비</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 입지 ═════════════════════════ -->
+<section class="location-sec sec" id="location">
+  <div class="wrap">
+    <span class="eyebrow">브레인시티 핵심 입지</span>
+    <h2 class="sec-title">학교도, 교통도, 자연도<br>모두 도보 거리</h2>
+    <p class="sec-desc" style="margin-bottom:28px">포기했던 세 가지를 이곳에서 동시에 누립니다</p>
+    <div class="tab-btns" role="tablist">
+      <button class="tab-btn on" data-tab="edu">🎓 교육</button>
+      <button class="tab-btn" data-tab="tra">🚄 교통</button>
+      <button class="tab-btn" data-tab="nat">🌳 자연</button>
+    </div>
+    <!-- 교육 -->
+    <div class="tab-pane on" id="tab-edu">
+      <div class="tab-img"><img src="image/교육_10-1.jpg" alt="도보권 입지 지도" onerror="this.style.background='#eee'"/></div>
+      <div class="tab-pts">
+        <div class="tp"><div class="tp-ico">🏫</div><div><div class="tp-title">도보 1분 — 초·중학교 통학</div><div class="tp-desc">단지 바로 앞 브레인시티 전용 초등학교·중학교 위치. 아이 혼자 걸어서 등교 가능한 완전한 교육 환경</div></div></div>
+        <div class="tp"><div class="tp-ico">🏥</div><div><div class="tp-title">도보 3분 — 아주대병원</div><div class="tp-desc">평택 내 최대 수준 상급종합의료시설 아주대 브레인시티 도보 3분 거리에 위치</div></div></div>
+        <div class="tp"><div class="tp-ico">🛍️</div><div><div class="tp-title">도보 5분 — 상업시설</div><div class="tp-desc">단지 바로 앞 근생시설 도보 1분. 브레인시티 유일 중심상업지역 도보 5분</div></div></div>
+        <div class="tp"><div class="tp-ico">🌿</div><div><div class="tp-title">도보 1분 — 대규모 공원</div><div class="tp-desc">단지 바로 앞 대규모 근린공원. 7천평 공원을 품은 공원 속 아파트</div></div></div>
       </div>
     </div>
-  </section>
-
-  <!-- ══ 입지 강점 (탭) ═════════════════════════════ -->
-  <section class="location fade-in" id="location">
-    <span class="section-eyebrow">브레인시티 핵심 입지</span>
-    <h2 class="section-title serif">학교도, 교통도, 자연도<br>모두 도보 거리</h2>
-    <p class="section-desc" style="margin-bottom: 24px;">
-      포기했던 세 가지를 이곳에서 동시에 누립니다
-    </p>
-
-    <div class="tab-buttons" role="tablist">
-      <button class="tab-btn active" data-tab="edu" role="tab">🎓 교육</button>
-      <button class="tab-btn"        data-tab="tra" role="tab">🚄 교통</button>
-      <button class="tab-btn"        data-tab="nat" role="tab">🌳 자연</button>
-    </div>
-
-    <!-- 교육 탭 -->
-    <div class="tab-panel active" id="tab-edu">
-      <div class="tab-image">
-        <img src="image/교육_10-1.jpg" alt="도보권 입지 지도"
-             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🗺️</div><div>교육_10-1.jpg</div></div>'" />
-      </div>
-      <div class="tab-points">
-        <div class="tab-point">
-          <div class="tab-point-icon">🏫</div>
-          <div>
-            <div class="tab-point-title">도보 1분 — 초·중학교 통학</div>
-            <div class="tab-point-desc">단지 바로 앞 브레인시티 전용 초등학교·중학교 위치. 아이 혼자 걸어서 등교 가능한 완전한 교육 환경</div>
-          </div>
-        </div>
-        <div class="tab-point">
-          <div class="tab-point-icon">🏥</div>
-          <div>
-            <div class="tab-point-title">도보 3분 — 아주대병원</div>
-            <div class="tab-point-desc">평택 내 최대 수준 상급종합의료시설 아주대 브레인시티 도보 3분 거리에 위치</div>
-          </div>
-        </div>
-        <div class="tab-point">
-          <div class="tab-point-icon">🛍️</div>
-          <div>
-            <div class="tab-point-title">도보 5분 — 상업시설</div>
-            <div class="tab-point-desc">단지 바로 앞 근생시설 도보 1분. 브레인시티 유일 중심상업지역 도보 5분</div>
-          </div>
-        </div>
-        <div class="tab-point">
-          <div class="tab-point-icon">🌿</div>
-          <div>
-            <div class="tab-point-title">도보 1분 — 대규모 공원</div>
-            <div class="tab-point-desc">단지 바로 앞 대규모 근린공원. 7천평 공원을 품은 공원 속 아파트</div>
-          </div>
-        </div>
+    <!-- 교통 -->
+    <div class="tab-pane" id="tab-tra">
+      <div class="tab-img"><img src="image/교육_8-1.jpg" alt="고속도로 교통망 지도" onerror="this.style.background='#eee'"/></div>
+      <div class="tab-img" style="margin-top:16px"><img src="image/교육_9-1.jpg" alt="철도망 교통 지도" onerror="this.style.background='#eee'"/></div>
+      <div class="tab-pts" style="margin-top:20px">
+        <div class="tp"><div class="tp-ico">🛣️</div><div><div class="tp-title">동부화성고속도로 2026년 9월 개통 예정</div><div class="tp-desc">용인-서울 고속도로와 연결. 고속도로 5개 노선 풍부한 도로망과 높은 접근성</div></div></div>
+        <div class="tp"><div class="tp-ico">🚄</div><div><div class="tp-title">GTX-C · KTX · SRT 철도 수혜</div><div class="tp-desc">GTX-C(예정) + KTX(28년 개통 예정) + SRT + 지하철 1호선. 철도 5개 노선 광역교통의 핵심 입지</div></div></div>
+        <div class="tp"><div class="tp-ico">🏭</div><div><div class="tp-title">삼성반도체 · 고덕신도시 인근</div><div class="tp-desc">삼성반도체 평택 캠퍼스, 고덕신도시와 인접. 직주근접 수요 풍부한 입지</div></div></div>
       </div>
     </div>
-
-    <!-- 교통 탭 -->
-    <div class="tab-panel" id="tab-tra">
-      <div class="tab-image">
-        <img src="image/교육_8-1.jpg" alt="고속도로 교통망 지도"
-             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🗺️</div><div>교육_8-1.jpg</div></div>'" />
-      </div>
-      <div class="tab-image" style="margin-top:10px;">
-        <img src="image/교육_9-1.jpg" alt="철도망 교통 지도"
-             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🚄</div><div>교육_9-1.jpg</div></div>'" />
-      </div>
-      <div class="tab-points">
-        <div class="tab-point">
-          <div class="tab-point-icon">🛣️</div>
-          <div>
-            <div class="tab-point-title">동부화고속도로 2026년 9월 개통 예정</div>
-            <div class="tab-point-desc">용인-서울 고속도로와 연결. 고속도로 5개 노선 풍부한 도로망과 높은 접근성</div>
-          </div>
-        </div>
-        <div class="tab-point">
-          <div class="tab-point-icon">🚄</div>
-          <div>
-            <div class="tab-point-title">GTX-C · KTX · SRT 철도 수혜</div>
-            <div class="tab-point-desc">GTX-C(예정) + KTX(28년 개통 예정) + SRT + 지하철 1·2호선. 철도 5개 노선 광역교통의 핵심 입지</div>
-          </div>
-        </div>
-        <div class="tab-point">
-          <div class="tab-point-icon">🏭</div>
-          <div>
-            <div class="tab-point-title">삼성반도체 · 고덕신도시 인근</div>
-            <div class="tab-point-desc">삼성반도체 평택 캠퍼스, 고덕신도시와 인접. 직주근접 수요 풍부한 입지</div>
-          </div>
-        </div>
+    <!-- 자연 -->
+    <div class="tab-pane" id="tab-nat">
+      <div class="tab-img"><img src="image/교육_3-1.jpg" alt="단지 배치도" onerror="this.style.background='#eee'"/></div>
+      <div class="tab-pts" style="margin-top:20px">
+        <div class="tp"><div class="tp-ico">🌳</div><div><div class="tp-title">약 1만 4천 평 자연녹지</div><div class="tp-desc">단지 내 6,500평 + 근린공원 7,150평으로 총 약 1만 4천 평 규모 자연녹지 조성</div></div></div>
+        <div class="tp"><div class="tp-ico">🏘️</div><div><div class="tp-title">동간거리 최대 129.1m</div><div class="tp-desc">V자형·T자형 단지배치로 전 세대 남향 위주 배치. 최대 129.1m 넓은 동간거리로 풍부한 일조량</div></div></div>
+        <div class="tp"><div class="tp-ico">🎪</div><div><div class="tp-title">414평 프리미엄 커뮤니티</div><div class="tp-desc">피트니스·골프연습장·키즈카페·도서관·독서실 등 다양한 커뮤니티 시설 410평 규모</div></div></div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- 자연 탭 -->
-    <div class="tab-panel" id="tab-nat">
-      <div class="tab-image">
-        <img src="image/교육_3-1.jpg" alt="단지 배치도"
-             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🌳</div><div>교육_3-1.jpg</div></div>'" />
-      </div>
-      <div class="tab-points">
-        <div class="tab-point">
-          <div class="tab-point-icon">🌳</div>
-          <div>
-            <div class="tab-point-title">약 1만 4천 평 자연녹지</div>
-            <div class="tab-point-desc">단지 내 6,500평 + 근린공원 7,150평으로 총 약 1만4천 평 규모 자연녹지 조성</div>
-          </div>
-        </div>
-        <div class="tab-point">
-          <div class="tab-point-icon">🏘️</div>
-          <div>
-            <div class="tab-point-title">동간거리 최대 129.1m</div>
-            <div class="tab-point-desc">V자형·T자형 단지배치로 전 세대 남향 위주 배치. 최대 129.1m 넓은 동간거리로 풍부한 일조량</div>
-          </div>
-        </div>
-        <div class="tab-point">
-          <div class="tab-point-icon">🎪</div>
-          <div>
-            <div class="tab-point-title">414평 프리미엄 커뮤니티</div>
-            <div class="tab-point-desc">피트니스·골프연습장·키즈카페·도서관·독서실 등 다양한 커뮤니티 시설 410평 규모</div>
-          </div>
-        </div>
-      </div>
+<!-- ══ 단지 강점 ══════════════════ -->
+<section class="complex-sec sec">
+  <div class="wrap">
+    <span class="eyebrow">단지 프리미엄</span>
+    <h2 class="sec-title">평면·설계·커뮤니티<br>3가지 모두 최고입니다</h2>
+    <div class="complex-img"><img src="image/교육_7-1.jpg" alt="단지 강점" onerror="this.style.background='#eee'"/></div>
+    <div class="cx-cards">
+      <div class="cx"><div class="cx-num">1</div><div><div class="cx-title">최고의 평면구성</div><div class="cx-desc">조망과 동선 효율도 극대화. 대형 드레스룸·팬트리 등 실용적 수납공간 확보. 알파룸 제공으로 높은 활용도. 거실-주방 맞통풍 구조</div></div></div>
+      <div class="cx"><div class="cx-num">2</div><div><div class="cx-title">최적의 단지설계</div><div class="cx-desc">전 세대 남향 위주 배치. 시야각 최소화 배치로 풍부한 일조량. 동간거리 최대 129.1m 시원한 개방감. 자연 속 공원형 단지</div></div></div>
+      <div class="cx"><div class="cx-num">3</div><div><div class="cx-title">최상의 커뮤니티</div><div class="cx-desc">410평 규모의 쾌적한 커뮤니티 시설. 피트니스·골프연습장·키즈카페·도서관·독서실 등. 1,215세대를 위한 다양한 활동 공간</div></div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══ 단지 강점 ══════════════════════════════════ -->
-  <section class="complex fade-in">
-    <span class="section-eyebrow">단지 프리미엄</span>
-    <h2 class="section-title serif">평면·설계·커뮤니티<br>3가지 모두 최고입니다</h2>
-
-    <div class="complex-image">
-      <img src="image/교육_7-1.jpg" alt="단지 3대 강점"
-           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>🏢</div><div>교육_7-1.jpg</div></div>'" />
+<!-- ══ 평면도 ════════════════════ -->
+<section class="floor-sec" id="floor">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold)">평형 안내</span>
+    <h2 class="sec-title wh" style="margin-bottom:8px">나에게 맞는<br>평형을 선택하세요</h2>
+    <p class="sec-desc wh" style="margin-bottom:32px">3가지 타입 · 잔여 세대 한정</p>
+    <div class="floor-tabs">
+      <button class="ft on" data-floor="84A">84A<br><span style="font-size:11px;font-weight:400;opacity:.8">34평 · 563세대</span></button>
+      <button class="ft" data-floor="84B">84B<br><span style="font-size:11px;font-weight:400;opacity:.8">34평 · 167세대</span></button>
+      <button class="ft" data-floor="101">101<br><span style="font-size:11px;font-weight:400;opacity:.8">40평 · 333세대</span></button>
     </div>
-
-    <div class="complex-cards">
-      <div class="complex-card">
-        <div class="complex-card-num">1</div>
-        <div>
-          <div class="complex-card-title">최고의 평면구성</div>
-          <div class="complex-card-desc">조망과 동선 효율도 극대화. 대형 드레스룸·팬트리 등 실용적 수납공간 확보. 알파룸 제공으로 높은 활용도. 거실-주방 맞통풍 구조</div>
-        </div>
-      </div>
-      <div class="complex-card">
-        <div class="complex-card-num">2</div>
-        <div>
-          <div class="complex-card-title">최적의 단지설계</div>
-          <div class="complex-card-desc">전 세대 남향 위주 배치. 시야각 최소화 배치로 풍부한 일조량. 동간거리 최대 129.1m 시원한 개방감. 자연 속 공원형 단지</div>
-        </div>
-      </div>
-      <div class="complex-card">
-        <div class="complex-card-num">3</div>
-        <div>
-          <div class="complex-card-title">최상의 커뮤니티</div>
-          <div class="complex-card-desc">410평 규모의 쾌적한 커뮤니티 시설. 피트니스·골프연습장·키즈카페·도서관·독서실 등. 1,215세대를 위한 다양한 활동 공간</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 평면 갤러리 ════════════════════════════════ -->
-  <section class="floor-plan fade-in" id="floor-plan">
-    <span class="section-eyebrow" style="color:var(--gold);">평형 안내</span>
-    <h2 class="section-title on-dark serif">나에게 맞는<br>평형을 선택하세요</h2>
-    <p class="section-desc on-dark" style="margin-bottom: 24px;">3가지 타입 · 1,063세대 (잔여 세대 한정)</p>
-
-    <div class="floor-tabs" role="tablist">
-      <button class="floor-tab-btn active" data-floor="84A">84A<br><span style="font-size:10px;font-weight:400;">34평·563세대</span></button>
-      <button class="floor-tab-btn"        data-floor="84B">84B<br><span style="font-size:10px;font-weight:400;">34평·167세대</span></button>
-      <button class="floor-tab-btn"        data-floor="101">101<br><span style="font-size:10px;font-weight:400;">40평·333세대</span></button>
-    </div>
-
     <!-- 84A -->
-    <div class="floor-panel active" id="floor-84A">
-      <div class="floor-image">
-        <img src="image/교육_4-1.jpg" alt="84A 평면도"
-             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)\'><div class=\'img-placeholder-icon\'>📐</div><div>84A 평면도</div></div>'" />
-      </div>
-      <div class="floor-info">
-        <div class="floor-info-item"><div class="floor-info-label">전용면적</div><div class="floor-info-value">84.99㎡</div></div>
-        <div class="floor-info-item"><div class="floor-info-label">공급면적</div><div class="floor-info-value">112.70㎡</div></div>
-        <div class="floor-info-item"><div class="floor-info-label">세대수</div><div class="floor-info-value">563세대</div></div>
-      </div>
-      <div class="floor-features">
-        <div class="floor-feature">ㄷ자형 주방의 넓은 수납공간 제공</div>
-        <div class="floor-feature">거실-주방 맞통풍 구조</div>
-        <div class="floor-feature">알파룸 제공으로 높은 활용도</div>
-        <div class="floor-feature">드레스룸 및 팬트리 공간 확보</div>
+    <div class="fp on" id="floor-84A">
+      <div class="fp-layout">
+        <div class="fp-img"><img src="image/교육_4-1.jpg" alt="84A 평면도" onerror="this.style.background='rgba(255,255,255,.06)'"/></div>
+        <div>
+          <div class="fp-specs">
+            <div class="fp-spec"><div class="fp-spec-lbl">전용면적</div><div class="fp-spec-val">84.99㎡</div></div>
+            <div class="fp-spec"><div class="fp-spec-lbl">공급면적</div><div class="fp-spec-val">112.70㎡</div></div>
+            <div class="fp-spec"><div class="fp-spec-lbl">세대수</div><div class="fp-spec-val">563세대</div></div>
+          </div>
+          <div class="fp-feats">
+            <div class="fp-feat">ㄷ자형 주방의 넓은 수납공간 제공</div>
+            <div class="fp-feat">거실-주방 맞통풍 구조</div>
+            <div class="fp-feat">알파룸 제공으로 높은 활용도</div>
+            <div class="fp-feat">드레스룸 및 팬트리 공간 확보</div>
+          </div>
+        </div>
       </div>
     </div>
-
     <!-- 84B -->
-    <div class="floor-panel" id="floor-84B">
-      <div class="floor-image">
-        <img src="image/교육_5-1.jpg" alt="84B 평면도"
-             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)\'><div class=\'img-placeholder-icon\'>📐</div><div>84B 평면도</div></div>'" />
-      </div>
-      <div class="floor-info">
-        <div class="floor-info-item"><div class="floor-info-label">전용면적</div><div class="floor-info-value">84.98㎡</div></div>
-        <div class="floor-info-item"><div class="floor-info-label">공급면적</div><div class="floor-info-value">112.92㎡</div></div>
-        <div class="floor-info-item"><div class="floor-info-label">세대수</div><div class="floor-info-value">167세대</div></div>
-      </div>
-      <div class="floor-features">
-        <div class="floor-feature">ㄱ자형 주방으로 효율적인 동선 배치</div>
-        <div class="floor-feature">거실·침실1·2·3 남향 위주 배치</div>
-        <div class="floor-feature">침실1 독립적 구조의 프라이빗 평면</div>
-        <div class="floor-feature">드레스룸 및 팬트리 공간 확보</div>
+    <div class="fp" id="floor-84B">
+      <div class="fp-layout">
+        <div class="fp-img"><img src="image/교육_5-1.jpg" alt="84B 평면도" onerror="this.style.background='rgba(255,255,255,.06)'"/></div>
+        <div>
+          <div class="fp-specs">
+            <div class="fp-spec"><div class="fp-spec-lbl">전용면적</div><div class="fp-spec-val">84.98㎡</div></div>
+            <div class="fp-spec"><div class="fp-spec-lbl">공급면적</div><div class="fp-spec-val">112.92㎡</div></div>
+            <div class="fp-spec"><div class="fp-spec-lbl">세대수</div><div class="fp-spec-val">167세대</div></div>
+          </div>
+          <div class="fp-feats">
+            <div class="fp-feat">ㄱ자형 주방으로 효율적인 동선 배치</div>
+            <div class="fp-feat">거실·침실1·2·3 남향 위주 배치</div>
+            <div class="fp-feat">침실1 독립적 구조의 프라이빗 평면</div>
+            <div class="fp-feat">드레스룸 및 팬트리 공간 확보</div>
+          </div>
+        </div>
       </div>
     </div>
-
     <!-- 101 -->
-    <div class="floor-panel" id="floor-101">
-      <div class="floor-image">
-        <img src="image/교육_6-1.jpg" alt="101㎡ 평면도"
-             onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\' style=\'background:rgba(255,255,255,.06);color:rgba(255,255,255,.3)\'><div class=\'img-placeholder-icon\'>📐</div><div>101㎡ 평면도</div></div>'" />
-      </div>
-      <div class="floor-info">
-        <div class="floor-info-item"><div class="floor-info-label">전용면적</div><div class="floor-info-value">101.98㎡</div></div>
-        <div class="floor-info-item"><div class="floor-info-label">공급면적</div><div class="floor-info-value">134.48㎡</div></div>
-        <div class="floor-info-item"><div class="floor-info-label">세대수</div><div class="floor-info-value">333세대</div></div>
-      </div>
-      <div class="floor-features">
-        <div class="floor-feature">ㄷ자형 주방의 넓은 수납공간 제공</div>
-        <div class="floor-feature">거실-주방 맞통풍 구조</div>
-        <div class="floor-feature">알파룸 제공으로 높은 활용도</div>
-        <div class="floor-feature">드레스룸 및 팬트리 공간 확보</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 분양 개요 ════════════════════════════════ -->
-  <section class="overview fade-in" id="overview">
-    <span class="section-eyebrow">사업 개요</span>
-    <h2 class="section-title serif">분양 정보</h2>
-
-    <div class="overview-image">
-      <img src="image/교육_2-1.jpg" alt="사업 개요 및 면적표"
-           onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'><div class=\'img-placeholder-icon\'>📋</div><div>교육_2-1.jpg</div></div>'" />
-    </div>
-
-    <div class="overview-table">
-      <div class="overview-row">
-        <div class="overview-key">위치</div>
-        <div class="overview-val">경기도 평택시 장안동 평택브레인시티 일반산업단지 6BL</div>
-      </div>
-      <div class="overview-row">
-        <div class="overview-key">용도지구</div>
-        <div class="overview-val">공동주택지구, 제3종 일반주거지역</div>
-      </div>
-      <div class="overview-row">
-        <div class="overview-key">규모</div>
-        <div class="overview-val">지하 2층 ~ 지상 35층 / 10개동 / 총 1,215세대</div>
-      </div>
-      <div class="overview-row">
-        <div class="overview-key">세대구성</div>
-        <div class="overview-val">84A(563) · 84B(167) · 101(333)</div>
-      </div>
-      <div class="overview-row">
-        <div class="overview-key">건폐율</div>
-        <div class="overview-val">14.80%</div>
-      </div>
-      <div class="overview-row">
-        <div class="overview-key">용적률</div>
-        <div class="overview-val">229.90%</div>
-      </div>
-      <div class="overview-row">
-        <div class="overview-key">주차</div>
-        <div class="overview-val">총 1,722대 (세대당 1.41대)</div>
-      </div>
-      <div class="overview-row">
-        <div class="overview-key">시행사</div>
-        <div class="overview-val">모아종합건설(주) · (주)로제비앙</div>
-      </div>
-      <div class="overview-row">
-        <div class="overview-key">시공사</div>
-        <div class="overview-val">모아엘가</div>
-      </div>
-      <div class="overview-row">
-        <div class="overview-key">입주예정</div>
-        <div class="overview-val">2028년 하반기 예정</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ 분양 일정 ══════════════════════════════════ -->
-  <section class="fade-in" style="background:var(--navy);padding:56px 24px;">
-    <span class="section-eyebrow" style="color:var(--gold);">분양 일정</span>
-    <h2 class="section-title on-dark serif">청약 전, 지금이<br>가장 좋은 타이밍입니다</h2>
-    <p class="section-desc on-dark" style="margin-bottom:28px;">선착순 동호지정 · 방문예약 고객 우선 배정</p>
-
-    <div style="display:flex;flex-direction:column;gap:0;border-radius:var(--radius-md);overflow:hidden;border:1px solid rgba(255,255,255,.12);">
-      <div style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:rgba(201,168,76,.15);border-bottom:1px solid rgba(255,255,255,.08);">
-        <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--navy);font-size:15px;flex-shrink:0;">1</div>
+    <div class="fp" id="floor-101">
+      <div class="fp-layout">
+        <div class="fp-img"><img src="image/교육_6-1.jpg" alt="101㎡ 평면도" onerror="this.style.background='rgba(255,255,255,.06)'"/></div>
         <div>
-          <div style="font-size:13px;font-weight:700;color:var(--gold2);margin-bottom:2px;">방문 예약 등록</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.55);">지금 바로 — 담당자 1:1 배정</div>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);">
-        <div style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--white);font-size:15px;flex-shrink:0;">2</div>
-        <div>
-          <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:2px;">견본주택 방문 상담</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.55);">평택 브레인시티 분양홍보관 운영 중</div>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);">
-        <div style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--white);font-size:15px;flex-shrink:0;">3</div>
-        <div>
-          <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:2px;">선착순 동호지정</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.55);">방문예약 고객 우선 배정 · 잔여 세대 한정</div>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;gap:16px;padding:18px 20px;background:rgba(255,255,255,.04);">
-        <div style="width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--white);font-size:15px;flex-shrink:0;">4</div>
-        <div>
-          <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:2px;">계약 완료</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.55);">입주 예정 2028년 하반기</div>
+          <div class="fp-specs">
+            <div class="fp-spec"><div class="fp-spec-lbl">전용면적</div><div class="fp-spec-val">101.98㎡</div></div>
+            <div class="fp-spec"><div class="fp-spec-lbl">공급면적</div><div class="fp-spec-val">134.48㎡</div></div>
+            <div class="fp-spec"><div class="fp-spec-lbl">세대수</div><div class="fp-spec-val">333세대</div></div>
+          </div>
+          <div class="fp-feats">
+            <div class="fp-feat">ㄷ자형 주방의 넓은 수납공간 제공</div>
+            <div class="fp-feat">거실-주방 맞통풍 구조</div>
+            <div class="fp-feat">알파룸 제공으로 높은 활용도</div>
+            <div class="fp-feat">드레스룸 및 팬트리 공간 확보</div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div style="margin-top:20px;background:rgba(198,40,40,.15);border:1px solid rgba(198,40,40,.3);border-radius:var(--radius-md);padding:16px 20px;">
-      <div style="font-size:13px;font-weight:700;color:#FF8A80;margin-bottom:4px;">⚠️ 잔여 세대 소진 시 마감</div>
-      <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.65;">84A·84B·101 평형 잔여 세대 한정 진행 중입니다. 방문 예약 후 전담 상담사를 통해 정확한 현황을 확인하세요.</div>
-    </div>
-  </section>
-
-  <!-- ══ 방문 특별 혜택 ══════════════════════════════ -->
-  <section class="fade-in" style="background:var(--gold-bg);padding:56px 24px;border-top:3px solid var(--gold);">
-    <span class="section-eyebrow">방문예약 고객 전용</span>
-    <h2 class="section-title serif">지금 예약하면<br>이런 혜택이 드려집니다</h2>
-
-    <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
-      <div style="background:var(--white);border-radius:var(--radius-md);padding:20px;display:flex;align-items:flex-start;gap:14px;box-shadow:var(--shadow-sm);border:1px solid rgba(201,168,76,.2);">
-        <div style="font-size:28px;flex-shrink:0;">🎁</div>
-        <div>
-          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">1:1 전담 상담사 배정</div>
-          <div style="font-size:13px;color:var(--gray500);line-height:1.6;">방문예약 고객 전용 전담 상담사가 배정되어 최적의 평형·층수·동호수를 안내드립니다.</div>
-        </div>
-      </div>
-      <div style="background:var(--white);border-radius:var(--radius-md);padding:20px;display:flex;align-items:flex-start;gap:14px;box-shadow:var(--shadow-sm);border:1px solid rgba(201,168,76,.2);">
-        <div style="font-size:28px;flex-shrink:0;">🅿️</div>
-        <div>
-          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">방문예약 고객 전용 주차 안내</div>
-          <div style="font-size:13px;color:var(--gray500);line-height:1.6;">사전 예약 고객에 한해 분양홍보관 전용 주차 구역을 별도 안내해 드립니다.</div>
-        </div>
-      </div>
-      <div style="background:var(--white);border-radius:var(--radius-md);padding:20px;display:flex;align-items:flex-start;gap:14px;box-shadow:var(--shadow-sm);border:1px solid rgba(201,168,76,.2);">
-        <div style="font-size:28px;flex-shrink:0;">📋</div>
-        <div>
-          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;">분양가 및 잔여 세대 우선 안내</div>
-          <div style="font-size:13px;color:var(--gray500);line-height:1.6;">방문예약 고객에게 실시간 잔여 세대 현황과 분양가 정보를 가장 먼저 안내드립니다.</div>
-        </div>
+<!-- ══ 분양 개요 ══════════════════ -->
+<section class="overview-sec sec" id="overview">
+  <div class="wrap">
+    <span class="eyebrow">사업 개요</span>
+    <h2 class="sec-title">분양 정보</h2>
+    <div class="ov-layout">
+      <div class="ov-img"><img src="image/교육_2-1.jpg" alt="사업 개요" onerror="this.style.background='#eee'"/></div>
+      <div class="ov-table">
+        <div class="ov-row"><div class="ov-key">위치</div><div class="ov-val">경기도 평택시 장안동 평택브레인시티 일반산업단지 6BL</div></div>
+        <div class="ov-row"><div class="ov-key">용도지구</div><div class="ov-val">공동주택지구, 제3종 일반주거지역</div></div>
+        <div class="ov-row"><div class="ov-key">규모</div><div class="ov-val">지하 2층 ~ 지상 35층 / 10개동 / 총 1,215세대</div></div>
+        <div class="ov-row"><div class="ov-key">세대구성</div><div class="ov-val">84A(563) · 84B(167) · 101(333)</div></div>
+        <div class="ov-row"><div class="ov-key">건폐율</div><div class="ov-val">14.80%</div></div>
+        <div class="ov-row"><div class="ov-key">용적률</div><div class="ov-val">229.90%</div></div>
+        <div class="ov-row"><div class="ov-key">주차</div><div class="ov-val">총 1,722대 (세대당 1.41대)</div></div>
+        <div class="ov-row"><div class="ov-key">시행사</div><div class="ov-val">모아종합건설(주) · (주)로제비앙</div></div>
+        <div class="ov-row"><div class="ov-key">시공사</div><div class="ov-val">모아엘가</div></div>
+        <div class="ov-row"><div class="ov-key">입주예정</div><div class="ov-val">2028년 하반기 예정</div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══ FAQ ══════════════════════════════════════ -->
-  <section class="fade-in" style="background:var(--gray50);padding:56px 24px;">
-    <span class="section-eyebrow">자주 묻는 질문</span>
-    <h2 class="section-title serif">궁금한 점이 있으신가요?</h2>
-
-    <div style="display:flex;flex-direction:column;gap:10px;margin-top:24px;" id="faq-list">
-
-      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
-        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
-          <span>분양가는 얼마인가요?</span>
-          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
-        </button>
-        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
-          <div style="padding-top:14px;">분양가는 방문 상담 시 정확한 금액을 안내드립니다. 평형·층수·동호수에 따라 차이가 있으며, 전담 상담사가 1:1로 최적의 조건을 안내해 드립니다. 아래 폼으로 방문 예약을 남겨주시면 빠르게 연락드립니다.</div>
-        </div>
-      </div>
-
-      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
-        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
-          <span>청약 없이 계약할 수 있나요?</span>
-          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
-        </button>
-        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
-          <div style="padding-top:14px;">네, 가능합니다. 현재 선착순 동호지정 방식으로 진행 중으로, 청약통장 없이 방문 계약이 가능합니다. 잔여 세대 한정으로 조기 마감될 수 있으니 빠른 방문 예약을 권장드립니다.</div>
-        </div>
-      </div>
-
-      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
-        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
-          <span>병원은 언제 개원하나요?</span>
-          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
-        </button>
-        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
-          <div style="padding-top:14px;">아주대학교병원 평택브레인시티 캠퍼스는 2028년 착공, 2030년 개원을 목표로 하고 있습니다. 500병상 규모의 AI 스마트 종합병원으로, 단지 입주 시점과 맞물려 의료 인프라가 완성됩니다. (예정사항으로 일정은 변경될 수 있습니다)</div>
-        </div>
-      </div>
-
-      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
-        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
-          <span>견본주택(분양홍보관) 위치가 어디인가요?</span>
-          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
-        </button>
-        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
-          <div style="padding-top:14px;">평택 브레인시티 내 분양홍보관을 운영 중입니다. 정확한 위치와 운영 시간은 방문 예약 후 담당자가 안내드립니다. 방문예약 고객에 한해 전용 주차 안내도 제공됩니다.</div>
-        </div>
-      </div>
-
-      <div class="faq-item" style="background:var(--white);border:1px solid var(--gray100);border-radius:var(--radius-md);overflow:hidden;">
-        <button class="faq-q" style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--navy);text-align:left;gap:12px;">
-          <span>GTX-C 개통은 언제인가요?</span>
-          <span class="faq-icon" style="font-size:18px;flex-shrink:0;transition:transform .3s;">＋</span>
-        </button>
-        <div class="faq-a" style="display:none;padding:0 20px 18px;font-size:13px;color:var(--gray500);line-height:1.8;border-top:1px solid var(--gray100);">
-          <div style="padding-top:14px;">GTX-C 노선은 예정사항으로 공식 발표 일정을 기준으로 안내드립니다. 현재 KTX(2028년 예정)·SRT·지하철 1호선이 이미 운행 중으로 광역 교통 접근성이 우수합니다. 동부화성고속도로 또한 2026년 9월 개통 예정입니다. (예정사항으로 변경될 수 있습니다)</div>
-        </div>
-      </div>
-
+<!-- ══ 분양 일정 ══════════════════ -->
+<section class="schedule-sec">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold)">분양 일정</span>
+    <h2 class="sec-title wh">청약 전, 지금이<br>가장 좋은 타이밍입니다</h2>
+    <p class="sec-desc wh">선착순 동호지정 · 방문예약 고객 우선 배정</p>
+    <div class="sch-steps">
+      <div class="sch-step hl"><div class="sch-n">1</div><div><div class="sch-title">방문 예약 등록</div><div class="sch-desc">지금 바로 — 담당자 1:1 배정</div></div></div>
+      <div class="sch-step"><div class="sch-n">2</div><div><div class="sch-title">견본주택 방문 상담</div><div class="sch-desc">평택 브레인시티 분양홍보관 운영 중</div></div></div>
+      <div class="sch-step"><div class="sch-n">3</div><div><div class="sch-title">선착순 동호지정</div><div class="sch-desc">방문예약 고객 우선 배정 · 잔여 세대 한정</div></div></div>
+      <div class="sch-step"><div class="sch-n">4</div><div><div class="sch-title">계약 완료</div><div class="sch-desc">입주 예정 2028년 하반기</div></div></div>
     </div>
-  </section>
+    <div class="sch-warn"><strong>⚠️ 잔여 세대 소진 시 마감</strong><br>84A·84B·101 평형 잔여 세대 한정 진행 중입니다. 방문 예약 후 전담 상담사를 통해 정확한 현황을 확인하세요.</div>
+  </div>
+</section>
 
-  <!-- ══ 상담 등록 폼 ════════════════════════════ -->
-  <section class="register-section fade-in" id="register">
-    <span class="section-eyebrow">방문 예약 고객 등록</span>
-    <h2 class="section-title serif">지금 등록하면<br>담당자가 1:1 안내합니다</h2>
-    <p class="section-desc" style="margin-bottom: 28px;">
-      30초 입력으로 전담 상담사 배정 · 방문예약 혜택 즉시 적용
-    </p>
+<!-- ══ 방문 혜택 ══════════════════ -->
+<section class="benefit-sec">
+  <div class="wrap">
+    <span class="eyebrow">방문예약 고객 전용</span>
+    <h2 class="sec-title">지금 예약하면<br>이런 혜택이 드려집니다</h2>
+    <div class="benefit-cards">
+      <div class="bc"><div class="bc-ico">🎁</div><div><div class="bc-title">1:1 전담 상담사 배정</div><div class="bc-desc">방문예약 고객 전용 전담 상담사가 배정되어 최적의 평형·층수·동호수를 안내드립니다.</div></div></div>
+      <div class="bc"><div class="bc-ico">🅿️</div><div><div class="bc-title">방문예약 고객 전용 주차 안내</div><div class="bc-desc">사전 예약 고객에 한해 분양홍보관 전용 주차 구역을 별도 안내해 드립니다.</div></div></div>
+      <div class="bc"><div class="bc-ico">📋</div><div><div class="bc-title">분양가 및 잔여 세대 우선 안내</div><div class="bc-desc">방문예약 고객에게 실시간 잔여 세대 현황과 분양가 정보를 가장 먼저 안내드립니다.</div></div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="register-box">
-      <div class="register-title">상담 신청 등록</div>
-      <div class="register-sub">담당자를 배정하여 순차적으로 안내드립니다</div>
+<!-- ══ FAQ ══════════════════════ -->
+<section class="faq-sec sec">
+  <div class="wrap">
+    <span class="eyebrow">자주 묻는 질문</span>
+    <h2 class="sec-title">궁금한 점이 있으신가요?</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q">분양가는 얼마인가요?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-a-inner">분양가는 방문 상담 시 정확한 금액을 안내드립니다. 평형·층수·동호수에 따라 차이가 있으며, 전담 상담사가 1:1로 최적의 조건을 안내해 드립니다.</div></div></div>
+      <div class="faq-item"><button class="faq-q">청약 없이 계약할 수 있나요?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-a-inner">네, 가능합니다. 현재 선착순 동호지정 방식으로 진행 중으로, 청약통장 없이 방문 계약이 가능합니다. 잔여 세대 한정으로 조기 마감될 수 있으니 빠른 방문 예약을 권장드립니다.</div></div></div>
+      <div class="faq-item"><button class="faq-q">병원은 언제 개원하나요?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-a-inner">아주대학교병원 평택브레인시티 캠퍼스는 2028년 착공, 2030년 개원을 목표로 하고 있습니다. (예정사항으로 일정은 변경될 수 있습니다)</div></div></div>
+      <div class="faq-item"><button class="faq-q">견본주택(분양홍보관) 위치가 어디인가요?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-a-inner">평택 브레인시티 내 분양홍보관을 운영 중입니다. 정확한 위치와 운영 시간은 방문 예약 후 담당자가 안내드립니다.</div></div></div>
+      <div class="faq-item"><button class="faq-q">GTX-C 개통은 언제인가요?<span class="faq-ico">+</span></button><div class="faq-a"><div class="faq-a-inner">GTX-C 노선은 예정사항으로 공식 발표 일정을 기준으로 안내드립니다. 현재 KTX(2028년 예정)·SRT·지하철 1호선이 이미 운행 중으로 광역 교통 접근성이 우수합니다. (예정사항으로 변경될 수 있습니다)</div></div></div>
+    </div>
+  </div>
+</section>
 
-      <form id="register-form" novalidate>
-
-        <!-- 이름 -->
+<!-- ══ 상담 폼 ════════════════════ -->
+<section class="form-sec sec" id="form">
+  <div class="wrap">
+    <span class="eyebrow">방문 예약 고객 등록</span>
+    <h2 class="sec-title" style="text-align:center">지금 등록하면<br>담당자가 1:1 안내합니다</h2>
+    <p class="sec-desc" style="text-align:center">30초 입력으로 전담 상담사 배정 · 방문예약 혜택 즉시 적용</p>
+    <div class="form-box">
+      <form id="reg-form" novalidate>
         <div class="form-group">
           <label class="form-label" for="inp-name">이름 <span class="req">*</span></label>
-          <input type="text" id="inp-name" class="form-input" placeholder="이름을 입력해 주세요" autocomplete="name" />
-          <div class="form-error-msg" id="err-name">이름을 입력해 주세요</div>
+          <input type="text" id="inp-name" class="form-input" placeholder="이름을 입력해 주세요" autocomplete="name"/>
+          <div class="err-msg" id="err-name">이름을 입력해 주세요</div>
         </div>
-
-        <!-- 연락처 -->
         <div class="form-group">
           <label class="form-label" for="inp-phone">연락처 <span class="req">*</span></label>
-          <input type="tel" id="inp-phone" class="form-input" placeholder="010-0000-0000" autocomplete="tel" inputmode="numeric" maxlength="13" />
-          <div class="form-error-msg" id="err-phone">올바른 연락처를 입력해 주세요 (숫자 11자리)</div>
+          <input type="tel" id="inp-phone" class="form-input" placeholder="010-0000-0000" inputmode="numeric" maxlength="13"/>
+          <div class="err-msg" id="err-phone">올바른 연락처를 입력해 주세요</div>
         </div>
-
-        <!-- 관심 타입 -->
         <div class="form-group">
-          <label class="form-label">관심 평형 <span style="color:var(--gray400);font-weight:400;">(선택)</span></label>
-          <div class="unit-buttons" id="unit-buttons">
-            <button type="button" class="unit-btn" data-unit="84A">84A</button>
-            <button type="button" class="unit-btn" data-unit="84B">84B</button>
-            <button type="button" class="unit-btn" data-unit="101">101</button>
+          <label class="form-label">관심 평형 <span style="color:var(--gray300);font-weight:400">(선택)</span></label>
+          <div class="unit-btns">
+            <button type="button" class="ub" data-unit="84A">84A</button>
+            <button type="button" class="ub" data-unit="84B">84B</button>
+            <button type="button" class="ub" data-unit="101">101</button>
           </div>
-          <input type="hidden" id="inp-unit" value="" />
+          <input type="hidden" id="inp-unit" value=""/>
         </div>
-
-        <!-- 방문 희망일 -->
         <div class="form-group">
-          <label class="form-label">방문 희망일시 <span style="color:var(--gray400);font-weight:400;">(선택)</span></label>
+          <label class="form-label">방문 희망일시 <span style="color:var(--gray300);font-weight:400">(선택)</span></label>
           <div class="form-row">
-            <input type="date" id="inp-date" class="form-input" />
-            <select id="inp-time" class="visit-time-select">
+            <input type="date" id="inp-date" class="form-input"/>
+            <select id="inp-time" class="time-sel">
               <option value="">시간</option>
-              <option value="09:00">09:00</option>
-              <option value="09:30">09:30</option>
-              <option value="10:00">10:00</option>
-              <option value="10:30">10:30</option>
-              <option value="11:00">11:00</option>
-              <option value="11:30">11:30</option>
-              <option value="13:00">13:00</option>
-              <option value="13:30">13:30</option>
-              <option value="14:00">14:00</option>
-              <option value="14:30">14:30</option>
-              <option value="15:00">15:00</option>
-              <option value="15:30">15:30</option>
-              <option value="16:00">16:00</option>
-              <option value="16:30">16:30</option>
-              <option value="17:00">17:00</option>
+              <option>09:00</option><option>09:30</option><option>10:00</option>
+              <option>10:30</option><option>11:00</option><option>11:30</option>
+              <option>13:00</option><option>13:30</option><option>14:00</option>
+              <option>14:30</option><option>15:00</option><option>15:30</option>
+              <option>16:00</option><option>16:30</option><option>17:00</option>
             </select>
           </div>
         </div>
-
-        <!-- 개인정보 동의 -->
         <div class="agree-row">
-          <input type="checkbox" id="inp-agree" class="agree-check" />
-          <label class="agree-text" for="inp-agree">
-            개인정보 수집·이용에 동의합니다. 수집된 정보(이름, 연락처)는 분양 상담 목적으로만 사용되며, 관련 법령에 따라 안전하게 보관됩니다.
-            <a href="#">개인정보처리방침 보기</a>
-          </label>
+          <input type="checkbox" id="inp-agree" class="agree-chk"/>
+          <label class="agree-txt" for="inp-agree">개인정보 수집·이용에 동의합니다. 수집된 정보(이름, 연락처)는 분양 상담 목적으로만 사용되며, 관련 법령에 따라 안전하게 보관됩니다. <a href="#">개인정보처리방침 보기</a></label>
         </div>
-        <div class="form-error-msg" id="err-agree">개인정보 수집·이용에 동의해 주세요</div>
-
-        <button type="submit" id="submit-btn" class="btn btn-navy" style="font-size:17px;padding:18px;background:var(--navy);letter-spacing:-.3px;">
-          무료 방문 예약 등록하기 →
-        </button>
-        <p style="text-align:center;font-size:11px;color:var(--gray400);margin-top:10px;">수집된 정보는 분양 상담 외 목적으로 절대 사용하지 않습니다</p>
+        <div class="err-msg" id="err-agree">개인정보 수집·이용에 동의해 주세요</div>
+        <button type="submit" id="submit-btn" class="btn btn-navy btn-full" style="font-size:17px;padding:19px;border-radius:14px;margin-top:8px">무료 방문 예약 등록하기 →</button>
+        <p class="submit-note">수집된 정보는 분양 상담 외 목적으로 절대 사용하지 않습니다</p>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══ 최종 CTA ═══════════════════════════════ -->
-  <section class="final-cta fade-in">
-    <span class="section-eyebrow">상담 안내</span>
-    <h2 class="section-title on-dark serif">
-      지금 바로<br>상담을 시작하세요
-    </h2>
-    <p class="section-desc on-dark">
-      선착순 동호지정 — 방문 예약 고객 우선 배정
-    </p>
-
-    <div class="contact-rows">
-      <div class="contact-row">
-        <div class="contact-icon">📍</div>
-        <span id="footer-addr"></span>
-      </div>
-      <div class="contact-row">
-        <div class="contact-icon">📞</div>
-        <span id="footer-phone"></span>
-      </div>
+<!-- ══ 최종 CTA ══════════════════ -->
+<section class="cta-sec">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold)">상담 안내</span>
+    <h2 class="sec-title wh">지금 바로<br>상담을 시작하세요</h2>
+    <p class="sec-desc wh">선착순 동호지정 — 방문 예약 고객 우선 배정</p>
+    <div class="cta-contact">
+      <div class="cta-row"><div class="cta-ico">📍</div><span id="cta-addr"></span></div>
+      <div class="cta-row"><div class="cta-ico">📞</div><span id="cta-phone-txt"></span></div>
     </div>
-
     <div class="cta-btns">
-      <a id="cta-phone" class="btn btn-phone">📞 전화 상담하기</a>
-      <a href="#register" class="btn btn-outline">방문 예약 등록하기</a>
+      <a id="cta-tel" class="btn btn-gold btn-lg">📞 전화 상담하기</a>
+      <a href="#form" class="btn btn-outline-w btn-lg">방문 예약 등록하기</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ══ 푸터 ══════════════════════════════════ -->
-  <footer>
-    <div class="footer-logo"><span>브레인시티 메디스파크</span><br>로제비앙 | 모아엘가</div>
-
-    <div class="footer-rows">
-      <div class="footer-row"><span class="footer-key">위치</span><span>경기도 평택시 장안동 브레인시티 6BL</span></div>
-      <div class="footer-row"><span class="footer-key">대표번호</span><span id="foot-phone"></span></div>
-      <div class="footer-row"><span class="footer-key">개발</span><span id="foot-dev"></span></div>
+<!-- ══ 푸터 ══════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-logo"><span>브레인시티 메디스파크</span><br>로제비앙 | 모아엘가</div>
+    <div class="foot-rows">
+      <div class="foot-row"><span class="foot-key">위치</span><span>경기도 평택시 장안동 브레인시티 6BL</span></div>
+      <div class="foot-row"><span class="foot-key">대표번호</span><span id="foot-phone"></span></div>
+      <div class="foot-row"><span class="foot-key">개발</span><span id="foot-dev"></span></div>
     </div>
-
-    <hr class="footer-divider" />
-
-    <div class="footer-legal">
-      본 홍보물의 이미지, 조감도, 배치도, 평면도 등은 예정사항으로 향후 관계기관의 인·허가, 시공 여건, 사업 진행에 따라 변경될 수 있으므로 참고자료로만 활용하시기 바랍니다.<br><br>
-      ※ 본 홈페이지는 분양 홍보를 위해 제작된 것으로 실제 계약 내용과 다를 수 있으며, 청약 전 입주자모집공고를 반드시 확인하시기 바랍니다.<br><br>
-      ※ 개인정보 수집·이용 목적: 분양 상담 및 방문 예약 안내 / 보유기간: 상담 완료 후 즉시 파기 / 문의: <span id="footer-legal-phone"></span>
+    <hr class="foot-div"/>
+    <div class="foot-legal">
+      본 홍보물의 이미지, 조감도, 배치도, 평면도 등은 예정사항으로 향후 관계기관의 인·허가, 시공 여건, 사업 진행에 따라 변경될 수 있으므로 참고자료로만 활용하시기 바랍니다.<br>
+      ※ 본 홈페이지는 분양 홍보를 위해 제작된 것으로 실제 계약 내용과 다를 수 있으며, 청약 전 입주자모집공고를 반드시 확인하시기 바랍니다.<br>
+      ※ 개인정보 수집·이용 목적: 분양 상담 및 방문 예약 안내 / 보유기간: 상담 완료 후 즉시 파기 / 문의: <span id="foot-legal-phone"></span>
     </div>
+    <div class="foot-copy" id="foot-copy"></div>
+  </div>
+</footer>
 
-    <div class="footer-copy" id="foot-copy"></div>
-  </footer>
-
-</div><!-- /page-wrap -->
-
-<!-- ══ 플로팅 버튼 ════════════════════════════ -->
-<div id="float-btns">
-  <a id="float-phone" class="float-btn float-btn-phone">📞 전화 상담</a>
-  <a href="#register" class="float-btn float-btn-kakao">📋 방문 예약</a>
+<!-- ══ 플로팅 버튼 ════════════════ -->
+<div id="float">
+  <a id="fl-tel" class="fb fb-call">📞 전화 상담</a>
+  <a href="#form" class="fb fb-res">📋 방문 예약</a>
 </div>
 
-<!-- ══ 완료 팝업 ═════════════════════════════ -->
-<div id="success-popup" role="dialog" aria-modal="true">
+<!-- ══ 성공 팝업 ══════════════════ -->
+<div id="popup">
   <div class="popup-box">
-    <div class="popup-icon">✅</div>
+    <div class="popup-ico">✅</div>
     <div class="popup-title">등록이 확인되었습니다</div>
-    <div class="popup-desc">
-      담당자를 배정하여<br>순차적으로 안내드립니다.<br><br>
-      문의: <strong id="popup-phone"></strong>
-    </div>
-    <button class="popup-close" id="popup-close-btn">확인</button>
+    <div class="popup-desc">담당자를 배정하여<br>순차적으로 안내드립니다.<br><br>문의: <strong id="popup-phone"></strong></div>
+    <button class="popup-close" id="popup-close">확인</button>
   </div>
 </div>
 
 <script>
-/* ═══════════════════════════════════════════════
-   초기화 — 동적 콘텐츠 삽입
-═══════════════════════════════════════════════ */
-(function() {
-  const tel = 'tel:' + SITE.phone;
-
-  document.getElementById('header-phone-num').textContent = SITE.phone;
-  document.getElementById('header-phone').href = tel;
-  document.getElementById('hero-phone').href   = tel;
-  document.getElementById('cta-phone').href    = tel;
-  document.getElementById('float-phone').href  = tel;
-
-  document.getElementById('footer-addr').textContent  = SITE.address;
-  document.getElementById('footer-phone').textContent = SITE.phone;
-  document.getElementById('foot-phone').textContent   = SITE.phone;
-  document.getElementById('foot-dev').textContent     = SITE.developer;
-  document.getElementById('foot-copy').textContent    = '© ' + new Date().getFullYear() + ' ' + SITE.name + '. All rights reserved. | 개발: ' + SITE.developer;
-  const lp = document.getElementById('footer-legal-phone');
-  if (lp) lp.textContent = SITE.phone;
-  document.getElementById('popup-phone').textContent  = SITE.phone;
+/* ── 초기화 ── */
+(function(){
+  const tel='tel:'+SITE.phone;
+  ['hdr-tel','hero-tel','cta-tel','fl-tel'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.href=tel;
+  });
+  document.getElementById('hdr-num').textContent=SITE.phone;
+  document.getElementById('cta-addr').textContent=SITE.address;
+  document.getElementById('cta-phone-txt').textContent=SITE.phone;
+  document.getElementById('foot-phone').textContent=SITE.phone;
+  document.getElementById('foot-dev').textContent=SITE.developer;
+  document.getElementById('popup-phone').textContent=SITE.phone;
+  document.getElementById('foot-copy').textContent='© '+new Date().getFullYear()+' 브레인시티 메디스파크. All rights reserved. | 개발: '+SITE.developer;
+  const lp=document.getElementById('foot-legal-phone');
+  if(lp) lp.textContent=SITE.phone;
 })();
 
-/* ═══════════════════════════════════════════════
-   긴급성 배너 — 랜덤 문의 수
-═══════════════════════════════════════════════ */
-(function() {
-  const base = 87;
-  const rand = Math.floor(Math.random() * 30) + base;
-  document.getElementById('urgency-count').textContent = rand;
-})();
+/* ── 긴급 배너 ── */
+document.getElementById('urg-n').textContent=Math.floor(Math.random()*30)+87;
 
-/* ═══════════════════════════════════════════════
-   입지 탭 전환
-═══════════════════════════════════════════════ */
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    this.classList.add('active');
-    document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+/* ── 입지 탭 ── */
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));
+    document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('on'));
+    this.classList.add('on');
+    document.getElementById('tab-'+this.dataset.tab).classList.add('on');
   });
 });
 
-/* ═══════════════════════════════════════════════
-   평면도 탭 전환
-═══════════════════════════════════════════════ */
-document.querySelectorAll('.floor-tab-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.floor-tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.floor-panel').forEach(p => p.classList.remove('active'));
-    this.classList.add('active');
-    document.getElementById('floor-' + this.dataset.floor).classList.add('active');
+/* ── 평면도 탭 ── */
+document.querySelectorAll('.ft').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.ft').forEach(b=>b.classList.remove('on'));
+    document.querySelectorAll('.fp').forEach(p=>p.classList.remove('on'));
+    this.classList.add('on');
+    document.getElementById('floor-'+this.dataset.floor).classList.add('on');
   });
 });
 
-/* ═══════════════════════════════════════════════
-   평형 선택 버튼
-═══════════════════════════════════════════════ */
-document.querySelectorAll('.unit-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('selected'));
-    this.classList.add('selected');
-    document.getElementById('inp-unit').value = this.dataset.unit;
+/* ── 평형 선택 ── */
+document.querySelectorAll('.ub').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.ub').forEach(b=>b.classList.remove('on'));
+    this.classList.add('on');
+    document.getElementById('inp-unit').value=this.dataset.unit;
   });
 });
 
-/* ═══════════════════════════════════════════════
-   연락처 자동 하이픈 포맷
-═══════════════════════════════════════════════ */
-document.getElementById('inp-phone').addEventListener('input', function() {
-  let v = this.value.replace(/\D/g, '').substring(0, 11);
-  if (v.length >= 8)      v = v.substring(0,3) + '-' + v.substring(3,7) + '-' + v.substring(7);
-  else if (v.length >= 4) v = v.substring(0,3) + '-' + v.substring(3);
-  this.value = v;
+/* ── 연락처 자동 하이픈 ── */
+document.getElementById('inp-phone').addEventListener('input',function(){
+  let v=this.value.replace(/\D/g,'').substring(0,11);
+  if(v.length>=8) v=v.substring(0,3)+'-'+v.substring(3,7)+'-'+v.substring(7);
+  else if(v.length>=4) v=v.substring(0,3)+'-'+v.substring(3);
+  this.value=v;
 });
 
-/* ═══════════════════════════════════════════════
-   폼 유효성 검사
-═══════════════════════════════════════════════ */
-function validateForm() {
-  let ok = true;
+/* ── FAQ 아코디언 ── */
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    const item=this.closest('.faq-item');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.display='none';
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      item.querySelector('.faq-a').style.display='block';
+    }
+  });
+});
 
-  const name  = document.getElementById('inp-name').value.trim();
-  const phone = document.getElementById('inp-phone').value.replace(/\D/g,'');
-  const agree = document.getElementById('inp-agree').checked;
-
-  // 이름
-  const errName = document.getElementById('err-name');
-  if (!name) {
-    document.getElementById('inp-name').classList.add('error');
-    errName.style.display = 'block'; ok = false;
-  } else {
-    document.getElementById('inp-name').classList.remove('error');
-    errName.style.display = 'none';
-  }
-
-  // 연락처
-  const errPhone = document.getElementById('err-phone');
-  if (phone.length < 10) {
-    document.getElementById('inp-phone').classList.add('error');
-    errPhone.style.display = 'block'; ok = false;
-  } else {
-    document.getElementById('inp-phone').classList.remove('error');
-    errPhone.style.display = 'none';
-  }
-
-  // 동의
-  const errAgree = document.getElementById('err-agree');
-  if (!agree) {
-    errAgree.style.display = 'block'; ok = false;
-  } else {
-    errAgree.style.display = 'none';
-  }
-
+/* ── 폼 유효성 ── */
+function validate(){
+  let ok=true;
+  const name=document.getElementById('inp-name').value.trim();
+  const phone=document.getElementById('inp-phone').value.replace(/\D/g,'');
+  const agree=document.getElementById('inp-agree').checked;
+  const en=document.getElementById('err-name');
+  const ep=document.getElementById('err-phone');
+  const ea=document.getElementById('err-agree');
+  if(!name){document.getElementById('inp-name').classList.add('err');en.style.display='block';ok=false;}
+  else{document.getElementById('inp-name').classList.remove('err');en.style.display='none';}
+  if(phone.length<10){document.getElementById('inp-phone').classList.add('err');ep.style.display='block';ok=false;}
+  else{document.getElementById('inp-phone').classList.remove('err');ep.style.display='none';}
+  if(!agree){ea.style.display='block';ok=false;}
+  else{ea.style.display='none';}
   return ok;
 }
 
-/* ═══════════════════════════════════════════════
-   폼 제출 → 앱스크립트 → 구글 시트 저장
-   개발자: 이정임 (서버에서 자동 삽입)
-═══════════════════════════════════════════════ */
-document.getElementById('register-form').addEventListener('submit', async function(e) {
+/* ── 폼 제출 ── */
+document.getElementById('reg-form').addEventListener('submit',async function(e){
   e.preventDefault();
-  if (!validateForm()) return;
-
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = true;
-  btn.textContent = '등록 중...';
-
-  const date = document.getElementById('inp-date').value;
-  const time = document.getElementById('inp-time').value;
-  const visitDate = (date && time) ? date + ' ' + time
-                  : date           ? date
-                  : '미정';
-
-  const payload = {
-    name:      document.getElementById('inp-name').value.trim(),
-    phone:     document.getElementById('inp-phone').value.trim(),
-    unitType:  document.getElementById('inp-unit').value || '미정',
-    visitDate: visitDate
-    // ※ developer("이정임")는 서버(Code.gs)에서 자동 삽입 — 클라이언트에서 전송 불필요
+  if(!validate()) return;
+  const btn=document.getElementById('submit-btn');
+  btn.disabled=true; btn.textContent='등록 중...';
+  const date=document.getElementById('inp-date').value;
+  const time=document.getElementById('inp-time').value;
+  const visitDate=(date&&time)?date+' '+time:date?date:'미정';
+  const payload={
+    name:document.getElementById('inp-name').value.trim(),
+    phone:document.getElementById('inp-phone').value.trim(),
+    unitType:document.getElementById('inp-unit').value||'미정',
+    visitDate
   };
-
-  try {
-    // CORS 이슈 방지를 위해 no-cors 모드 사용
-    // (no-cors 사용 시 응답 본문을 읽을 수 없으므로 무조건 성공 처리)
-    await fetch(APPS_SCRIPT_URL, {
-      method:  'POST',
-      mode:    'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
-      body:    JSON.stringify(payload)
-    });
-
-    // 성공 처리
-    document.getElementById('register-form').reset();
-    document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('selected'));
-    document.getElementById('inp-unit').value = '';
-    document.getElementById('success-popup').classList.add('show');
-
-  } catch(err) {
-    alert('등록 중 오류가 발생했습니다.\n전화로 문의해 주세요: ' + SITE.phone);
-  } finally {
-    btn.disabled = false;
-    btn.textContent = '등록하기 →';
+  try{
+    await fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});
+    document.getElementById('reg-form').reset();
+    document.querySelectorAll('.ub').forEach(b=>b.classList.remove('on'));
+    document.getElementById('inp-unit').value='';
+    document.getElementById('popup').classList.add('show');
+  }catch(err){
+    alert('등록 중 오류가 발생했습니다.\n전화로 문의해 주세요: '+SITE.phone);
+  }finally{
+    btn.disabled=false; btn.textContent='무료 방문 예약 등록하기 →';
   }
 });
 
-/* ═══════════════════════════════════════════════
-   완료 팝업 닫기
-═══════════════════════════════════════════════ */
-document.getElementById('popup-close-btn').addEventListener('click', function() {
-  document.getElementById('success-popup').classList.remove('show');
-});
-document.getElementById('success-popup').addEventListener('click', function(e) {
-  if (e.target === this) this.classList.remove('show');
-});
+/* ── 팝업 닫기 ── */
+document.getElementById('popup-close').addEventListener('click',()=>document.getElementById('popup').classList.remove('show'));
+document.getElementById('popup').addEventListener('click',function(e){if(e.target===this)this.classList.remove('show');});
 
-/* ═══════════════════════════════════════════════
-   플로팅 버튼 — 스크롤 300px 후 등장
-═══════════════════════════════════════════════ */
-const floatBtns = document.getElementById('float-btns');
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 300) floatBtns.classList.add('show');
-  else floatBtns.classList.remove('show');
-}, { passive: true });
+/* ── 플로팅 버튼 ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('float').classList.toggle('show',window.scrollY>300);
+},{passive:true});
 
-/* ═══════════════════════════════════════════════
-   FAQ 아코디언
-═══════════════════════════════════════════════ */
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const item = this.closest('.faq-item');
-    const ans  = item.querySelector('.faq-a');
-    const icon = this.querySelector('.faq-icon');
-    const open = ans.style.display === 'block';
-    document.querySelectorAll('.faq-a').forEach(a => a.style.display = 'none');
-    document.querySelectorAll('.faq-icon').forEach(i => { i.textContent = '＋'; i.style.transform = ''; });
-    if (!open) {
-      ans.style.display = 'block';
-      icon.textContent = '－';
-      icon.style.transform = 'rotate(0deg)';
-    }
-  });
+/* ── 스크롤 fade-in ── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';obs.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.cx,.bc,.mc,.tp,.ov-table,.faq-item,.sch-step').forEach(el=>{
+  el.style.cssText+='opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease';
+  obs.observe(el);
 });
-
-/* ═══════════════════════════════════════════════
-   스크롤 fade-in 애니메이션
-═══════════════════════════════════════════════ */
-const fadeEls = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-fadeEls.forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>

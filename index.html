@@ -53,7 +53,7 @@
     .serif { font-family: 'Noto Serif KR', 'Apple Myungjo', Georgia, serif; }
 
     .page-wrap {
-      max-width: 480px;
+      max-width: 100%;
       margin: 0 auto;
       background: var(--white);
       min-height: 100vh;
@@ -621,7 +621,7 @@
     ═══════════════════════════════════════════════ */
     #float-btns {
       position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
-      width: 100%; max-width: 480px;
+      width: 100%; max-width: 100%;
       display: flex; gap: 0;
       z-index: 300;
       opacity: 0; pointer-events: none;
@@ -673,11 +673,132 @@
 
     .footer-copy { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,.18); }
 
-    /* ─── 반응형: 480px 초과 ─────────────────────── */
-    @media (min-width: 481px) {
+    /* ═══════════════════════════════════════════════
+       반응형 — 태블릿 (768px+)
+    ═══════════════════════════════════════════════ */
+    @media (min-width: 768px) {
+      section { padding: 72px 48px; }
+
+      .hero-title   { font-size: 38px; }
+      .section-title{ font-size: 32px; }
+
+      .stats-bar {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .medical-cards {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+      }
+
+      .tab-image { height: 280px; }
+
+      .complex-cards {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+      }
+      .complex-card:last-child { grid-column: 1 / -1; }
+
+      .floor-image { height: 380px; }
+
+      .register-box { padding: 40px 48px; }
+      .form-group   { max-width: 560px; }
+      .unit-buttons { gap: 10px; }
+      .unit-btn     { padding: 11px 22px; font-size: 14px; }
+
+      #float-btns { max-width: 768px; }
+    }
+
+    /* ═══════════════════════════════════════════════
+       반응형 — 데스크톱 (1024px+)
+    ═══════════════════════════════════════════════ */
+    @media (min-width: 1024px) {
       body { background: #D0D5E0; }
-      .page-wrap { box-shadow: 0 0 80px rgba(0,0,0,.18); }
-      #float-btns { border-radius: 0; }
+
+      #site-header { padding: 0 60px; }
+      .header-inner{ height: 70px; }
+      .header-logo { font-size: 18px; }
+      .header-phone{ font-size: 15px; padding: 10px 20px; }
+      .header-nav a { font-size: 13px; padding: 14px 18px; }
+
+      section { padding: 88px 80px; }
+
+      /* Hero — 좌우 2분할 */
+      .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+      .hero-image { height: 100%; }
+      .hero-content { padding: 64px 60px; display: flex; flex-direction: column; justify-content: center; }
+      .hero-title { font-size: 44px; }
+      .hero-btns { flex-direction: row; flex-wrap: wrap; }
+      .hero-btns .btn { width: auto; min-width: 200px; }
+
+      /* 수치 배너 4열 유지 */
+      .stats-bar { padding: 32px 80px; }
+      .stat-num  { font-size: 28px; }
+
+      /* 의료 — 이미지 + 카드 */
+      .medical { padding: 88px 80px; }
+      .medical-cards { grid-template-columns: repeat(3, 1fr); }
+      .medical-image { height: 300px; }
+
+      /* 입지 탭 */
+      .tab-image { height: 340px; }
+      .tab-points { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+      /* 단지 강점 */
+      .complex-image { height: 300px; }
+      .complex-cards { grid-template-columns: repeat(3, 1fr); }
+      .complex-card:last-child { grid-column: auto; }
+
+      /* 평면도 */
+      .floor-plan { padding: 88px 80px; }
+      .floor-image { height: 460px; }
+      .floor-info  { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+      /* 분양 개요 */
+      .overview-image { height: 280px; }
+      .overview-table { max-width: 800px; }
+      .overview-key   { width: 140px; font-size: 13px; }
+      .overview-val   { font-size: 14px; }
+
+      /* 폼 */
+      .register-section { padding: 88px 80px; }
+      .register-box {
+        max-width: 700px; margin: 0 auto;
+        padding: 52px 56px;
+      }
+      .register-title { font-size: 24px; }
+      .form-group { max-width: 100%; }
+
+      /* section-title */
+      .section-title { font-size: 36px; }
+
+      /* 플로팅 버튼 */
+      #float-btns {
+        max-width: 480px;
+        left: auto; right: 40px;
+        transform: none;
+        border-radius: var(--radius-md);
+        bottom: 40px;
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* 푸터 */
+      footer { padding: 56px 80px 80px; }
+      .footer-rows { flex-direction: row; flex-wrap: wrap; gap: 24px; }
+
+      /* FAQ */
+      .faq-item button { font-size: 15px; }
+    }
+
+    /* ═══════════════════════════════════════════════
+       반응형 — 와이드 (1400px+)
+    ═══════════════════════════════════════════════ */
+    @media (min-width: 1400px) {
+      section { padding: 100px 120px; }
+      .hero-content { padding: 80px 80px; }
+      .stats-bar    { padding: 36px 120px; }
+      .medical      { padding: 100px 120px; }
+      .floor-plan   { padding: 100px 120px; }
+      .register-section { padding: 100px 120px; }
+      footer        { padding: 64px 120px 100px; }
     }
   </style>
 </head>

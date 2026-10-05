@@ -159,6 +159,7 @@ figcaption { padding-top: 10px; color: var(--muted); font-size: 10px; line-heigh
 .consult-form { display: grid; gap: 15px; padding: clamp(20px, 4vw, 40px); color: var(--ink); background: #fff; }
 .consult-form > label:not(.check-label) { display: grid; gap: 7px; color: #435047; font-size: 11px; font-weight: 800; }
 .consult-form input:not([type="checkbox"]), .consult-form select { width: 100%; min-height: 46px; padding: 0 12px; border: 1px solid var(--line); border-radius: 2px; color: var(--ink); background: #fbfaf6; }
+.appointment-note { margin: -7px 0 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
 .check-label { display: flex; align-items: flex-start; gap: 9px; color: #505e55; font-size: 11px; line-height: 1.7; }
 .check-label input { width: 17px; height: 17px; flex: 0 0 auto; margin: 1px 0 0; accent-color: var(--forest); }
 .privacy-draft { padding: 15px; background: #f3f2ec; }
